@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">BeachTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Enter Your Email .....</string>
+    <string name="password">Enter Your Password .....</string>
+    <string name="savepassword">Save New Password</string>
+    <string name="newpassword">Enter Your New Password .....</string>
+    <string name="confirmpassword">Confirm Your Password .....</string>
+    <string name="confirmnewpassword">Confirm Your New Password .....</string>
+    <string name="login">Login</string>
+    <string name="backlogin">Back to Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sendverification">Send Code to Email</string>
+    <string name="Verify">Verify</string>
+    <string name="EnterCode">Enter Code .....</string>
+    <string name="Confirm">Confirm Code</string>
+    <string name="guest">Continue as Guest</string>
+
+
 </resources>

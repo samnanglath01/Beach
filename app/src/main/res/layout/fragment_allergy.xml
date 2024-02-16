@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllergyFragment"
+    android:background="@color/gray">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/kitchen" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:gravity="center"
+            android:background="#A0000000">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Allergens"
+                android:padding="12dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_milk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_fish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fish"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_soy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soy"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_peanuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peanuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_treenuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tree Nuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_wheat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wheat"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_eggs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eggs"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_shellfish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shellfish / Crustacean"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox_sesame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sesame Seeds"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <Button
+                android:id="@+id/saveAllergy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="Save"
+                android:backgroundTint="@color/yellow"
+                />
+
+            <Button
+                android:id="@+id/backToDietary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="Back to Dietary Preference"
+                android:backgroundTint="@color/yellow"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
