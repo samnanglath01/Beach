@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249827453833",
+    "project_id": "beachtest-abc5b",
+    "storage_bucket": "beachtest-abc5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249827453833:android:301c815dc2d05f36310f58",
+        "android_client_info": {
+          "package_name": "com.example.beachtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoiNDhy2_58JmUw8vex6DkAcMlyEJRNEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
