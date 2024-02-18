@@ -46,7 +46,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_milk"
+                android:id="@+id/checkBoxMilk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Milk"
@@ -62,7 +62,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_fish"
+                android:id="@+id/checkBoxFish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fish"
@@ -78,7 +78,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_soy"
+                android:id="@+id/checkBoxSoy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Soy"
@@ -94,7 +94,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_peanuts"
+                android:id="@+id/checkBoxPeanuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Peanuts"
@@ -110,7 +110,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_treenuts"
+                android:id="@+id/checkBoxTreenuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tree Nuts"
@@ -126,7 +126,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_wheat"
+                android:id="@+id/checkBoxWheat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Wheat"
@@ -142,7 +142,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_eggs"
+                android:id="@+id/checkBoxEggs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Eggs"
@@ -158,7 +158,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_shellfish"
+                android:id="@+id/checkBoxShellfish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Shellfish / Crustacean"
@@ -174,7 +174,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox_sesame"
+                android:id="@+id/checkBoxSesame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sesame Seeds"
