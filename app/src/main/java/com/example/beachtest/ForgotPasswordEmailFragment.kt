@@ -27,12 +27,13 @@ private lateinit var auth: FirebaseAuth
  * Use the [ForgotPasswordEmailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class ForgotPasswordEmailFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentForgotPasswordEmailBinding
-
+    //Samnang Lath
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
@@ -41,7 +42,7 @@ class ForgotPasswordEmailFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
+    //Samnang Lath
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,6 +60,7 @@ class ForgotPasswordEmailFragment : Fragment() {
             }
         }
 
+        //Samnang Lath
         // Set up the click listener for the "Back to Login" button using the binding
         binding.backToLogInButton.setOnClickListener {
             findNavController().navigate(R.id.action_forgotPasswordEmailFragment_to_signInFragment)
