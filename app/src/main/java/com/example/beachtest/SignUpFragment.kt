@@ -13,7 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.example.beachtest.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-
+// Samnang Lath
+//singup with with view binding
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var auth: FirebaseAuth
@@ -37,14 +38,19 @@ class SignUpFragment : Fragment() {
         return binding.root
 
     }
+    //Samnang Lath
     private fun signUpUser() {
+        // Retrieve text inputs from the email and password fields and trim any leading or trailing spaces.
         val email = binding.emailEditText.text.toString().trim()
         val password = binding.passwordEditText.text.toString().trim()
         val confirmPassword = binding.confirmpasswordEditText.text.toString().trim()
-
+        // Call a separate function to validate the input fields.
+        // This typically checks for non-empty inputs, valid email format, matching passwords, etc.
         if (validateInputs(email, password, confirmPassword)) {
+            // Use FirebaseAuth to attempt creating a new user with the email and password.
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity()) { task ->
+                    // If Firebase successfully creates the user account, log the success.
                     if (task.isSuccessful) {
                         // Sign up success, log the success and navigate
                         Log.d("SignUpSuccess", "createUserWithEmail:success")
@@ -62,6 +68,7 @@ class SignUpFragment : Fragment() {
                 }
         }
     }
+    //Samnang Lath
     private fun validateInputs(email: String, password: String, confirmPassword: String): Boolean {
         if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(context, "Fields cannot be empty.", Toast.LENGTH_SHORT).show()

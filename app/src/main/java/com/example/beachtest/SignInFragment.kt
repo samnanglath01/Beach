@@ -10,9 +10,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
+//Samnang Lath
+//code for sign in
+// using viewbinding
 
 class SignInFragment : Fragment() {
+    // Declare a variable for View Binding to access views in the fragment layout
     private lateinit var binding: FragmentSignInBinding
+    // Declare a variable for Firebase Authentication to handle user authentication.
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,16 +25,26 @@ class SignInFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSignInBinding.inflate(inflater, container, false)
+        // Initialize the FirebaseAuth instance to work with Firebase Authentication.
         auth = FirebaseAuth.getInstance()
         binding.loginButton.setOnClickListener {
             signInUser()
         }
+        //bind with singupButton
+        // Set an OnClickListener on the 'loginButton' defined in the layout.
+        // When the button is clicked, the 'signInUser' function is called to handle user sign-in.
+        binding.loginButton.setOnClickListener {
+            signInUser()
+        }
 
+        // Set an OnClickListener on the 'signUpButton'. When clicked, it navigates to the SignUpFragment.
+        // This allows users to move to the sign-up screen if they don't have an account.
         binding.signUpButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
 
-
+// Set an OnClickListener on the 'forgotPasswordButton'. When clicked, it navigates to the ForgotPasswordEmailFragment.
+        // This provides users a way to reset their password if they've forgotten it.
 
         binding.forgotPasswordButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordEmailFragment)
@@ -37,6 +52,7 @@ class SignInFragment : Fragment() {
 
         return binding.root
     }
+    //Samnang Lath
     private fun signInUser() {
         val email = binding.emailEditText.text.toString().trim()
         val password = binding.passwordEditText.text.toString().trim()
