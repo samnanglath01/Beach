@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/dishImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/burgers"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/dishNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="Burger"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Container for Thumbs Up and Thumbs Down Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="16dp">
+
+    <!-- Thumbs Up Button -->
+    <ImageButton
+        android:id="@+id/thumbsUpButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/thumbs_up"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/thumbs_up_description"/>
+
+    <!-- Thumbs Down Button -->
+    <ImageButton
+        android:id="@+id/thumbsDownButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/thumbs_down"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/thumbs_down_description"/>
+    </LinearLayout>
+
+    <!-- TextView for Ingredients Label -->
+    <TextView
+        android:id="@+id/ingredientsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredients:"
+        android:textSize="26sp"
+        android:layout_marginTop="6dp"/>
+
+    <!-- TextView for Ingredients List -->
+    <TextView
+        android:id="@+id/ingredientsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="6dp"/>
+
+
+</LinearLayout>
