@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- This layout is for the splash screen of the app, featuring a fullscreen image with additional branding images overlaid. Written by: Marlen Dizon -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".SplashFragment">
 
+    <!-- Fullscreen background image -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="476dp"
@@ -13,11 +15,13 @@
         android:scaleType="fitXY"
         android:src="@drawable/chefshark" />
 
+    <!-- Container for overlay images -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Top overlay image with welcome text -->
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
@@ -25,6 +29,7 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/welcometo" />
 
+        <!-- Bottom overlay image with app name -->
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
