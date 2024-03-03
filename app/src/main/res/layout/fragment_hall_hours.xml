@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Beachside Hours -->
+        <TextView
+            android:id="@+id/tvBeachsideTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beachside"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvBeachsideHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday - Friday 6:30 am - 8:30 pm\nSaturday 11 am - 7:30 pm\nSunday 11 am - 7:30 pm"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Hillside Hours -->
+        <TextView
+            android:id="@+id/tvHillsideTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hillside"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvHillsideHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday - Friday 7 am - 8:30 pm\nSaturday 9:30 am - 7:30 pm\nSunday Closed"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Parkside Hours -->
+        <TextView
+            android:id="@+id/tvParksideTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parkside"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvParksideHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday - Friday 7 am - 8:30 pm\nSaturday Closed\nSunday 9:30 am - 7:30 pm" />
+
+    </LinearLayout>
+
+
+</ScrollView>
