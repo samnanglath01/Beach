@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.example.beachtest.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-// Samnang Lath
+// Samnang Lath & Marlen Dizon
 //singup with with view binding
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding

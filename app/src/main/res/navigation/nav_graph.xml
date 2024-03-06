@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Navigation graph for the app. Defines all the app's navigation paths. Written by: Marlen Dizon -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
+    <!-- Splash screen fragment. The app's entry point. -->
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.beachtest.SplashFragment"
@@ -14,6 +16,8 @@
             android:id="@+id/action_splashFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Sign-in screen fragment. -->
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.beachtest.SignInFragment"
@@ -26,21 +30,25 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordEmailFragment"
             app:destination="@id/forgotPasswordEmailFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_signInFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Fragment for email-based password recovery. -->
     <fragment
         android:id="@+id/forgotPasswordEmailFragment"
         android:name="com.example.beachtest.ForgotPasswordEmailFragment"
         android:label="fragment_forgot_password_email"
         tools:layout="@layout/fragment_forgot_password_email" >
         <action
-            android:id="@+id/action_forgotPasswordEmailFragment_to_verificationFragment"
-            app:destination="@id/verificationFragment" />
-        <action
             android:id="@+id/action_forgotPasswordEmailFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordEmailFragment_to_signInFragment2"
+            app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Sign-up screen fragment. -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.beachtest.SignUpFragment"
@@ -53,6 +61,8 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Fragment for setting dietary preferences. -->
     <fragment
         android:id="@+id/dietaryPreferenceFragment"
         android:name="com.example.beachtest.DietaryPreferenceFragment"
@@ -62,6 +72,8 @@
             android:id="@+id/action_dietaryPreferenceFragment_to_allergyFragment"
             app:destination="@id/allergyFragment" />
     </fragment>
+
+    <!-- Fragment for specifying allergies. -->
     <fragment
         android:id="@+id/allergyFragment"
         android:name="com.example.beachtest.AllergyFragment"
@@ -71,12 +83,14 @@
             android:name="dietaryPreference"
             app:argType="string" />
         <action
-            android:id="@+id/action_allergyFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_allergyFragment_to_dietaryPreferenceFragment"
             app:destination="@id/dietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_allergyFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Verification screen fragment. -->
     <fragment
         android:id="@+id/verificationFragment"
         android:name="com.example.beachtest.VerificationFragment"
@@ -89,6 +103,8 @@
             android:id="@+id/action_verificationFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Password reset screen fragment. -->
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.example.beachtest.ResetPasswordFragment"
@@ -98,9 +114,25 @@
             android:id="@+id/action_resetPasswordFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Homepage screen fragment. -->
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.beachtest.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+
+    <!-- Home screen fragment. -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.beachtest.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
+    <!-- More option on homepage screen fragment. -->
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.example.beachtest.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" />
 </navigation>

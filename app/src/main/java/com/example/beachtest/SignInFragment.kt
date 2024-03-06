@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
-//Samnang Lath
+//Samnang Lath & Marlen Dizon
 //code for sign in
 // using viewbinding
 
@@ -50,6 +50,11 @@ class SignInFragment : Fragment() {
             it.findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordEmailFragment)
         }
 
+        // Set up click listener for the forgot guest button to navigate to the guest home screen
+        binding.guestButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+        }
+
         return binding.root
     }
     //Samnang Lath
@@ -61,7 +66,7 @@ class SignInFragment : Fragment() {
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign-in success, navigate to homeFragment
-                    findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
                 } else {
                     // If sign-in fails, display a message to the user.
                     Toast.makeText(context, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

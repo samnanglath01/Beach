@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentAllergyBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -33,12 +34,14 @@ class AllergyFragment : Fragment() {
         // When the button is clicked, the saveAllergies() funct ion will be called
         binding.saveAllergy.setOnClickListener { // Assuming  have a 'Save' button with this ID
             // This function should contain the logic to save allergy information to Firestore.
+
             saveAllergies(dietaryPreference)
+            findNavController().navigate(R.id.action_allergyFragment_to_homePageFragment)
         }
     }
-
     //Samnang Lath
     private fun saveAllergies(dietaryPreference: String?) {
+        // Initialize a mutable list to hold the selected allergies.
         // Initialize a mutable list to hold the selected allergies.
         var selectedAllergies :String = ""
         // Check each checkbox in the fragment's layout. If checked, add the corresponding allergy to the list.
