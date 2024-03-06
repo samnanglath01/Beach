@@ -55,12 +55,12 @@ class DietaryPreferenceFragment : Fragment() {
             }
         }
     }
-
+    //save the selected dietary preference to Firestore.
     private fun saveDietaryPreference(dietaryPreference: String, onSuccess: () -> Unit) {
         // Retrieve the current user's ID from Firebase Authentication.
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
+       val userId = FirebaseAuth.getInstance().currentUser?.uid
+        //// Checks if the userId is not null with lambda function
         userId?.let { id ->
-            // Check if the userId is not null.
             val userPreferences = hashMapOf("dietaryPreference" to dietaryPreference)
 // Access the 'Users' collection in Firestore, and get the document corresponding to the userId.
             firestore.collection("Users").document(id)
