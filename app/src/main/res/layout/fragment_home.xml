@@ -1,16 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/black"
+            >
+
+            <ImageView
+                android:id="@+id/imageViewBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/tophome" />
+
+            <!-- Dining Halls title -->
+            <TextView
+                android:id="@+id/textViewDiningHallsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewBanner"
+                android:layout_marginTop="-40dp"
+                android:text="CSULB Dining Halls"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:textColor="@color/yellow"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parkside"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageParkside"
+                android:layout_width="wrap_content"
+                android:layout_height="225dp"
+                android:src="@drawable/parkside"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hillside"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageHillside"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/hillside"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beachside"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageBeachside"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/beachside"
+                android:layout_marginBottom="90dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

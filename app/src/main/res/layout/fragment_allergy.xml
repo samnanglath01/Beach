@@ -56,7 +56,7 @@
 
             <!-- Milk allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_milk"
+                android:id="@+id/checkBoxMilk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Milk"
@@ -74,7 +74,7 @@
 
             <!-- Fish allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_fish"
+                android:id="@+id/checkBoxFish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fish"
@@ -92,7 +92,7 @@
 
             <!-- Soy allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_soy"
+                android:id="@+id/checkBoxSoy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Soy"
@@ -110,7 +110,7 @@
 
             <!-- Peanuts allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_peanuts"
+                android:id="@+id/checkBoxPeanuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Peanuts"
@@ -128,7 +128,7 @@
 
             <!-- Tree Nuts allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_treenuts"
+                android:id="@+id/checkBoxTreenuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tree Nuts"
@@ -146,7 +146,7 @@
 
             <!-- Wheat allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_wheat"
+                android:id="@+id/checkBoxWheat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Wheat"
@@ -164,7 +164,7 @@
 
             <!-- Eggs allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_eggs"
+                android:id="@+id/checkBoxEggs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Eggs"
@@ -182,7 +182,7 @@
 
             <!-- Shellfish / Crustacean allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_shellfish"
+                android:id="@+id/checkBoxShellfish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Shellfish / Crustacean"
@@ -200,7 +200,7 @@
 
             <!-- Sesame allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_sesame"
+                android:id="@+id/checkBoxSesame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sesame Seeds"

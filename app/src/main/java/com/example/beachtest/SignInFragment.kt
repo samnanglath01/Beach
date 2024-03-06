@@ -5,46 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
+import com.google.firebase.auth.FirebaseAuth
+//Samnang Lath & Marlen Dizon
+//code for sign in
+// using viewbinding
 
-/**
- * SignInFragment allows the user to sign in to their account.
- * This fragment includes options to navigate to sign up, home page, or reset password if the user forgot it.
- * UI and Navigations Written by: Marlen Dizon
- */
 class SignInFragment : Fragment() {
-    // Binding property to access the views in the layout fragment_sign_in.xml
+    // Declare a variable for View Binding to access views in the fragment layout
     private lateinit var binding: FragmentSignInBinding
-
-    /**
-     * Called to have the fragment instantiate its user interface view.
-     * This is optional, and non-graphical fragments can return null.
-     * This will be called between onCreate and onActivityCreated.
-     *
-     * @param inflater The LayoutInflater object that can be used to inflate any views in the fragment.
-     * @param container If non-null, this is the parent view that the fragment's UI should be attached to.
-     * @param savedInstanceState If non-null, this fragment is being re-constructed from a previous saved state as given here.
-     * @return Return the View for the fragment's UI, or null.
-     */
+    // Declare a variable for Firebase Authentication to handle user authentication.
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment using data binding
+        // Inflate the layout for this fragment
         binding = FragmentSignInBinding.inflate(inflater, container, false)
-
-        // Set up click listener for the login button to navigate to the HomePageFragment
+        // Initialize the FirebaseAuth instance to work with Firebase Authentication.
+        auth = FirebaseAuth.getInstance()
         binding.loginButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+            signInUser()
+        }
+        //bind with singupButton
+        // Set an OnClickListener on the 'loginButton' defined in the layout.
+        // When the button is clicked, the 'signInUser' function is called to handle user sign-in.
+        binding.loginButton.setOnClickListener {
+            signInUser()
         }
 
-        // Set up click listener for the sign up button to navigate to the SignUpFragment
+        // Set an OnClickListener on the 'signUpButton'. When clicked, it navigates to the SignUpFragment.
+        // This allows users to move to the sign-up screen if they don't have an account.
         binding.signUpButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
 
-        // Set up click listener for the forgot password button to navigate to the ForgotPasswordEmailFragment
+// Set an OnClickListener on the 'forgotPasswordButton'. When clicked, it navigates to the ForgotPasswordEmailFragment.
+        // This provides users a way to reset their password if they've forgotten it.
+
         binding.forgotPasswordButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordEmailFragment)
         }
@@ -54,8 +55,25 @@ class SignInFragment : Fragment() {
             it.findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
         }
 
-        // Return the root view of the binding class, which holds all the layout's views
         return binding.root
     }
+    //Samnang Lath
+    private fun signInUser() {
+        val email = binding.emailEditText.text.toString().trim()
+        val password = binding.passwordEditText.text.toString().trim()
 
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Sign-in success, navigate to homeFragment
+                    findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+                } else {
+                    // If sign-in fails, display a message to the user.
+                    Toast.makeText(context, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            Toast.makeText(context, "Please enter both email and password.", Toast.LENGTH_SHORT).show()
+        }
+    }
 }

@@ -37,6 +37,7 @@
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@color/white"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
@@ -44,14 +45,14 @@
                 android:padding="12dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
-                app:hintEnabled="false"
-                android:layout_marginBottom="16dp"/>
+                app:hintEnabled="false" />
 
             <!-- Password input field for new users -->
             <EditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@color/white"
                 android:hint="@string/password"
                 android:inputType="textPassword"
@@ -59,16 +60,29 @@
                 android:padding="12dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
-                app:hintEnabled="false"
-                android:layout_marginBottom="16dp"/>
+                app:hintEnabled="false" />
 
             <!-- Confirm password input field for new users to verify their password -->
             <EditText
                 android:id="@+id/confirmpasswordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@color/white"
                 android:hint="@string/confirmpassword"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="12dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false" />
+
+            <EditText
+                android:id="@+id/usernameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="@string/username"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="12dp"
@@ -82,8 +96,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/sign_up"
-                android:backgroundTint="@color/yellow"/>
+                android:backgroundTint="@color/yellow"
+                android:text="@string/sign_up" />
 
             <!-- Button to allow users to return to the login screen if they already have an account -->
             <Button
@@ -91,8 +105,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/backlogin"
-                android:backgroundTint="@color/yellow"/>
+                android:backgroundTint="@color/yellow"
+                android:text="@string/backlogin" />
 
         </LinearLayout>
 
