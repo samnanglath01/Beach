@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:hint="@string/username"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:maxLines="1"
                 android:padding="12dp"
                 app:boxStrokeWidth="0dp"
