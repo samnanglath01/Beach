@@ -56,6 +56,16 @@
                 android:src="@drawable/parkside"
                 android:layout_marginBottom="6dp"/>
 
+            <Button
+                android:id="@+id/parksidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="See Details"
+                android:layout_marginTop="-60dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,6 +83,16 @@
                 android:src="@drawable/hillside"
                 android:layout_marginBottom="6dp"/>
 
+            <Button
+                android:id="@+id/hillsidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="See Details"
+                android:layout_marginTop="-60dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,7 +108,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="228dp"
                 android:src="@drawable/beachside"
-                android:layout_marginBottom="90dp"/>
+                android:layout_marginBottom="6dp"/>
+
+            <Button
+                android:id="@+id/beachsidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="See Details"
+                android:layout_marginTop="-60dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginBottom="100dp"
+                android:backgroundTint="@color/yellow"/>
 
         </LinearLayout>
 
