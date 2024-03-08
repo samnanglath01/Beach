@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Profile"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/profileicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -33,7 +34,7 @@
                 android:padding="18dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true" />
+                android:focusable="true"/>
 
             <View
                 android:layout_width="match_parent"
@@ -46,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Prices"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/priceicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -66,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Dining Hall Hours"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/timeicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -93,7 +96,8 @@
                 android:padding="18dp"
                 android:text="     Virtual Tour"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/buttonLocation"
@@ -108,7 +112,8 @@
                 android:padding="18dp"
                 android:text="     Location"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <View
                 android:layout_width="match_parent"
@@ -121,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Language"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/languageicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -141,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Calendar"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/calendaricon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -161,6 +168,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Photography Tips"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/cameraicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -169,11 +177,6 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3"/>
 
             <View
                 android:layout_width="match_parent"
@@ -206,6 +209,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Events"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/eventsicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -226,6 +230,7 @@
                 android:layout_height="wrap_content"
                 android:text="     Pantry"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/pantryicon"
                 android:drawableEnd="@drawable/arrow_forward"
@@ -240,6 +245,7 @@
                 android:layout_height="1dp"
                 android:background="#D3D3D3"
                 android:layout_marginBottom="100dp"/>
+
 
 
         </LinearLayout>

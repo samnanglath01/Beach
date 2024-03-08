@@ -117,7 +117,14 @@
         android:id="@+id/homePageFragment"
         android:name="com.example.beachtest.HomePageFragment"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_photographyTipFragment"
+            app:destination="@id/photographyTipFragment" />
+    </fragment>
 
     <!-- Home screen fragment. -->
     <fragment
@@ -132,4 +139,14 @@
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" />
+    <fragment
+        android:id="@+id/photographyTipFragment"
+        android:name="com.example.beachtest.PhotographyTipFragment"
+        android:label="fragment_photography_tip"
+        tools:layout="@layout/fragment_photography_tip" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.beachtest.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
