@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditDietaryPreferenceFragment">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/kitchen" />
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:gravity="center"
+            android:background="#A0000000">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Dietary Preference"
+                android:padding="12dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#A0000000">
+
+                <RadioButton
+                    android:id="@+id/radio_classic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Classic\nNo holds barred"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_pescatarian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pescatarian\nNo red meat or poultry"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_halal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Halal\nLawful or Permitted"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_vegetarian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vegetarian\nNo meat"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_vegan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vegan\nOnly plants"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+            </RadioGroup>
+
+            <!-- Text label for the allergen selection section -->
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Allergens"
+                android:padding="12dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginTop="40dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Milk allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Fish allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxFish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fish"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Soy allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxSoy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soy"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Peanuts allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxPeanuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peanuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Tree Nuts allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxTreenuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tree Nuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Wheat allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxWheat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wheat"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Eggs allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxEggs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eggs"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Shellfish / Crustacean allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxShellfish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shellfish / Crustacean"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Sesame allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxSesame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sesame Seeds"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+
+            <Button
+                android:id="@+id/saveEditDietbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"
+                android:text="Save Edit"
+                android:backgroundTint="@color/yellow"
+                />
+
+            <Button
+                android:id="@+id/backToProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Back to Profile" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
