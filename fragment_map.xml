@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/beachbackground">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Map"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageViewRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="382dp"
+        app:srcCompat= "@drawable/restmap" />
+
+    <Button
+        android:id="@+id/buttonNuggetGrillPub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nugget Grill and Pub"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <Button
+        android:id="@+id/buttonOutpostGrill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outpost Grill"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <Button
+        android:id="@+id/buttonBeachsideDining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Beachside Dining Hall"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <Button
+        android:id="@+id/buttonHillsideDining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hillside Dining Hall"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <Button
+        android:id="@+id/buttonParksideDining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Parkside Dining Hall"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <Button
+        android:id="@+id/buttonUsuDining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="USU Dining"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button" />
+
+</LinearLayout>
+
