@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentAllergyBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,13 +32,14 @@ class AllergyFragment : Fragment() {
         binding.saveAllergy.setOnClickListener { // Assuming  have a 'Save' button with this ID
             // This function should contain the logic to save allergy information to Firestore.
             saveAllergies()
+            findNavController().navigate(R.id.action_allergyFragment_to_homePageFragment)
         }
     }
-//Samnang Lath
+    //Samnang Lath
     private fun saveAllergies() {
-    // Initialize a mutable list to hold the selected allergies.
+        // Initialize a mutable list to hold the selected allergies.
         val selectedAllergies = mutableListOf<String>()
-    // Check each checkbox in the fragment's layout. If checked, add the corresponding allergy to the list.
+        // Check each checkbox in the fragment's layout. If checked, add the corresponding allergy to the list.
         if (binding.checkBoxMilk.isChecked) selectedAllergies.add("Milk")
         if (binding.checkBoxFish.isChecked) selectedAllergies.add("Fish")
         if (binding.checkBoxSoy.isChecked) selectedAllergies.add("Soy")
@@ -47,7 +49,7 @@ class AllergyFragment : Fragment() {
         if (binding.checkBoxShellfish.isChecked) selectedAllergies.add("ShellFish")
         if (binding.checkBoxSesame.isChecked) selectedAllergies.add("Sesame")
         if (binding.checkBoxWheat.isChecked) selectedAllergies.add("Wheat")
-    // Retrieve the current user's unique ID from Firebase Authentication.
+        // Retrieve the current user's unique ID from Firebase Authentication.
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { id ->
             db.collection("users").document(id).set(
