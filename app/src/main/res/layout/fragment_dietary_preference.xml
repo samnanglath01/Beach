@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DietaryPreferenceFragment"
+    android:background="@color/gray">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/kitchen" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:gravity="center"
+            android:background="#A0000000">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Dietary Preference"
+                android:padding="12dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#A0000000">
+
+                <RadioButton
+                    android:id="@+id/radio_classic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Classic\nNo holds barred"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_pescatarian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pescatarian\nNo red meat or poultry"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_halal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Halal\nLawful or Permitted"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_vegetarian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vegetarian\nNo meat"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"/>
+
+                <RadioButton
+                    android:id="@+id/radio_vegan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vegan\nOnly plants"
+                    android:textColor="@color/white"
+                    android:padding="12dp"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/saveDietbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="Save"
+                android:backgroundTint="@color/yellow"
+                />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</FrameLayout>

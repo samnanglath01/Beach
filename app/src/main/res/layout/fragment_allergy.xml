@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FrameLayout for the AllergyFragment, designed to allow users to select their allergens.
+     Features a background image for visual appeal, a scrollable view for user selections,
+     and action buttons for saving or navigation. Designed for ease of use and accessibility.
+     Written by: Marlen Dizon -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllergyFragment"
+    android:background="@color/gray">
+
+    <!-- Background ImageView to enhance visual appeal of the fragment -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/kitchen" />
+
+    <!-- ScrollView to accommodate varying screen sizes and ensure all content is accessible -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:gravity="center"
+            android:background="#A0000000">
+
+            <!-- Text label for the allergen selection section -->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Allergens"
+                android:padding="12dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Milk allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Fish allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxFish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fish"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Soy allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxSoy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soy"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Peanuts allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxPeanuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peanuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Tree Nuts allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxTreenuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tree Nuts"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Wheat allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxWheat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wheat"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Eggs allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxEggs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eggs"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Shellfish / Crustacean allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxShellfish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shellfish / Crustacean"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
+
+            <!-- Sesame allergen option -->
+            <CheckBox
+                android:id="@+id/checkBoxSesame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sesame Seeds"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="17dp"
+                android:background="#A0000000"/>
+
+            <!-- Save button for confirming allergen selections -->
+            <Button
+                android:id="@+id/saveAllergy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="Save"
+                android:backgroundTint="@color/yellow"
+                />
+
+            <!-- Button for navigating back to the dietary preferences screen -->
+            <Button
+                android:id="@+id/backToDietary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:text="Back to Dietary Preference"
+                android:backgroundTint="@color/yellow"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
