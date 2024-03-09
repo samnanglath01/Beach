@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import android.widget.Button
 
 class MapFrag : Fragment() {
-
+    //UI NEEDS TO BE CHANGED
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
