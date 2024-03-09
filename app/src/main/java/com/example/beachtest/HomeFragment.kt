@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
         // Retrieve dining hall names from the database
         val diningHalls = databaseHelper.getDiningHalls()
 
-        // Map the static buttons in the layout to the dynamic dining hall names (assuming the order is Beachside, Hillside, Parkside)
+        // Map the static buttons in the layout to the dynamic dining hall names
         val buttons = listOf(binding.beachsidehomebutton, binding.hillsidehomebutton, binding.parksidehomebutton)
         for (i in diningHalls.indices) {
             buttons[i].apply {
@@ -35,7 +35,5 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-
-        // If there are more dining halls than buttons, consider adding more buttons in your layout or handling them differently.
     }
 }
