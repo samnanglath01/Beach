@@ -13,8 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/topbannerProfile"
@@ -36,6 +35,16 @@
                 android:background="?android:attr/selectableItemBackground" />
 
             <ImageView
+                android:id="@+id/editprofileButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginBottom="-50dp"
+                android:src="@drawable/editicon"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
                 android:id="@+id/profileImg"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -43,8 +52,11 @@
                 android:layout_marginTop="30dp"
                 android:src="@drawable/baseline_person_4_24"/>
 
+
+
             <Button
                 android:id="@+id/btnProfile"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -59,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="username"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -135,19 +147,38 @@
                 android:text="Edit Dietary Preference"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/yellow"/>
-
-
-            <Button
-                android:id="@+id/DeleteButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="Delete Account"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/yellow"
-                android:layout_marginBottom="100dp"/>
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/DeleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="100dp"
+                android:text="Delete Account"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/backhomebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="18dp"
+                android:text="Back to Home Page"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/arrowbackicon"
+                android:gravity="center"
+                android:drawablePadding="8dp" />
 
         </LinearLayout>
     </ScrollView>
