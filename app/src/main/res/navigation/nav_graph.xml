@@ -207,7 +207,14 @@
         android:id="@+id/optionsFragment"
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
-        tools:layout="@layout/fragment_options" />
+        tools:layout="@layout/fragment_options">
+        <action
+            android:id="@+id/action_optionsFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/photographyTipFragment"
         android:name="com.example.beachtest.PhotographyTipFragment"

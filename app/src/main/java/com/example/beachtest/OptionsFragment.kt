@@ -31,6 +31,16 @@ class OptionsFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homePageFragment_to_photographyTipFragment)
         }
 
+        binding.buttonPrices.setOnClickListener {
+            Toast.makeText(context, "Prices clicked", Toast.LENGTH_SHORT).show();
+            it.findNavController().navigate(R.id.action_optionsFragment_to_pricesFragment)
+        }
+
+        binding.buttonHours.setOnClickListener {
+            Toast.makeText(context, "Hours clicked", Toast.LENGTH_SHORT).show();
+            it.findNavController().navigate(R.id.action_optionsFragment_to_hallHoursFragment)
+        }
+
 
         return binding.root
     }
