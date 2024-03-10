@@ -43,27 +43,30 @@ class AllergyFragment : Fragment() {
     private fun saveAllergies(dietaryPreference: String?) {
         // Initialize a mutable list to hold the selected allergies.
         // Initialize a mutable list to hold the selected allergies.
-        var selectedAllergies :String = ""
-        // Check each checkbox in the fragment's layout. If checked, add the corresponding allergy to the list.
-        if (binding.checkBoxMilk.isChecked) selectedAllergies = "Milk"
-        if (binding.checkBoxFish.isChecked) selectedAllergies=("Fish")
-        if (binding.checkBoxSoy.isChecked) selectedAllergies=("Soy")
-        if (binding.checkBoxPeanuts.isChecked) selectedAllergies=("Peanuts")
-        if (binding.checkBoxTreenuts.isChecked) selectedAllergies=("Tree nuts")
-        if (binding.checkBoxEggs.isChecked) selectedAllergies=("Eggs")
-        if (binding.checkBoxShellfish.isChecked) selectedAllergies=("ShellFish")
-        if (binding.checkBoxSesame.isChecked) selectedAllergies=("Sesame")
-        if (binding.checkBoxWheat.isChecked) selectedAllergies=("Wheat")
-        // Retrieve the current user's unique ID from Firebase Authentication.
+        val checkedAllergies = hashMapOf<String, Any>()
+
+// Add only the checked allergies to the map
+        if (binding.checkBoxMilk.isChecked) checkedAllergies["containsMilk"] = true
+        if (binding.checkBoxFish.isChecked) checkedAllergies["containsFish"] = true
+        if (binding.checkBoxSoy.isChecked) checkedAllergies["containsSoy"] = true
+        if (binding.checkBoxPeanuts.isChecked) checkedAllergies["containsPeanuts"] = true
+        if (binding.checkBoxTreenuts.isChecked) checkedAllergies["containsTreeNuts"] = true
+        if (binding.checkBoxEggs.isChecked) checkedAllergies["containsEggs"] = true
+        if (binding.checkBoxShellfish.isChecked) checkedAllergies["containsShellfish"] = true
+        if (binding.checkBoxSesame.isChecked) checkedAllergies["containsSesame"] = true
+        if (binding.checkBoxWheat.isChecked) checkedAllergies["containsWheat"] = true
+
+// Retrieve the current user's unique ID from Firebase Authentication
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { id ->
-            // Create a map to hold both the dietaryPreference and the selectedAllergies
+            // Create a map to hold the user's dietary preference and their allergies
             val userData = hashMapOf<String, Any>()
             dietaryPreference?.let {
                 userData["dietaryPreference"] = it
             }
-            userData["allergies"] = selectedAllergies
+            userData.putAll(checkedAllergies)
 
+            // Save the user data to Firestore, merging it with existing data
             db.collection("Users").document(id).set(
                 userData,
                 SetOptions.merge()
