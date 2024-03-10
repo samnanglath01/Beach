@@ -155,6 +155,9 @@
         <action
             android:id="@+id/action_profileFragment_to_editDietaryPreferenceFragment"
             app:destination="@id/editDietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
