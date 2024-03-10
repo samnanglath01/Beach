@@ -6,6 +6,11 @@
     android:id="@+id/frame_container"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomePageFragment">
+    <!-- FrameLayout is the root container for the fragment's UI.
+         It is set to match the parent in both width and height,
+         filling the entire screen space allocated for the fragment.
+         The 'frame_container' ID is assigned for potential reference in Java/Kotlin code.
+         'tools:context' specifies which fragment class this layout is associated with. -->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -19,7 +24,16 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:itemIconSize="30dp"
-        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        />
-
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"/>
+    <!-- BottomNavigationView is a UI component that allows users to navigate
+         between top-level content areas in the app. It's placed at the bottom of the screen.
+         - 'layout_width' and 'layout_height' are set to match_parent and wrap_content, respectively,
+           indicating it stretches across the screen width and only takes up as much height as needed.
+         - The ID 'bottom_navigation' is for identifying the view in code.
+         - 'layout_gravity="bottom"' positions the navigation at the bottom of the FrameLayout.
+         - 'app:menu' links to a menu resource file defining the items to be displayed in the navigation bar.
+         - The background color is set to gray, and the icon and text colors are set to white for visibility.
+         - 'itemIconSize' adjusts the size of the icons within the navigation bar.
+         - 'itemActiveIndicatorStyle' refers to a custom style resource for the active item indicator,
+           enhancing the visual feedback for the currently active section. -->
 </FrameLayout>

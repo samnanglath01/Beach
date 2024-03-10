@@ -4,21 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PhotographyTipFragment">
+    <!-- FrameLayout as the root container -->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!-- ScrollView to ensure the content can be scrolled through if it extends beyond the screen size -->
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <!-- LinearLayout for vertical stacking of child views -->
+
 
             <ImageView
                 android:id="@+id/topbannerProfile"
                 android:layout_width="410dp"
                 android:layout_height="110dp"
                 android:src="@drawable/topbanner" />
+            <!-- ImageView for displaying the top banner -->
+
 
             <TextView
                 android:id="@+id/buttonPhotographyTips"
@@ -62,6 +69,8 @@
                 android:id="@+id/videoView"
                 android:layout_marginBottom="10dp">
             </VideoView>
+            <!-- VideoView for displaying video content related to photography tips -->
+
 
             <TextView
                 android:id="@+id/textView4"
@@ -100,12 +109,12 @@
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="➡ Avoid direct sunlight as it can cause harsh shadows and highlights. A softly lit place near a window during daylight hours is ideal."
-                android:textColor="@color/black"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginBottom="5dp"
                 android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"/>
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="➡ Avoid direct sunlight as it can cause harsh shadows and highlights. A softly lit place near a window during daylight hours is ideal."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -393,6 +402,25 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/backhomebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="18dp"
+                android:text="Back to Home Page"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/arrowbackicon"
+                android:gravity="center"
+                android:drawablePadding="8dp" />
+            <!-- Button to navigate back to the home page, styled to maintain consistency with the overall theme -->
+
+
 
 
         </LinearLayout>

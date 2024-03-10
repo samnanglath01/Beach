@@ -5,22 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditProfileFragment">
+    <!-- Root FrameLayout: provides a base layer for the fragment layout -->
 
-    <!-- Nested FrameLayout to provide a consistent background and layout structure similar to the SignInFragment for visual consistency -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".SignInFragment">
+        android:layout_height="match_parent">
+        <!-- Nested FrameLayout: used for structuring the UI elements within the fragment -->
 
-        <!-- Background image for the sign-up screen, ensuring a visually appealing and consistent user experience across the app -->
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@drawable/beachbackground" />
+        <!-- Background ImageView: sets a beach scene as the background for a visually appealing look -->
 
-        <!-- Container for the sign-up form elements with a semi-transparent background to enhance readability over the background image -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,8 +27,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="32dp">
+            <!-- Semi-transparent LinearLayout container: centralizes the form elements and ensures they are readable over the background image -->
 
-            <!-- Email input field for new users -->
             <EditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
@@ -43,7 +42,7 @@
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 app:hintEnabled="false" />
-
+            <!-- Email EditText: allows users to edit their email address -->
 
             <EditText
                 android:id="@+id/usernameText"
@@ -57,8 +56,8 @@
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 app:hintEnabled="false" />
+            <!-- Username EditText: permits users to edit their username -->
 
-            <!-- Sign-up button to submit the form and create a new user account -->
             <Button
                 android:id="@+id/SaveeditButton"
                 android:layout_width="match_parent"
@@ -66,8 +65,8 @@
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/yellow"
                 android:text="Save Edit" />
+            <!-- Save Edit Button: submits the form to save the edited user information -->
 
-            <!-- Button to allow users to return to the login screen if they already have an account -->
             <Button
                 android:id="@+id/backToProfileButton"
                 android:layout_width="match_parent"
@@ -75,9 +74,8 @@
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/yellow"
                 android:text="Back to Profile" />
+            <!-- Back to Profile Button: allows the user to return to their profile without making changes -->
 
         </LinearLayout>
-
     </FrameLayout>
-
 </FrameLayout>
