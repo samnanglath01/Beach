@@ -5,5 +5,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".MealTimeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/imageViewBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/tophome" />
+
+            <TextView
+                android:id="@+id/textMealTimesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewBanner"
+                android:layout_marginTop="-40dp"
+                android:text="Meal Times"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:textColor="@color/yellow"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageBreakfast"
+                android:layout_width="364dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:src="@drawable/breakfasttheme" />
+
+            <Button
+                android:id="@+id/breakfastButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="View Menu"
+                android:layout_marginTop="-100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageLunch"
+                android:layout_width="364dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:src="@drawable/lunchtheme" />
+
+            <Button
+                android:id="@+id/lunchButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="View Menu"
+                android:layout_marginTop="-95dp"
+                android:layout_marginStart="230dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/yellow"/>
+
+            <ImageView
+                android:id="@+id/imageDinner"
+                android:layout_width="364dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:src="@drawable/dinnertheme" />
+
+            <Button
+                android:id="@+id/dinnerButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="View Menu"
+                android:layout_marginTop="-95dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="100dp"
+                android:backgroundTint="@color/yellow"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

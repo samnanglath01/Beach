@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuItemsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/black"
+            >
+
+            <ImageView
+                android:id="@+id/imageViewBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/tophome" />
+
+            <TextView
+                android:id="@+id/textMenuItemsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewBanner"
+                android:layout_marginTop="-40dp"
+                android:text="Menu"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:textColor="@color/yellow"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Dynamic menu items will be added here programmatically -->
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +55,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/black"
         android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewBanner"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="228dp"
+            android:src="@drawable/tophome" />
+
+        <TextView
+            android:id="@+id/textViewMenuItemsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu Items"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="26dp"
+            android:textColor="@color/yellow"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+
     </LinearLayout>
-
-
-</FrameLayout>
+</ScrollView>
+-->

@@ -30,7 +30,7 @@
             app:destination="@id/forgotPasswordEmailFragment" />
         <action
             android:id="@+id/action_signInFragment_to_homePageFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Fragment for email-based password recovery. -->
