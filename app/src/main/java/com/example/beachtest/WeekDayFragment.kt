@@ -5,17 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentWeekDayBinding
 import androidx.navigation.fragment.navArgs
 
 class WeekDayFragment : Fragment() {
     private val args: WeekDayFragmentArgs by navArgs()
-    private var _binding: FragmentWeekDayBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentWeekDayBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentWeekDayBinding.inflate(inflater, container, false)
+        binding = FragmentWeekDayBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -23,34 +24,21 @@ class WeekDayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val databaseHelper = DatabaseHelper.DatabaseHelper(requireContext())
+
         val days = databaseHelper.getDays()
 
-        setupDayButtons(days)
-    }
+        val container = view.findViewById<LinearLayout>(R.id.daysContainer)
 
-    private fun setupDayButtons(days: List<String>) {
-        val buttons = listOf(binding.mondaybutton, binding.tuesdaybutton, binding.wednesdaybutton, binding.thursdaybutton, binding.fridaybutton, binding.saturdaybutton, binding.sundaybutton)
-
-        // Hide all buttons initially
-        buttons.forEach { it.visibility = View.GONE }
-
-        // Show and setup buttons based on available days
-        days.forEachIndexed { index, day ->
-            if (index < buttons.size) {
-                buttons[index].apply {
-                    visibility = View.VISIBLE
-                    text = day
-                    setOnClickListener {
-                        val action = WeekDayFragmentDirections.actionWeekDayFragmentToMealTimeFragment(args.diningHall, day)
-                        findNavController().navigate(action)
-                    }
+        days.forEach { day ->
+            val button = Button(requireContext()).apply {
+                text = day
+                setOnClickListener {
+                    val action = WeekDayFragmentDirections.actionWeekDayFragmentToMealTimeFragment(diningHall = args.diningHall, day = day)
+                    findNavController().navigate(action)
                 }
             }
+            container?.addView(button)
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
