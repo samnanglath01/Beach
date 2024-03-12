@@ -123,6 +123,12 @@
         <action
             android:id="@+id/action_homePageFragment_to_photographyTipFragment"
             app:destination="@id/photographyTipFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -208,12 +214,7 @@
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options">
-        <action
-            android:id="@+id/action_optionsFragment_to_hallHoursFragment"
-            app:destination="@id/hallHoursFragment" />
-        <action
-            android:id="@+id/action_optionsFragment_to_pricesFragment"
-            app:destination="@id/pricesFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/photographyTipFragment"
@@ -224,7 +225,26 @@
         android:id="@+id/profileFragment"
         android:name="com.example.beachtest.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editDietaryPreferenceFragment"
+            app:destination="@id/editDietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.beachtest.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 
     <!-- Hours screen fragment. -->
     <fragment
@@ -232,6 +252,16 @@
         android:name="com.example.beachtest.HallHoursFragment"
         android:label="fragment_menu_items"
         tools:layout="@layout/fragment_hall_hours">
+    </fragment>
+
+    <fragment
+        android:id="@+id/editDietaryPreferenceFragment"
+        android:name="com.example.beachtest.EditDietaryPreferenceFragment"
+        android:label="fragment_edit_dietary_preference"
+        tools:layout="@layout/fragment_edit_dietary_preference" >
+        <action
+            android:id="@+id/action_editDietaryPreferenceFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <!-- Prices screen fragment. -->

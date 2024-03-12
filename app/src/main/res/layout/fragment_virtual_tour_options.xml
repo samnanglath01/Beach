@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HomeFragment">
-
+    tools:context=".VirtualTourOptionsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,40 +12,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/black"
-            >
+            android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageViewBanner"
-                android:layout_width="wrap_content"
-                android:layout_height="228dp"
-                android:src="@drawable/tophome" />
+                android:id="@+id/topBannerProfile"
+                android:layout_width="410dp"
+                android:layout_height="110dp"
+                android:src="@drawable/topbanner"/>
 
-            <!-- Dining Halls title -->
             <TextView
-                android:id="@+id/textVirtualTourTitle"
+                android:id="@+id/buttonVirtualTour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageViewBanner"
-                android:layout_marginTop="-40dp"
-                android:text="Virtual Tour"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="     Virtual Tour"
                 android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="26dp"
-                android:textColor="@color/yellow"
-                android:layout_marginBottom="8dp"/>
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/touricon"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Parkside"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginStart="35dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="@color/yellow"/>
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
 
             <ImageView
                 android:id="@+id/imageParkside"
@@ -61,20 +57,22 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Tour Parkside"
+                android:textColor="@color/black"
                 android:layout_marginTop="-60dp"
                 android:layout_marginStart="45dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/yellow"/>
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hillside"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginStart="35dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="@color/yellow"/>
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
 
             <ImageView
                 android:id="@+id/imageHillside"
@@ -88,20 +86,22 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Tour Hillside"
+                android:textColor="@color/black"
                 android:layout_marginTop="-60dp"
                 android:layout_marginStart="45dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/yellow"/>
 
             <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Beachside"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginStart="35dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="@color/yellow"/>
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
 
             <ImageView
                 android:id="@+id/imageBeachside"
@@ -115,13 +115,13 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Tour Beachside"
+                android:textColor="@color/black"
                 android:layout_marginTop="-60dp"
                 android:layout_marginStart="45dp"
                 android:layout_marginBottom="100dp"
                 android:backgroundTint="@color/yellow"/>
 
         </LinearLayout>
-
     </ScrollView>
 
-</LinearLayout>
+</FrameLayout>
