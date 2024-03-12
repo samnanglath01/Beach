@@ -5,8 +5,12 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+// Luis Flores
 class DatabaseHelper {
+    // Define the DatabaseHelper class to manage database creation using SQLiteOpenHelper superclass
     class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+        // Companion object allows for the definition of constants and static methods or properties
+        // accessible at the class level
         companion object {
             private const val DATABASE_VERSION = 1
             private const val DATABASE_NAME = "MenuCycle.db"
@@ -18,7 +22,11 @@ class DatabaseHelper {
             private const val COLUMN_MENU_ITEM = "menuItem"
         }
 
+        // Called when the database is first created
         override fun onCreate(db: SQLiteDatabase) {
+            // Defines a multi-line string using triple quotes to hold the SQL statement for creating a table.
+            // The use of $TABLE_NAME, $COLUMN_ID, etc., injects the values of these constants into the SQL string,
+            // ensuring that the table and column names are as defined in the companion object.
             val createTableStatement = """
             CREATE TABLE $TABLE_NAME (
                 $COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,18 +35,23 @@ class DatabaseHelper {
                 $COLUMN_DINING_HALL TEXT,
                 $COLUMN_MENU_ITEM TEXT
             )
-        """.trimIndent()
+        """.trimIndent() // Removes whitespace from each line in the string literal
 
             db.execSQL(createTableStatement)
         }
 
+        // Overrides the onUpgrade method from SQLiteOpenHelper. This method is called when the database
+        // needs to be upgraded, which typically happens when the version number specified in the application
+        // code is higher than the version number of the database currently installed on the device.
         override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+            // Drops the table if it already exists
             db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
-            onCreate(db)
+            onCreate(db) // Recreate the database
         }
 
+        // Populate the SQLite database with initial data
         fun populateInitialData() {
-            // Define a data class for menu items
+            // Define a data class for menu items, blueprint for creating menu item objects
             data class MenuItem(val day: String, val mealTime: String, val diningHall: String, val menuItem: String)
 
             val menuItems = listOf(
@@ -355,41 +368,125 @@ class DatabaseHelper {
                 MenuItem("Sunday", "Dinner", "Parkside", "Pepperoni and Cheese Pizza"),
             )
 
-            // Insert each menu item into the database
+            // Acquires a writable instance of the database to insert data into it.
             val dbWritable = this.writableDatabase
             menuItems.forEach { menuItem ->
+                // Prepares the data for insertion by creating a ContentValues object.
                 val values = ContentValues().apply {
-                    put(COLUMN_DAY, menuItem.day)
-                    put(COLUMN_MEAL_TIME, menuItem.mealTime)
-                    put(COLUMN_DINING_HALL, menuItem.diningHall)
-                    put(COLUMN_MENU_ITEM, menuItem.menuItem)
+                    put(COLUMN_DAY, menuItem.day) // Maps "day" from MenuItem to COLUMN_DAY in the database.
+                    put(COLUMN_MEAL_TIME, menuItem.mealTime) // Maps "mealTime" from MenuItem to COLUMN_MEAL_TIME.
+                    put(COLUMN_DINING_HALL, menuItem.diningHall) // Maps "diningHall" from MenuItem to COLUMN_DINING_HALL.
+                    put(COLUMN_MENU_ITEM, menuItem.menuItem) // Maps "menuItem" from MenuItem to COLUMN_MENU_ITEM.
+
                 }
+                // Inserts the ContentValues into the table. The second parameter (nullColumnHack)
+                // is null, indicating no need for it in this context.
                 dbWritable.insert(TABLE_NAME, null, values)
             }
+            // Closes the database to release resources
             dbWritable.close()
+        }
+
+        fun getDiningHalls(): List<String> {
+            val db = this.readableDatabase
+            val diningHalls = mutableListOf<String>()
+            val cursor = db.query(
+                true, // distinct
+                TABLE_NAME,
+                arrayOf(COLUMN_DINING_HALL), // columns to return
+                null, // columns for the WHERE clause
+                null, // values for the WHERE clause
+                null, // don't group the rows
+                null, // don't filter by row groups
+                null, // don't sort
+                null  // don't limit
+            )
+
+            while (cursor.moveToNext()) {
+                val diningHall = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DINING_HALL))
+                diningHalls.add(diningHall)
+            }
+            cursor.close()
+            db.close()
+
+            return diningHalls.distinct()
+        }
+
+        fun getDays(): List<String> {
+            val db = this.readableDatabase
+            val days = mutableListOf<String>()
+            val cursor = db.query(
+                true, // distinct
+                TABLE_NAME,
+                arrayOf(COLUMN_DAY), // columns to return
+                null, // columns for the WHERE clause
+                null, // values for the WHERE clause
+                null, // group rows
+                null, // filter by row groups
+                null, // The sort order
+                null  // limit
+            )
+
+            while (cursor.moveToNext()) {
+                val day = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DAY))
+                days.add(day)
+            }
+            cursor.close()
+            db.close()
+
+            return days.distinct()
+        }
+
+        fun getMealTimes(): List<String> {
+            val db = this.readableDatabase
+            val mealTimes = mutableListOf<String>()
+            val cursor = db.query(
+                true, // distinct
+                TABLE_NAME,
+                arrayOf(COLUMN_MEAL_TIME), // columns to return
+                null, // columns for the WHERE clause
+                null, // values for the WHERE clause
+                null, // group rows
+                null, // filter by row groups
+                null, // The sort order
+                null  // limit
+            )
+
+            while (cursor.moveToNext()) {
+                val mealTime = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MEAL_TIME))
+                mealTimes.add(mealTime)
+            }
+            cursor.close()
+            db.close()
+
+            return mealTimes.distinct()
         }
 
         fun getMenuItems(day: String, mealTime: String, diningHall: String): List<String> {
             val db = this.readableDatabase
             val menuItems = mutableListOf<String>()
+            val selection = "$COLUMN_DAY = ? AND $COLUMN_MEAL_TIME = ? AND $COLUMN_DINING_HALL = ?"
+            val selectionArgs = arrayOf(day, mealTime, diningHall)
             val cursor = db.query(
-                true,
                 TABLE_NAME,
-                arrayOf(COLUMN_MENU_ITEM),
-                "$COLUMN_DAY = ? AND $COLUMN_MEAL_TIME = ? AND $COLUMN_DINING_HALL = ?",
-                arrayOf(day, mealTime, diningHall),
-                null, null, null, null
+                arrayOf(COLUMN_MENU_ITEM), // Only need the menu item column.
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
             )
 
-            if (cursor.moveToFirst()) {
-                do {
-                    val menuItem = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MENU_ITEM))
-                    menuItems.add(menuItem)
-                } while (cursor.moveToNext())
+            while (cursor.moveToNext()) {
+                val menuItem = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MENU_ITEM))
+                menuItems.add(menuItem)
             }
             cursor.close()
             db.close()
-            return menuItems.distinct()
+
+            return menuItems
         }
+
+
     }
 }

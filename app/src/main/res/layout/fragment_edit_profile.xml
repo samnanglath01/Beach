@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Nested FrameLayout to provide a consistent background and layout structure similar to the SignInFragment for visual consistency -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".SignInFragment">
+
+        <!-- Background image for the sign-up screen, ensuring a visually appealing and consistent user experience across the app -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/beachbackground" />
+
+        <!-- Container for the sign-up form elements with a semi-transparent background to enhance readability over the background image -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A0000000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Email input field for new users -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:hint="Edit Email ....."
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="12dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false" />
+
+
+            <EditText
+                android:id="@+id/usernameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Edit Username ....."
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false" />
+
+            <!-- Sign-up button to submit the form and create a new user account -->
+            <Button
+                android:id="@+id/SaveeditButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Save Edit" />
+
+            <!-- Button to allow users to return to the login screen if they already have an account -->
+            <Button
+                android:id="@+id/backToProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Back to Profile" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </FrameLayout>

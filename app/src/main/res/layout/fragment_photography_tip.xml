@@ -5,10 +5,396 @@
     android:layout_height="match_parent"
     tools:context=".PhotographyTipFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/topbannerProfile"
+                android:layout_width="410dp"
+                android:layout_height="110dp"
+                android:src="@drawable/topbanner" />
+
+            <TextView
+                android:id="@+id/buttonPhotographyTips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     Photography Tips"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/cameraicon"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The Easiest Way To Shoot High Quality Food Photos Like A Pro!"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video by Patrick Tomasso"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/videoView"
+                android:layout_marginBottom="10dp">
+            </VideoView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Here are some tips to help you capture mouth-watering food photos:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Use Natural Light"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Aim to use natural light wherever possible. It brings out the true colors and textures of your food."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Avoid direct sunlight as it can cause harsh shadows and highlights. A softly lit place near a window during daylight hours is ideal."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Avoid Using Flash"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ The flash on your smartphone can create unflattering reflections and make your food look greasy."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Natural light is more flattering for food photography."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Stabilize Your Phone"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Use a tripod or rest your phone on a stable surface to avoid blurry images."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Some smartphones have built-in stabilizers for photography; make sure to utilize those features if available."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Composition Matters
+"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Play with the composition by using the rule of thirds. Place the main elements of your dish along these lines or at the intersections."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Try different angles to see what best showcases your dish. Top-down (for layout dishes or to show off table settings) and close-ups (to capture texture and detail) are popular choices."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Pay Attention to the Background"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Keep the background simple and uncluttered to ensure the focus remains on the food."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Use plates, cutlery, and tablecloths that complement the colors of your dish without overpowering it."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Edit Your Photos"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Use photo editing apps to enhance your images subtly. Adjusting brightness, contrast, saturation, and sharpness can make your photos pop."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Avoid over-editing, as it can make the food look unnatural."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7. Consider the Color Palette"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Think about the color contrast and balance. Foods often look more appetizing when there’s a good contrast between the dish and the background."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Use complementary colors to make your dishes stand out."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8. Experiment with Props"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Incorporate relevant props like ingredients, cooking utensils, or herbs to add context and depth to your photos."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Props can also help tell a story about the meal or the cooking process."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9. Focus on Details"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Make sure the focal point of your photo is sharp. Many smartphones allow you to tap the screen to focus on a specific area."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Capturing the small details can make a big difference, especially for close-up shots."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10. Clean Your Lens"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="➡ Before you start shooting, ensure your smartphone’s camera lens is clean. A smudged lens can result in blurry, unclear photos."
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

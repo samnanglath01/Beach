@@ -1,227 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".DiningHallDetailsFragment">
 
-    <!-- ScrollView to allow for scrolling if content exceeds screen size -->
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- Dining Hall Name -->
+        <TextView
+            android:id="@+id/diningHallNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dining_hall_name"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:padding="16dp" />
+
+        <!-- Meal block for Breakfast with background image -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/breakfast_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/breakfastTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/breakfast"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:background="#AA000000"/>
+
+            <Button
+                android:id="@+id/viewBreakfastMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:text="@string/view_menu1" />
+        </RelativeLayout>
+
+        <!-- Meal block for Lunch with background image -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/lunch_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/lunchTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/lunch"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:background="#AA000000"/>
+
+            <Button
+                android:id="@+id/viewLunchMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:text="@string/view_menu2" />
+        </RelativeLayout>
+
+        <!-- Meal block for Dinner with background image -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/dinner_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dinnerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/dinner"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:background="#AA000000"/>
+
+            <Button
+                android:id="@+id/viewDinnerMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:text="@string/view_menu3" />
+        </RelativeLayout>
+
+        <!-- Leave a review section -->
+        <TextView
+            android:id="@+id/leaveReviewTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leave_a_review"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp" />
+
+        <!-- User profile and name container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-            <!-- Dining Hall Name -->
-            <TextView
-                android:id="@+id/diningHallNameTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dining_hall_name"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:padding="16dp" />
-
-            <!-- Meal block for Breakfast with background image -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/breakfast_background"
-                android:padding="16dp">
-
-                <!-- Text for Breakfast positioned at the top -->
-                <TextView
-                    android:id="@+id/breakfastTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/breakfast"
-                    android:textSize="24sp"
-                    android:textColor="#FFFFFF"
-                    android:background="#AA000000"/>
-
-                <!-- Button to view Breakfast menu positioned at the bottom -->
-                <Button
-                    android:id="@+id/viewBreakfastMenuButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/view_menu1" />
-            </RelativeLayout>
-
-            <!-- Meal block for Lunch with background image -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/lunchy"
-                android:padding="16dp">
-
-                <!-- Text for Lunch positioned at the top -->
-                <TextView
-                    android:id="@+id/lunchTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/lunch"
-                    android:textSize="24sp"
-                    android:textColor="#FFFFFF"
-                    android:background="#AA000000"/>
-
-                <!-- Button to view Lunch menu positioned at the bottom -->
-                <Button
-                    android:id="@+id/viewLunchMenuButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/view_menu2" />
-            </RelativeLayout>
-
-            <!-- Meal block for Dinner with background image -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/dinny"
-                android:padding="16dp">
-
-                <!-- Text for Dinner positioned at the top -->
-                <TextView
-                    android:id="@+id/dinnerTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/dinner"
-                    android:textSize="24sp"
-                    android:textColor="#FFFFFF"
-                    android:background="#AA000000"/>
-
-                <!-- Button to view Dinner menu positioned at the bottom -->
-                <Button
-                    android:id="@+id/viewDinnerMenuButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/view_menu3" />
-            </RelativeLayout>
-
-            <!-- Leave a review section -->
-            <TextView
-                android:id="@+id/leaveReviewTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/leave_a_review"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="32dp" />
-
-            <!-- User profile and name container -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <!-- Circular ImageView for profile picture -->
-                <ImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@android:drawable/sym_def_app_icon"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="8dp"/>
-
-                <!-- TextView for user's name -->
-                <TextView
-                    android:id="@+id/userNameTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/john_smith"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- RatingBar for user ratings -->
-            <!-- Newly added RatingBar just above the EditText -->
-            <RatingBar
-                android:id="@+id/reviewRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="0"
-                android:stepSize="1"
-                android:layout_gravity="center_horizontal"
-                style="?android:attr/ratingBarStyleIndicator"
-                android:layout_marginTop="8dp"/>
-
-            <!-- EditText for review input -->
-            <EditText
-                android:id="@+id/reviewEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/write_your_review"
-                android:textColor="#000000"
-                android:background="#FFFFFF"
-                android:padding="10dp"
-                android:inputType="textMultiLine"
-                android:minLines="3"
-                android:maxLines="5"
-                android:scrollbars="vertical"
-                android:autofillHints="" />
-
-            <!-- Button to submit review with increased touch target size -->
-            <Button
-                android:id="@+id/submitReviewButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="@string/submit_review"
-                android:layout_marginTop="16dp"
-                android:padding="12dp"
-                android:gravity="center" />
-
-            <!-- This Button is styled to look like the 'Add Photo' button with an icon and text -->
-            <Button
-                android:id="@+id/addPhotoButton"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:drawableStart="@android:drawable/ic_menu_camera"
-                android:drawablePadding="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/add_photo"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:elevation="4dp"
-                android:onClick="onAddPhotoClicked"
-                />
-
-            <!-- ImageView for displaying the selected image -->
             <ImageView
-                android:id="@+id/reviewImageView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="8dp"
-                android:visibility="gone"
+                android:id="@+id/profileImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/sym_def_app_icon"
                 android:scaleType="centerCrop"
-                />
-            <!-- Existing reviews placeholder -->
-            <!-- You'll need to programmatically add views or use a RecyclerView to list the reviews -->
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/profile_picture_description" />
 
+            <TextView
+                android:id="@+id/userNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/john_smith"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+
+        <!-- RatingBar for user ratings -->
+        <RatingBar
+            android:id="@+id/reviewRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1"
+            android:layout_gravity="center_horizontal"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_marginTop="8dp"/>
+
+        <!-- EditText for review input -->
+        <EditText
+            android:id="@+id/reviewEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/write_your_review"
+            android:textColor="#000000"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:autofillHints="none" />
+
+        <!-- Button to submit review -->
+        <Button
+            android:id="@+id/submitReviewButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/submit_review"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:gravity="center" />
+
+        <!-- 'Add Photo' button -->
+        <Button
+            android:id="@+id/addPhotoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:drawableStart="@android:drawable/ic_menu_camera"
+            android:drawablePadding="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/add_photo"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="4dp" />
+
+        <!-- ImageView for displaying the selected image -->
+        <ImageView
+            android:id="@+id/reviewImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/review_image_description" />
+
+    </LinearLayout>
+</ScrollView>

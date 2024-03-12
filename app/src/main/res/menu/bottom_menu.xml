@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- XML layout for the bottom navigation menu in an Android app.
+     This menu is typically used for navigating between different sections of the app.
+     It includes items for the Home and Options sections.
+     Written by: Marlen Dizon -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+
+    <!-- Menu item for navigating to the Home screen.
+         It uses a house icon to visually represent the Home section. -->
+    <item
+        android:id="@+id/bottom_home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <!-- Menu item for navigating to the Options screen.
+         It uses a grid icon to visually represent different options or settings available in the app. -->
+    <item
+        android:id="@+id/bottom_options"
+        android:title="Options"
+        android:icon="@drawable/outline_apps_24"/>
+
 </menu>

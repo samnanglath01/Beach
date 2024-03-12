@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Navigation graph for the app. Defines all the app's navigation paths. Written by: Marlen Dizon -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
+    <!-- Splash screen fragment. The app's entry point. -->
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.beachtest.SplashFragment"
@@ -14,6 +16,8 @@
             android:id="@+id/action_splashFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Sign-in screen fragment. -->
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.beachtest.SignInFragment"
@@ -26,21 +30,25 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordEmailFragment"
             app:destination="@id/forgotPasswordEmailFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_signInFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Fragment for email-based password recovery. -->
     <fragment
         android:id="@+id/forgotPasswordEmailFragment"
         android:name="com.example.beachtest.ForgotPasswordEmailFragment"
         android:label="fragment_forgot_password_email"
         tools:layout="@layout/fragment_forgot_password_email" >
         <action
-            android:id="@+id/action_forgotPasswordEmailFragment_to_verificationFragment"
-            app:destination="@id/verificationFragment" />
-        <action
             android:id="@+id/action_forgotPasswordEmailFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordEmailFragment_to_signInFragment2"
+            app:destination="@id/signInFragment" />
     </fragment>
+
+    <!--Sign Up Screen Fragment. -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.beachtest.SignUpFragment"
@@ -53,6 +61,8 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Fragment for setting dietary preferences. -->
     <fragment
         android:id="@+id/dietaryPreferenceFragment"
         android:name="com.example.beachtest.DietaryPreferenceFragment"
@@ -62,18 +72,22 @@
             android:id="@+id/action_dietaryPreferenceFragment_to_allergyFragment"
             app:destination="@id/allergyFragment" />
     </fragment>
+
+    <!-- Fragment for specifying allergies. -->
     <fragment
         android:id="@+id/allergyFragment"
         android:name="com.example.beachtest.AllergyFragment"
         android:label="fragment_allergy"
         tools:layout="@layout/fragment_allergy" >
         <action
-            android:id="@+id/action_allergyFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_allergyFragment_to_dietaryPreferenceFragment"
             app:destination="@id/dietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_allergyFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Verification screen fragment. -->
     <fragment
         android:id="@+id/verificationFragment"
         android:name="com.example.beachtest.VerificationFragment"
@@ -86,6 +100,8 @@
             android:id="@+id/action_verificationFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Password reset screen fragment. -->
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.example.beachtest.ResetPasswordFragment"
@@ -95,6 +111,22 @@
             android:id="@+id/action_resetPasswordFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+    <!-- Homepage screen fragment. -->
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.beachtest.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_photographyTipFragment"
+            app:destination="@id/photographyTipFragment" />
+    </fragment>
+
+    <!-- Home Screen Fragment-->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.beachtest.HomeFragment"
@@ -108,26 +140,71 @@
             android:id="@+id/action_homeFragment_to_diningHallDetailsFragment"
             app:destination="@id/diningHallDetailsFragment" />
     </fragment>
+
+    <!-- Weekday screen fragment. -->
     <fragment
         android:id="@+id/weekDayFragment"
         android:name="com.example.beachtest.WeekDayFragment"
         android:label="fragment_weekday"
         tools:layout="@layout/fragment_week_day">
+        <argument
+            android:name="diningHall"
+            app:argType="string"/>
         <action
             android:id="@+id/action_weekDayFragment_to_mealTimeFragment"
-            app:destination="@id/mealTimeFragment" />
+            app:destination="@id/mealTimeFragment">
+            <argument
+                android:name="day"
+                app:argType="string" />
+        </action>
     </fragment>
+
+    <!-- Meal Time Fragment -->
     <fragment
         android:id="@+id/mealTimeFragment"
         android:name="com.example.beachtest.MealTimeFragment"
-        android:label="fragment_mealtime"
+        android:label="fragment_meal_time"
         tools:layout="@layout/fragment_meal_time">
+        <argument
+            android:name="diningHall"
+            app:argType="string"/>
+        <argument
+            android:name="day"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_mealTimeFragment_to_menuItemsFragment"
+            app:destination="@id/menuItemsFragment">
+            <argument
+                android:name="diningHall"
+                app:argType="string"/>
+            <argument
+                android:name="day"
+                app:argType="string"/>
+            <argument
+                android:name="mealTime"
+                app:argType="string"/>
+        </action>
     </fragment>
+
+    <!-- Menu items screen fragment. -->
     <fragment
-        android:id="@+id/vendorDetailsFragment"
-        android:name="com.example.beachtest.VendorDetailsFragment"
-        android:label="fragment_vendor_details"
-        tools:layout="@layout/fragment_vendor_details" />
+        android:id="@+id/menuItemsFragment"
+        android:name="com.example.beachtest.MenuItemsFragment"
+        android:label="fragment_menu_items"
+        tools:layout="@layout/fragment_menu_items">
+        <argument
+            android:name="diningHall"
+            app:argType="string" />
+        <argument
+            android:name="day"
+            app:argType="string" />
+        <argument
+            android:name="mealTime"
+            app:argType="string" />
+    </fragment>
+
+
+    <!-- Dining Hall Details Fragment -->
     <fragment
         android:id="@+id/diningHallDetailsFragment"
         android:name="com.example.beachtest.DiningHallDetailsFragment"
@@ -137,5 +214,114 @@
         <action
             android:id="@+id/action_diningHallDetailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Food Trucks Fragment -->
+    <fragment
+        android:id="@+id/foodTrucksFragment"
+        android:name="com.example.beachtest.FoodTrucksFragment"
+        android:label="fragment_food_trucks"
+        tools:layout="@layout/fragment_food_trucks">
+        <action
+            android:id="@+id/actionFoodTrucksFragmentToFoodTruckVendorDetailsFragment"
+            app:destination="@id/foodTruckVendorDetailsFragment" />
+        <action
+            android:id="@+id/actionFoodTrucksFragmentToFarmersMarketVendorDetailsFragment"
+            app:destination="@id/farmersMarketVendorDetailsFragment" />
+        <!-- Define action to navigate back to home fragment -->
+        <action
+            android:id="@+id/action_foodTrucksFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/foodTruckVendorDetailsFragment"
+        android:name="com.example.beachtest.FoodTruckVendorDetailsFragment"
+        android:label="fragment_food_truck_vendor_details"
+        tools:layout="@layout/fragment_food_truck_vendor_details">
+        <!-- Define action to navigate back to food trucks fragment -->
+        <action
+            android:id="@+id/action_foodTruckVendorDetailsFragment_to_foodTrucksFragment"
+            app:destination="@id/foodTrucksFragment" />
+    </fragment>
+
+    <!-- Farmers Market Vendor Details Fragment -->
+    <fragment
+        android:id="@+id/farmersMarketVendorDetailsFragment"
+        android:name="com.example.beachtest.FarmersMarketVendorDetailsFragment"
+        android:label="fragment_farmers_market_vendor_details"
+        tools:layout="@layout/fragment_farmers_market_vendor_details">
+        <!-- Corrected action to navigate back to food trucks fragment -->
+        <action
+            android:id="@+id/action_farmersMarketVendorDetailsFragment_to_foodTrucksFragment"
+            app:destination="@id/foodTrucksFragment" />
+    </fragment>
+
+    <!-- More option on homepage screen fragment. -->
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.example.beachtest.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.beachtest.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editDietaryPreferenceFragment"
+            app:destination="@id/editDietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.beachtest.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <!-- Edit Dietary Preferences -->
+    <fragment
+        android:id="@+id/editDietaryPreferenceFragment"
+        android:name="com.example.beachtest.EditDietaryPreferenceFragment"
+        android:label="fragment_edit_dietary_preference"
+        tools:layout="@layout/fragment_edit_dietary_preference" >
+        <action
+            android:id="@+id/action_editDietaryPreferenceFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <!-- Photography Tip Fragment -->
+    <fragment
+        android:id="@+id/photographyTipFragment"
+        android:name="com.example.beachtest.PhotographyTipFragment"
+        android:label="fragment_photography_tip"
+        tools:layout="@layout/fragment_photography_tip" />
+
+    <!-- Hours screen fragment. -->
+    <fragment
+        android:id="@+id/hallHoursFragment"
+        android:name="com.example.beachtest.HallHoursFragment"
+        android:label="fragment_menu_items"
+        tools:layout="@layout/fragment_hall_hours">
+    </fragment>
+
+    <!-- Prices screen fragment. -->
+    <fragment
+        android:id="@+id/pricesFragment"
+        android:name="com.example.beachtest.PricesFragment"
+        android:label="fragment_prices_items"
+        tools:layout="@layout/fragment_prices">
+
     </fragment>
 </navigation>
