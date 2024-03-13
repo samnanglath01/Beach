@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import android.widget.Button
+import android.widget.TextView
 
 class MapFrag : Fragment() {
     //UI NEEDS TO BE CHANGED
@@ -35,6 +36,39 @@ class MapFrag : Fragment() {
         }
         rootView.findViewById<Button>(R.id.buttonUsuDining).setOnClickListener {
             openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonUsuDining).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonSubway).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonCoffeeBean).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonRobeks).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonElPollo).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonCarlsJr).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/3jKcq7Y82Wv87aaj6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonCornerMarket).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/FAgbk9LDNnRj8KmeA")
+        }
+        rootView.findViewById<TextView>(R.id.buttonCafeLab).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/veLYRi95XXbVhYHN6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonStudentStore).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/Qk67LPMtqYJv2E2Z6")
+        }
+        rootView.findViewById<TextView>(R.id.buttonBeachHut).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/Md1YAAExfnUFBmzUA")
+        }
+        rootView.findViewById<TextView>(R.id.buttonArtStore).setOnClickListener {
+            openWebPage("https://maps.app.goo.gl/mumnsQYd7QxzCSN49")
         }
 
         return rootView

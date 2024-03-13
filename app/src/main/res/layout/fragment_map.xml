@@ -1,73 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/beachbackground">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Map"
-        android:textSize="24sp" />
-
-    <ImageView
-        android:id="@+id/imageViewRestaurant"
-        android:layout_width="match_parent"
-        android:layout_height="382dp"
-        app:srcCompat= "@drawable/restmap" />
-
-    <Button
-        android:id="@+id/buttonNuggetGrillPub"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nugget Grill and Pub"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/topbannerProfile"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:src="@drawable/tophome" />
 
-    <Button
-        android:id="@+id/buttonOutpostGrill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Outpost Grill"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        <TextView
+            android:id="@+id/buttonProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Locations"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:drawableStart="@drawable/calendericon"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:padding="18dp"
+            android:background="?android:attr/selectableItemBackground" />
 
-    <Button
-        android:id="@+id/buttonBeachsideDining"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Beachside Dining Hall"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        <!-- Buttons -->
+        <ImageView
+            android:id="@+id/imageViewRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="382dp"
+            android:src="@drawable/restmap" />
 
-    <Button
-        android:id="@+id/buttonHillsideDining"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hillside Dining Hall"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        <TextView
+            android:id="@+id/buttonNuggetGrillPub"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Nugget Grill Pub"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
 
-    <Button
-        android:id="@+id/buttonParksideDining"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Parkside Dining Hall"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        <TextView
+            android:id="@+id/buttonOutpostGrill"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Outpost Grill"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
 
-    <Button
-        android:id="@+id/buttonUsuDining"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="USU Dining"
-        android:padding="16dp"
-        android:background="@drawable/rounded_button" />
+        <TextView
+            android:id="@+id/buttonBeachsideDining"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Beachside Dining"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/buttonHillsideDining"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Hillside Dining"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
 
+        <TextView
+            android:id="@+id/buttonParksideDining"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Parkside Dining"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonUsuDining"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Usu Dining"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:background="@drawable/rounded_button"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonSubway"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Subway"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonCoffeeBean"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Coffee Bean"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonRobeks"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Robeks"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonElPollo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="El Pollo"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonCarlsJr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Carls Jr"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonCornerMarket"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Corner Market"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonCafeLab"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Cafe Lab"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonStudentStore"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Student Store"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonBeachHut"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="The Beach Hut"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/buttonArtStore"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Art Store"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+
+        <TextView
+            android:id="@+id/backhomebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableStart="@drawable/baseline_arrow_back_24"
+            android:drawablePadding="8dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="18dp"
+            android:text="Back to Home Page"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>
