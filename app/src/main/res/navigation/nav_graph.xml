@@ -111,26 +111,6 @@
             app:destination="@id/signInFragment" />
     </fragment>
 
-    <!-- Homepage screen fragment. -->
-    <fragment
-        android:id="@+id/homePageFragment"
-        android:name="com.example.beachtest.HomePageFragment"
-        android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" >
-        <action
-            android:id="@+id/action_homePageFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_photographyTipFragment"
-            app:destination="@id/photographyTipFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_pricesFragment"
-            app:destination="@id/pricesFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_hallHoursFragment"
-            app:destination="@id/hallHoursFragment" />
-    </fragment>
-
     <!-- Home screen fragment. -->
     <fragment
         android:id="@+id/homeFragment"
@@ -184,13 +164,28 @@
         tools:layout="@layout/fragment_menu_items">
     </fragment>
 
-    <!-- More option on homepage screen fragment. -->
+    <!-- More options on homepage screen fragment. -->
     <fragment
         android:id="@+id/optionsFragment"
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options">
 
+        <action
+            android:id="@+id/action_optionsFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_photographyTipFragment"
+            app:destination="@id/photographyTipFragment" />
     </fragment>
     <fragment
         android:id="@+id/photographyTipFragment"
@@ -256,6 +251,26 @@
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_virtual_tour">
 
+    </fragment>
+
+    <!-- Homepage screen fragment. -->
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.beachtest.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_photographyTipFragment"
+            app:destination="@id/photographyTipFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
     </fragment>
 
 </navigation>
