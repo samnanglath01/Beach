@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import com.example.beachtest.databinding.FragmentVirtualTourOptionsBinding
+import com.example.beachtest.databinding.FragmentVirtualTourBinding
 
-class VirtualTourOptionsFragment : Fragment() {
-    private lateinit var binding: FragmentVirtualTourOptionsBinding
+class VirtualTourFragment : Fragment() {
+    private lateinit var binding: FragmentVirtualTourBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentVirtualTourOptionsBinding.inflate(inflater, container, false)
+        binding = FragmentVirtualTourBinding.inflate(inflater, container, false)
         return binding.root
 
     }

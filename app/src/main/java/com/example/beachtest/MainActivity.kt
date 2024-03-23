@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,19 +18,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val databaseHelper = DatabaseHelper.DatabaseHelper(this)
-
-        val prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-
-        if (!prefs.getBoolean("data_populated", false)) {
-            // Calls the populateInitialData method of the databaseHelper object.
-            databaseHelper.populateInitialData()
-
-            // After populating the database with initial data, updates the SharedPreferences to set
-            // "data_populated" to true.
-            prefs.edit().putBoolean("data_populated", true).apply()
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

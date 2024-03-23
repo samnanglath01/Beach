@@ -52,7 +52,7 @@ class SignInFragment : Fragment() {
 
         // Set up click listener for the forgot guest button to navigate to the guest home screen
         binding.guestButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+            it.findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
         }
 
         return binding.root
@@ -66,7 +66,7 @@ class SignInFragment : Fragment() {
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign-in success, navigate to homeFragment
-                    findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+                    findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
                 } else {
                     // If sign-in fails, display a message to the user.
                     Toast.makeText(context, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

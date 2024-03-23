@@ -29,8 +29,8 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordEmailFragment"
             app:destination="@id/forgotPasswordEmailFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homePageFragment"
-            app:destination="@id/homePageFragment" />
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <!-- Fragment for email-based password recovery. -->
@@ -82,8 +82,8 @@
             android:id="@+id/action_allergyFragment_to_dietaryPreferenceFragment"
             app:destination="@id/dietaryPreferenceFragment" />
         <action
-            android:id="@+id/action_allergyFragment_to_homePageFragment"
-            app:destination="@id/homePageFragment" />
+            android:id="@+id/action_allergyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <!-- Verification screen fragment. -->
@@ -138,31 +138,31 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_weekDayFragment"
-            app:destination="@id/weekDayFragment">
-            <argument
-                android:name="diningHall"
-                app:argType="string"/>
-        </action>
+            android:id="@+id/action_homeFragment_to_mealTimeFragment"
+            app:destination="@id/mealTimeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_photographyTipFragment"
+            app:destination="@id/photographyTipFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
-    <!-- Weekday screen fragment. -->
-    <fragment
-        android:id="@+id/weekDayFragment"
-        android:name="com.example.beachtest.WeekDayFragment"
-        android:label="fragment_weekday"
-        tools:layout="@layout/fragment_week_day">
-        <argument
-            android:name="diningHall"
-            app:argType="string"/>
-        <action
-            android:id="@+id/action_weekDayFragment_to_mealTimeFragment"
-            app:destination="@id/mealTimeFragment">
-            <argument
-                android:name="day"
-                app:argType="string" />
-        </action>
-    </fragment>
 
     <!-- Meal time screen fragment. -->
     <fragment
@@ -170,24 +170,9 @@
         android:name="com.example.beachtest.MealTimeFragment"
         android:label="fragment_meal_time"
         tools:layout="@layout/fragment_meal_time">
-        <argument
-            android:name="diningHall"
-            app:argType="string"/>
-        <argument
-            android:name="day"
-            app:argType="string"/>
         <action
             android:id="@+id/action_mealTimeFragment_to_menuItemsFragment"
             app:destination="@id/menuItemsFragment">
-            <argument
-                android:name="diningHall"
-                app:argType="string"/>
-            <argument
-                android:name="day"
-                app:argType="string"/>
-            <argument
-                android:name="mealTime"
-                app:argType="string"/>
         </action>
     </fragment>
 
@@ -197,15 +182,6 @@
         android:name="com.example.beachtest.MenuItemsFragment"
         android:label="fragment_menu_items"
         tools:layout="@layout/fragment_menu_items">
-        <argument
-            android:name="diningHall"
-            app:argType="string" />
-        <argument
-            android:name="day"
-            app:argType="string" />
-        <argument
-            android:name="mealTime"
-            app:argType="string" />
     </fragment>
 
     <!-- More option on homepage screen fragment. -->
@@ -270,6 +246,15 @@
         android:name="com.example.beachtest.PricesFragment"
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_prices">
+
+    </fragment>
+
+    <!-- Virtual tour fragment -->
+    <fragment
+        android:id="@+id/virtualTourFragment"
+        android:name="com.example.beachtest.VirtualTourFragment"
+        android:label="fragment_prices_items"
+        tools:layout="@layout/fragment_virtual_tour">
 
     </fragment>
 

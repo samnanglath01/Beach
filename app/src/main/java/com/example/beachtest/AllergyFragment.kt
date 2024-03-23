@@ -14,6 +14,7 @@ import com.google.firebase.firestore.SetOptions
 //samnang lath
 class AllergyFragment : Fragment() {
     private lateinit var binding: FragmentAllergyBinding // Assuming  using View Binding
+
     // Initialize an instance of FirebaseFirestore to interact with your Firestore database.
     private val db = FirebaseFirestore.getInstance()
     override fun onCreateView(
@@ -27,45 +28,57 @@ class AllergyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Retrieve the dietaryPreference argument
+        val dietaryPreference = arguments?.getString("dietaryPreference")
 // Set up an OnClickListener for the 'saveAllergy' button defined in your layout.
-        // When the button is clicked, the saveAllergies() function will be called
+        // When the button is clicked, the saveAllergies() funct ion will be called
         binding.saveAllergy.setOnClickListener { // Assuming  have a 'Save' button with this ID
             // This function should contain the logic to save allergy information to Firestore.
-            saveAllergies()
-            findNavController().navigate(R.id.action_allergyFragment_to_homePageFragment)
+
+            saveAllergies(dietaryPreference)
+            findNavController().navigate(R.id.action_allergyFragment_to_homeFragment)
         }
     }
     //Samnang Lath
-    private fun saveAllergies() {
+    private fun saveAllergies(dietaryPreference: String?) {
         // Initialize a mutable list to hold the selected allergies.
-        val selectedAllergies = mutableListOf<String>()
-        // Check each checkbox in the fragment's layout. If checked, add the corresponding allergy to the list.
-        if (binding.checkBoxMilk.isChecked) selectedAllergies.add("Milk")
-        if (binding.checkBoxFish.isChecked) selectedAllergies.add("Fish")
-        if (binding.checkBoxSoy.isChecked) selectedAllergies.add("Soy")
-        if (binding.checkBoxPeanuts.isChecked) selectedAllergies.add("Peanuts")
-        if (binding.checkBoxTreenuts.isChecked) selectedAllergies.add("Tree nuts")
-        if (binding.checkBoxEggs.isChecked) selectedAllergies.add("Eggs")
-        if (binding.checkBoxShellfish.isChecked) selectedAllergies.add("ShellFish")
-        if (binding.checkBoxSesame.isChecked) selectedAllergies.add("Sesame")
-        if (binding.checkBoxWheat.isChecked) selectedAllergies.add("Wheat")
-        // Retrieve the current user's unique ID from Firebase Authentication.
+        // Initialize a mutable list to hold the selected allergies.
+        val checkedAllergies = hashMapOf<String, Any>()
+
+// Add only the checked allergies to the map
+        if (binding.checkBoxMilk.isChecked) checkedAllergies["containsMilk"] = true
+        if (binding.checkBoxFish.isChecked) checkedAllergies["containsFish"] = true
+        if (binding.checkBoxSoy.isChecked) checkedAllergies["containsSoy"] = true
+        if (binding.checkBoxPeanuts.isChecked) checkedAllergies["containsPeanuts"] = true
+        if (binding.checkBoxTreenuts.isChecked) checkedAllergies["containsTreeNuts"] = true
+        if (binding.checkBoxEggs.isChecked) checkedAllergies["containsEggs"] = true
+        if (binding.checkBoxShellfish.isChecked) checkedAllergies["containsShellfish"] = true
+        if (binding.checkBoxSesame.isChecked) checkedAllergies["containsSesame"] = true
+        if (binding.checkBoxWheat.isChecked) checkedAllergies["containsWheat"] = true
+
+// Retrieve the current user's unique ID from Firebase Authentication
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { id ->
-            db.collection("users").document(id).set(
-                mapOf("allergies" to selectedAllergies),
+            // Create a map to hold the user's dietary preference and their allergies
+            val userData = hashMapOf<String, Any>()
+            dietaryPreference?.let {
+                userData["dietaryPreference"] = it
+            }
+            userData.putAll(checkedAllergies)
+
+            // Save the user data to Firestore, merging it with existing data
+            db.collection("Users").document(id).set(
+                userData,
                 SetOptions.merge()
             ).addOnSuccessListener {
-                Toast.makeText(context, "Allergies saved successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Data saved successfully", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener { e ->
                 Toast.makeText(
                     context,
-                    // Display a success message when the allergies are successfully saved.
-                    "Failed to save allergies: ${e.localizedMessage}",
+                    "Failed to save data: ${e.localizedMessage}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
-
     }
 }

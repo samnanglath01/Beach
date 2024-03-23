@@ -34,6 +34,7 @@ class ForgotPasswordEmailFragment : Fragment() {
     private var param2: String? = null
     private lateinit var binding: FragmentForgotPasswordEmailBinding
     //Samnang Lath
+    // onCreate lifecycle callback where the FirebaseAuth instance is initialized,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
@@ -51,9 +52,10 @@ class ForgotPasswordEmailFragment : Fragment() {
         binding = FragmentForgotPasswordEmailBinding.inflate(inflater, container, false)
 
         // Set up the click listener for the submit button using the binding
+        // and calls sendPasswordResetEmail function with the email.
         binding.verificationButton.setOnClickListener {
-            val email = binding.emailEditPasswordText.text.toString().trim()
-            if (email.isNotEmpty()) {
+            val email = binding.emailEditPasswordText.text.toString().trim() //get input
+            if (email.isNotEmpty()) { //check
                 sendPasswordResetEmail(email)
             } else {
                 binding.emailEditPasswordText.error = "Please enter your email"
@@ -73,8 +75,10 @@ class ForgotPasswordEmailFragment : Fragment() {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    //sucess
                     Toast.makeText(context, "Reset link sent to your email", Toast.LENGTH_LONG).show()
                 } else {
+                    //ffailed
                     Toast.makeText(context, "Failed to send reset email", Toast.LENGTH_LONG).show()
                 }
             }
