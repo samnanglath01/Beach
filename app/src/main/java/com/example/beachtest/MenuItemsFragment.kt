@@ -1,16 +1,19 @@
 package com.example.beachtest
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import java.time.LocalDate
 import java.util.Locale
 
 // Luis Flores
@@ -25,11 +28,13 @@ class MenuItemsFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getUserSelectionsAndDisplayMenu()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun getUserSelectionsAndDisplayMenu() {
         val userUid = auth.currentUser?.uid ?: return // Get current user UID
 
@@ -54,14 +59,17 @@ class MenuItemsFragment : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun displayMenuItems(diningHall: String, mealTime: String, dietaryPreference: String?, allergies: Set<String>) {
         // Determine the corresponding fields for Firestore based on user selection
-        val servedDiningHallField = "served${diningHall.replaceFirstChar { it.uppercase(Locale.ROOT) }}"
-        val servedMealTimeField = "served${mealTime.replaceFirstChar { it.uppercase(Locale.ROOT) }}"
+        val today = LocalDate.now()
+        val dayOfWeek = today.dayOfWeek.toString().lowercase().capitalize()
+        val servedTodayField = "served$dayOfWeek"
 
         var menuItemsQuery = firestore.collection("menu")
-            .whereEqualTo(servedDiningHallField, true)
-            .whereEqualTo(servedMealTimeField, true)
+            .whereEqualTo("served${diningHall.capitalize(Locale.ROOT)}", true)
+            .whereEqualTo("served${mealTime.capitalize(Locale.ROOT)}", true)
+            .whereEqualTo(servedTodayField, true)
 
         // Exclude menu items containing allergens
         allergies.forEach { allergy ->
