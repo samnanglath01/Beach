@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMealTimeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -31,17 +32,22 @@ class MealTimeFragment : Fragment() {
     private fun setupMealTimeButtons() {
         binding.breakfastButton.setOnClickListener {
             saveMealTimeChoice("Breakfast")
+            Toast.makeText(context, "Breakfast selected", Toast.LENGTH_SHORT).show();
+
         }
 
         binding.brunchButton.setOnClickListener {
+            Toast.makeText(context, "Brunch selected", Toast.LENGTH_SHORT).show();
             saveMealTimeChoice("Brunch")
         }
 
         binding.lunchButton.setOnClickListener {
+            Toast.makeText(context, "Lunch selected", Toast.LENGTH_SHORT).show();
             saveMealTimeChoice("Lunch")
         }
 
         binding.dinnerButton.setOnClickListener {
+            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show();
             saveMealTimeChoice("Dinner")
         }
     }
