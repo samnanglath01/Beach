@@ -29,8 +29,8 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordEmailFragment"
             app:destination="@id/forgotPasswordEmailFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_signInFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Fragment for email-based password recovery. -->
@@ -82,8 +82,8 @@
             android:id="@+id/action_allergyFragment_to_dietaryPreferenceFragment"
             app:destination="@id/dietaryPreferenceFragment" />
         <action
-            android:id="@+id/action_allergyFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_allergyFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Verification screen fragment. -->
@@ -120,29 +120,7 @@
         <action
             android:id="@+id/action_homeFragment_to_mealTimeFragment"
             app:destination="@id/mealTimeFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_photographyTipFragment"
-            app:destination="@id/photographyTipFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_pricesFragment"
-            app:destination="@id/pricesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_hallHoursFragment"
-            app:destination="@id/hallHoursFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_virtualTourFragment"
-            app:destination="@id/virtualTourFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
-
 
     <!-- Meal time screen fragment. -->
     <fragment
@@ -259,6 +237,12 @@
         android:name="com.example.beachtest.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_mealTimeFragment"
+            app:destination="@id/action_homePageFragment_to_mealTimeFragment"/>
+        <action
+            android:id="@+id/action_homePageFragment_to_menuItemsFragment"
+            app:destination="@id/action_homePageFragment_to_menuItemsFragment"/>
         <action
             android:id="@+id/action_homePageFragment_to_profileFragment"
             app:destination="@id/profileFragment" />

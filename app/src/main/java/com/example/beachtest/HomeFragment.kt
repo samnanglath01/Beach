@@ -25,21 +25,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.bottom_home -> {
-                    // Possibly refresh HomeFragment data if needed, but do not replace it.
-                    true
-                }
-                R.id.bottom_options -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_optionsFragment)
-                    true
-                }
-                else -> false
-            }
-        }
-
         setupDiningHallButtons()
     }
 

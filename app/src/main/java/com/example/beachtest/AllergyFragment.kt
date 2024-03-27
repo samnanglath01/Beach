@@ -36,7 +36,7 @@ class AllergyFragment : Fragment() {
             // This function should contain the logic to save allergy information to Firestore.
 
             saveAllergies(dietaryPreference)
-            findNavController().navigate(R.id.action_allergyFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_allergyFragment_to_homePageFragment)
         }
     }
     //Samnang Lath

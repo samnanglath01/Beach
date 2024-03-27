@@ -12,7 +12,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 // Luis Flores
 class MealTimeFragment : Fragment() {
-
     private lateinit var binding: FragmentMealTimeBinding
     private val firestore = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
