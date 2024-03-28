@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
@@ -63,6 +64,26 @@ class MenuItemsFragment : Fragment() {
     private fun displayMenuItems(diningHall: String, mealTime: String, dietaryPreference: String?, allergies: Set<String>) {
         // Determine the corresponding fields for Firestore based on user selection
         val today = LocalDate.now()
+
+        // Define the date ranges
+        val startDate1 = LocalDate.of(2024, 4, 8)
+        val endDate1 = LocalDate.of(2024, 4, 14)
+        val startDate2 = LocalDate.of(2024, 4, 15)
+        val endDate2 = LocalDate.of(2024, 4, 21)
+        val startDate3 = LocalDate.of(2024, 4, 22)
+        val endDate3 = LocalDate.of(2024, 4, 28)
+        val startDate4 = LocalDate.of(2024, 4, 29)
+        val endDate4 = LocalDate.of(2024, 5, 5)
+        val startDate5 = LocalDate.of(2024, 3, 25)
+        val endDate5 = LocalDate.of(2024, 3, 31)
+
+        // Check if today is within the date range
+        val isWithinCycle1 = !today.isBefore(startDate1) && !today.isAfter(endDate1)
+        val isWithinCycle2 = !today.isBefore(startDate2) && !today.isAfter(endDate2)
+        val isWithinCycle3 = !today.isBefore(startDate3) && !today.isAfter(endDate3)
+        val isWithinCycle4 = !today.isBefore(startDate4) && !today.isAfter(endDate4)
+        val isWithinCycle5 = !today.isBefore(startDate5) && !today.isAfter(endDate5)
+
         val dayOfWeek = today.dayOfWeek.toString().lowercase().capitalize()
         val servedTodayField = "served$dayOfWeek"
 
@@ -70,6 +91,21 @@ class MenuItemsFragment : Fragment() {
             .whereEqualTo("served${diningHall.capitalize(Locale.ROOT)}", true)
             .whereEqualTo("served${mealTime.capitalize(Locale.ROOT)}", true)
             .whereEqualTo(servedTodayField, true)
+
+        // Apply the 'servedCycle' filters if within the date range
+        if (isWithinCycle1) {
+            menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle1", true)
+        } else if (isWithinCycle2){
+            menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle2", true)
+        } else if (isWithinCycle3){
+            menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle3", true)
+        } else if (isWithinCycle4){
+            menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle4", true)
+        } else if (isWithinCycle5){
+            menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle5", true)
+        } else{
+            Toast.makeText(context, "Out of menu cycle range", Toast.LENGTH_SHORT).show()
+        }
 
         // Exclude menu items containing allergens
         allergies.forEach { allergy ->

@@ -118,12 +118,6 @@
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
         <action
-            android:id="@+id/action_homePageFragment_to_mealTimeFragment"
-            app:destination="@id/action_homePageFragment_to_mealTimeFragment"/>
-        <action
-            android:id="@+id/action_homePageFragment_to_menuItemsFragment"
-            app:destination="@id/action_homePageFragment_to_menuItemsFragment"/>
-        <action
             android:id="@+id/action_homePageFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
@@ -138,6 +132,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_virtualTourFragment"
             app:destination="@id/virtualTourFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_mealTimeFragment"
+            app:destination="@id/mealTimeFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
