@@ -135,6 +135,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_mealTimeFragment"
             app:destination="@id/mealTimeFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_foodPantryFragment"
+            app:destination="@id/foodPantryFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -244,6 +247,12 @@
         tools:layout="@layout/fragment_virtual_tour">
     </fragment>
 
-
+    <!-- Food Pantry fragment -->
+    <fragment
+        android:id="@+id/foodPantryFragment"
+        android:name="com.example.beachtest.FoodPantryFragment"
+        android:label="fragment_food_pantry"
+        tools:layout="@layout/fragment_food_pantry">
+    </fragment>
 
 </navigation>

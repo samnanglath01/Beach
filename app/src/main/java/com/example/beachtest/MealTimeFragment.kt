@@ -1,15 +1,19 @@
 package com.example.beachtest
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMealTimeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.DayOfWeek
+import java.time.LocalDate
 
 // Luis Flores
 class MealTimeFragment : Fragment() {
@@ -24,26 +28,41 @@ class MealTimeFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMealTimeButtons()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setupMealTimeButtons() {
-        binding.breakfastButton.setOnClickListener {
-            saveMealTimeChoice("Breakfast")
-            Toast.makeText(context, "Breakfast selected", Toast.LENGTH_SHORT).show();
+        val today = LocalDate.now().dayOfWeek
 
+        binding.breakfastButton.setOnClickListener {
+            if (today == DayOfWeek.SATURDAY || today == DayOfWeek.SUNDAY) {
+                Toast.makeText(context, "Breakfast is not served on weekends. Please select another meal time.", Toast.LENGTH_LONG).show()
+            } else {
+                saveMealTimeChoice("Breakfast")
+                Toast.makeText(context, "Breakfast selected", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.brunchButton.setOnClickListener {
-            Toast.makeText(context, "Brunch selected", Toast.LENGTH_SHORT).show();
-            saveMealTimeChoice("Brunch")
+            if (today != DayOfWeek.SATURDAY && today != DayOfWeek.SUNDAY) {
+                Toast.makeText(context, "Brunch is only served on weekends. Please select another meal time.", Toast.LENGTH_LONG).show()
+            } else {
+                saveMealTimeChoice("Brunch")
+                Toast.makeText(context, "Brunch selected", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.lunchButton.setOnClickListener {
-            Toast.makeText(context, "Lunch selected", Toast.LENGTH_SHORT).show();
-            saveMealTimeChoice("Lunch")
+            if (today == DayOfWeek.SATURDAY || today == DayOfWeek.SUNDAY) {
+                Toast.makeText(context, "Lunch is not served on weekends. Please select another meal time.", Toast.LENGTH_LONG).show()
+            } else {
+                saveMealTimeChoice("Lunch")
+                Toast.makeText(context, "Lunch selected", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.dinnerButton.setOnClickListener {
