@@ -18,6 +18,10 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.beachtest.Users.ui.UserManager
 import android.Manifest
+import androidx.navigation.findNavController
+import com.example.beachtest.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -28,25 +32,29 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProfileFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+// Samnang Lath
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentProfileBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        binding.editButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+        }
+
+        binding.editDietButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_editDietaryPreferenceFragment)
+        }
+
+
+        return binding.root
+    }
+//Samnang Lath
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -72,12 +80,29 @@ class ProfileFragment : Fragment() {
         }
         val profileButton: Button = view.findViewById(R.id.btnProfile)
         val profileImageView: ImageView = view.findViewById(R.id.profileImg)
-
+        val btnDelete:TextView= view.findViewById(R.id.DeleteButton)
         profileButton.setOnClickListener {
             // Check for permissions and open gallery
             openGallery()
         }
+        btnDelete.setOnClickListener {
+            val user = FirebaseAuth.getInstance().currentUser
+
+            user?.delete()?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(requireActivity(), "Account deleted.", Toast.LENGTH_SHORT).show()
+
+                        it.findNavController().navigate(R.id.action_profileFragment_to_signInFragment)
+
+                    // Handle the post-account-deletion logic here, such as navigating to a sign-in activity.
+                } else {
+                    Toast.makeText(requireActivity(), "Failed to delete account.", Toast.LENGTH_SHORT).show()
+                    // Handle the error, possibly asking the user to try again.
+                }
+            }
+        }
     }
+    //Samnang Lath
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
@@ -107,6 +132,7 @@ class ProfileFragment : Fragment() {
                 }
             }
     }
+    //Samnang Lath
     private fun openGallery() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {

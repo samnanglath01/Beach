@@ -79,9 +79,6 @@
         android:name="com.example.beachtest.AllergyFragment"
         android:label="fragment_allergy"
         tools:layout="@layout/fragment_allergy" >
-        <argument
-            android:name="dietaryPreference"
-            app:argType="string" />
         <action
             android:id="@+id/action_allergyFragment_to_dietaryPreferenceFragment"
             app:destination="@id/dietaryPreferenceFragment" />
@@ -158,6 +155,9 @@
         <action
             android:id="@+id/action_profileFragment_to_editDietaryPreferenceFragment"
             app:destination="@id/editDietaryPreferenceFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
