@@ -262,8 +262,24 @@
         android:id="@+id/optionsFragment"
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
-        tools:layout="@layout/fragment_options" />
+        tools:layout="@layout/fragment_options">
+        <action
+            android:id="@+id/action_optionsFragment_to_languagePrefUiFragment"
+            app:destination="@id/languagePrefUiFragment" />
+        <!-- Add an action to navigate to the ScheduleMealsFragment -->
+        <action
+            android:id="@+id/action_optionsFragment_to_scheduleMealsFragment"
+            app:destination="@id/scheduleMealsFragment" />
+   </fragment>
 
+    <!-- Language Preference Selection Fragment -->
+    <fragment
+    android:id="@+id/languagePrefUiFragment"
+    android:name="com.example.beachtest.LanguagePrefUiFragment"
+    android:label="fragment_language_pref_ui"
+    tools:layout="@layout/fragment_language_pref_ui" />
+
+    <!-- Profile Fragment -->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.beachtest.ProfileFragment"
@@ -280,6 +296,7 @@
             app:destination="@id/optionsFragment" />
     </fragment>
 
+    <!-- Edit Profile Fragment -->
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.example.beachtest.EditProfileFragment"
@@ -322,6 +339,37 @@
         android:name="com.example.beachtest.PricesFragment"
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_prices">
-
+        <action
+            android:id="@+id/action_pricesFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
     </fragment>
+
+    <!-- Virtual tour fragment -->
+    <fragment
+        android:id="@+id/virtualTourFragment"
+        android:name="com.example.beachtest.VirtualTourFragment"
+        android:label="fragment_prices_items"
+        tools:layout="@layout/fragment_virtual_tour">
+    </fragment>
+
+    <!-- Food Pantry fragment -->
+    <fragment
+        android:id="@+id/foodPantryFragment"
+        android:name="com.example.beachtest.FoodPantryFragment"
+        android:label="fragment_food_pantry"
+        tools:layout="@layout/fragment_food_pantry">
+    </fragment>
+
+    <!-- Schedule Meals Fragment -->
+    <fragment
+        android:id="@+id/scheduleMealsFragment"
+        android:name="com.example.beachtest.ScheduleMealsFragment"
+        android:label="fragment_schedule_meals"
+        tools:layout="@layout/fragment_schedule_meals">
+        <!-- Action to navigate back to the OptionsFragment -->
+        <action
+            android:id="@+id/action_scheduleMealsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+
 </navigation>

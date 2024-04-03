@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- FrameLayout for SignInFragment, providing the user interface for sign in.
+     Includes input fields for email and password, and buttons for login, sign up, forgot password, and guest access.
+     Written by: Marlen Dizon -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".SignInFragment">
 
+    <!-- Background image for the sign-in screen -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
@@ -13,6 +17,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/beachbackground" />
 
+    <!-- Container for sign-in form elements -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +26,7 @@
         android:gravity="center"
         android:background="#A0000000">
 
+        <!-- Email input field -->
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
@@ -35,6 +41,7 @@
             android:padding="12dp"
             android:layout_marginBottom="16dp"/>
 
+        <!-- Password input field -->
         <EditText
             android:id="@+id/passwordEditText"
             android:background="@color/white"
@@ -48,6 +55,7 @@
             android:maxLines="1"
             android:padding="12dp"/>
 
+        <!-- Login button -->
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"

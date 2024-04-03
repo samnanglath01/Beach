@@ -18,14 +18,28 @@
             android:contentDescription="@string/topBanner" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonFarmersMarket"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/farmersMarketVendorsList"
-            android:textSize="18sp"
+            android:text="  Farmers Market Vendors"
             android:textStyle="bold"
-            android:layout_marginTop="32dp" />
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:drawableStart="@drawable/priceicon"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="10dp"/>
 
         <!-- Vendor Buttons -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/farmersMarketVendorsList"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/buttonVendor1"
             style="?android:attr/borderlessButtonStyle"

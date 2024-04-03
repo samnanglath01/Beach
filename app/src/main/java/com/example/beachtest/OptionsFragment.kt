@@ -31,9 +31,24 @@ class OptionsFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homePageFragment_to_photographyTipFragment)
         }
 
+        binding.buttonLanguage.setOnClickListener {
+            Toast.makeText(context, "Language Preferences clicked", Toast.LENGTH_SHORT).show()
+            it.findNavController().navigate(R.id.languagePrefUiFragment)
+        }
+
         binding.buttonVendors.setOnClickListener {
             Toast.makeText(context, "Campus Vendors clicked", Toast.LENGTH_SHORT).show()
             it.findNavController().navigate(R.id.foodTrucksFragment)
+        }
+
+        binding.buttonScheduleMeal.setOnClickListener {
+            Toast.makeText(context, "Schedule Meal clicked", Toast.LENGTH_SHORT).show()
+            it.findNavController().navigate(R.id.scheduleMealsFragment)
+        }
+
+        binding.buttonPrices.setOnClickListener {
+            Toast.makeText(context, "Dining Hall Prices clicked", Toast.LENGTH_SHORT).show()
+            it.findNavController().navigate(R.id.pricesFragment)
         }
 
 

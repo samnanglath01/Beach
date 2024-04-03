@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,27 +7,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/topbannerProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/topbanner"
-            android:contentDescription="@string/topBanner" />
+            android:contentDescription="@string/topBanner"
+            android:src="@drawable/topbanner" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonFoodTrucks"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/foodTruckVendorsList"
-            android:textSize="18sp"
+            android:text="Food Truck Vendors"
             android:textStyle="bold"
-            android:layout_marginTop="32dp" />
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:drawableStart="@drawable/priceicon"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="10dp"/>
 
-        <!-- Vendor 1 Button -->
-        <Button
-            android:id="@+id/buttonVendor1"
-            style="?android:attr/borderlessButtonStyle"
+        <TextView
+            android:id="@+id/textVendor1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_1"
@@ -36,12 +39,12 @@
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <!-- Vendor 2 Button -->
-        <Button
-            android:id="@+id/buttonVendor2"
-            style="?android:attr/borderlessButtonStyle"
+        <TextView
+            android:id="@+id/textVendor2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_2"
@@ -49,12 +52,12 @@
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <!-- Vendor 3 Button -->
-        <Button
-            android:id="@+id/buttonVendor3"
-            style="?android:attr/borderlessButtonStyle"
+        <TextView
+            android:id="@+id/textVendor3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_3"
@@ -62,12 +65,12 @@
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <!-- Vendor 4 Button -->
-        <Button
-            android:id="@+id/buttonVendor4"
-            style="?android:attr/borderlessButtonStyle"
+        <TextView
+            android:id="@+id/textVendor4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_4"
@@ -75,12 +78,12 @@
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <!-- Vendor 5 Button -->
-        <Button
-            android:id="@+id/buttonVendor5"
-            style="?android:attr/borderlessButtonStyle"
+        <TextView
+            android:id="@+id/textVendor5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_5"
@@ -88,12 +91,12 @@
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <!-- Back to Home Page Button -->
-        <Button
+        <TextView
             android:id="@+id/backhomebutton"
-            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/back_to_home_page"
@@ -101,7 +104,8 @@
             android:drawableStart="@drawable/arrowbackicon"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
-
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
     </LinearLayout>
 </ScrollView>
