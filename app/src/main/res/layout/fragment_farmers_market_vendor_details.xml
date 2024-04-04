@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/topbannerProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/topbanner"
+            android:contentDescription="@string/topBanner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/farmersMarketVendorsList"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp" />
+
+        <!-- Vendor Buttons -->
+        <Button
+            android:id="@+id/buttonVendor1"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_1"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/buttonVendor2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_2"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/buttonVendor3"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_3"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/buttonVendor4"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_4"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/buttonVendor5"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_5"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/buttonVendor6"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fm_vendor_6"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+        <!-- Back to Home Page Button -->
+        <Button
+            android:id="@+id/backhomebutton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_home_page"
+            android:textColor="@color/black"
+            android:drawableStart="@drawable/arrowbackicon"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</ScrollView>

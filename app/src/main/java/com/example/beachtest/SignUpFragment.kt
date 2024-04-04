@@ -13,14 +13,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.example.beachtest.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-
 // Samnang Lath & Marlen Dizon
 //singup with with view binding
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var db: FirebaseFirestore
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,11 +44,9 @@ class SignUpFragment : Fragment() {
         val email = binding.emailEditText.text.toString().trim()
         val password = binding.passwordEditText.text.toString().trim()
         val confirmPassword = binding.confirmpasswordEditText.text.toString().trim()
-        val userName= binding.usernameText.text.toString().trim()
-        db = FirebaseFirestore.getInstance()
         // Call a separate function to validate the input fields.
         // This typically checks for non-empty inputs, valid email format, matching passwords, etc.
-        if (validateInputs(email, password, confirmPassword,userName)) {
+        if (validateInputs(email, password, confirmPassword)) {
             // Use FirebaseAuth to attempt creating a new user with the email and password.
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity()) { task ->
@@ -60,29 +55,10 @@ class SignUpFragment : Fragment() {
                         // Sign up success, log the success and navigate
                         Log.d("SignUpSuccess", "createUserWithEmail:success")
                         val user = auth.currentUser
-                        val userId = user?.uid
 
-                        // Prepare user data to be saved
-                        val userMap = hashMapOf(
-                            "username" to userName,
-                            "email" to email
-                            // Add other user details as needed
-                        )
-
-                        // Save the additional user information in Firestore
-                        userId?.let {
-                            db.collection("Users").document(it)
-                                .set(userMap)
-                                .addOnSuccessListener {
-                                    Log.d("FirestoreSuccess", "User profile created for $userId")
-                                    // Navigate to next fragment or activity after successful signup and profile creation
-                                    activity?.runOnUiThread {
-                                        findNavController().navigate(R.id.action_signUpFragment_to_dietaryPreferenceFragment)
-                                    }
-                                }
-                                .addOnFailureListener { e ->
-                                    Log.w("FirestoreError", "Error creating user profile", e)
-                                }
+                        // Ensure navigation is done on the main thread
+                        activity?.runOnUiThread {
+                            findNavController().navigate(R.id.action_signUpFragment_to_dietaryPreferenceFragment)
                         }
                     } else {
                         // If sign up fails, log the error and display a message to the user.
@@ -93,7 +69,7 @@ class SignUpFragment : Fragment() {
         }
     }
     //Samnang Lath
-    private fun validateInputs(email: String, password: String, confirmPassword: String,userName:String): Boolean {
+    private fun validateInputs(email: String, password: String, confirmPassword: String): Boolean {
         if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(context, "Fields cannot be empty.", Toast.LENGTH_SHORT).show()
             return false

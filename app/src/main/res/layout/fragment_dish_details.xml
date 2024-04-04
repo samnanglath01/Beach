@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Written by Sebastian Tadeo -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DishDetailsFragment">
+
+    <!-- ScrollView to allow scrolling -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- LinearLayout to organize views vertically -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Top banner image -->
+            <ImageView
+                android:id="@+id/topbannerProfile"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:src="@drawable/topbanner"
+                android:contentDescription="@string/topBanner"/>
+
+            <!-- Button for dish details -->
+            <TextView
+                android:id="@+id/buttonDishDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dish_details"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/foodicon"
+                android:gravity="center_vertical"
+                android:padding="19dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- Image of the dish -->
+            <ImageView
+                android:id="@+id/dishImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/burgers"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/dish_image_description"/>
+
+            <!-- Name of the dish -->
+            <TextView
+                android:id="@+id/dishNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:text="@string/burger"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Container for thumbs up and thumbs down buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="16dp">
+
+                <!-- Thumbs up button -->
+                <ImageButton
+                    android:id="@+id/thumbsUpButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/thumbs_up"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/thumbs_up_description"/>
+
+                <!-- Thumbs down button -->
+                <ImageButton
+                    android:id="@+id/thumbsDownButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/thumbs_down"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/thumbs_down_description"/>
+            </LinearLayout>
+
+            <!-- Label for ingredients -->
+            <TextView
+                android:id="@+id/ingredientsLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredients_label"
+                android:textSize="26sp"
+                android:layout_marginTop="6dp"/>
+
+            <!-- Text view for displaying ingredients -->
+            <TextView
+                android:id="@+id/ingredientsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="6dp"/>
+
+            <!-- Button to navigate back to home page -->
+            <TextView
+                android:id="@+id/backhomebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="18dp"
+                android:text="@string/back_to_home_page"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/arrowbackicon"
+                android:gravity="center"
+                android:drawablePadding="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

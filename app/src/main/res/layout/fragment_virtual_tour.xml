@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VirtualTourFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/topBannerProfile"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:src="@drawable/topbanner"/>
+
+            <TextView
+                android:id="@+id/buttonVirtualTour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     Virtual Tour"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/touricon"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/virtualTourInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:text="Welcome to our Virtual Page! Here you can get an inside look into each of the 3 dining halls, such as the tables for good seating location, all the delicacies from each dish provided, and the chefs that work tirelessly to cater and prepare your favorite dish!\n"/>
+
+            <TextView
+                android:id="@+id/virtualTourInfo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:text="Choose a Dining Hall below to get started with your tour:"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parkside"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
+
+            <ImageView
+                android:id="@+id/imageParkside"
+                android:layout_width="wrap_content"
+                android:layout_height="225dp"
+                android:src="@drawable/parkside"
+                android:layout_marginBottom="6dp"/>
+
+            <Button
+                android:id="@+id/parksidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Tour Parkside"
+                android:textColor="@color/white"
+                android:layout_marginTop="-65dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hillside"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
+
+            <ImageView
+                android:id="@+id/imageHillside"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/hillside"
+                android:layout_marginBottom="6dp"/>
+
+            <Button
+                android:id="@+id/hillsidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Tour Hillside"
+                android:textColor="@color/white"
+                android:layout_marginTop="-65dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/yellow"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beachside"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="33dp"/>
+
+            <ImageView
+                android:id="@+id/imageBeachside"
+                android:layout_width="wrap_content"
+                android:layout_height="228dp"
+                android:src="@drawable/beachside"
+                android:layout_marginBottom="6dp"/>
+
+            <Button
+                android:id="@+id/beachsidehomebutton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Tour Beachside"
+                android:textColor="@color/white"
+                android:layout_marginTop="-65dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="100dp"
+                android:backgroundTint="@color/yellow"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
