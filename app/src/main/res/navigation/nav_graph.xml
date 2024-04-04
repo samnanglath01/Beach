@@ -124,6 +124,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_photographyTipFragment"
             app:destination="@id/photographyTipFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_setMealPlan"
+            app:destination="@id/setMealPlan" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -138,7 +141,11 @@
         android:id="@+id/optionsFragment"
         android:name="com.example.beachtest.OptionsFragment"
         android:label="fragment_options"
-        tools:layout="@layout/fragment_options" />
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_setMealPlan"
+            app:destination="@id/setMealPlan" />
+    </fragment>
     <fragment
         android:id="@+id/photographyTipFragment"
         android:name="com.example.beachtest.PhotographyTipFragment"
@@ -177,4 +184,9 @@
             android:id="@+id/action_editDietaryPreferenceFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/setMealPlan"
+        android:name="com.example.beachtest.SetMealPlan"
+        android:label="fragment_set_meal_plan"
+        tools:layout="@layout/fragment_set_meal_plan" />
 </navigation>

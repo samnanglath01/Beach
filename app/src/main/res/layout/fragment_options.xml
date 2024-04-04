@@ -40,6 +40,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
+            <TextView
+                android:id="@+id/buttonSetPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     Meal Plan"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/foodicon"
+                android:drawableEnd="@drawable/arrow_forward"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
 
             <TextView
                 android:id="@+id/buttonPrices"

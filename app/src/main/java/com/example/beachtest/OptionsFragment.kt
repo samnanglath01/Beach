@@ -24,6 +24,11 @@ class OptionsFragment : Fragment() {
             //it.findNavController().navigate(R.id.action_optionsFragment_to_profileFragment)
             it.findNavController().navigate(R.id.action_homePageFragment_to_profileFragment)
         }
+        binding.buttonSetPlan.setOnClickListener {
+            Toast.makeText(context, "Meal plan clicked clicked", Toast.LENGTH_SHORT).show();
+            //it.findNavController().navigate(R.id.action_optionsFragment_to_profileFragment)
+            it.findNavController().navigate(R.id.action_homePageFragment_to_setMealPlan)
+        }
 
         binding.buttonPhotographyTips.setOnClickListener {
             Toast.makeText(context, "Photography Tips clicked", Toast.LENGTH_SHORT).show();
