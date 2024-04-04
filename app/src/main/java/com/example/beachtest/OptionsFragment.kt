@@ -44,6 +44,16 @@ class OptionsFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homePageFragment_to_virtualTourFragment)
         }
 
+        binding.buttonPantry.setOnClickListener {
+            Toast.makeText(context, "Food Pantry clicked", Toast.LENGTH_SHORT).show();
+            it.findNavController().navigate(R.id.action_homePageFragment_to_foodPantryFragment)
+        }
+
+        binding.buttonVendors.setOnClickListener {
+            Toast.makeText(context, "Campus Vendors clicked", Toast.LENGTH_SHORT).show()
+            it.findNavController().navigate(R.id.action_homePageFragment_to_foodTrucksFragment)
+        }
+
         return binding.root
     }
 }
