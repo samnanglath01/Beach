@@ -168,6 +168,59 @@
         tools:layout="@layout/fragment_menu_items">
     </fragment>
 
+    <!-- Dining Hall Details Fragment -->
+    <fragment
+        android:id="@+id/diningHallDetailsFragment"
+        android:name="com.example.beachtest.DiningHallDetailsFragment"
+        android:label="fragment_dining_hall_details"
+        tools:layout="@layout/fragment_dining_hall_details" >
+        <!-- Define actions for this fragment if needed, such as navigating back to home -->
+        <action
+            android:id="@+id/action_diningHallDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Food Trucks Fragment -->
+    <fragment
+        android:id="@+id/foodTrucksFragment"
+        android:name="com.example.beachtest.FoodTrucksFragment"
+        android:label="fragment_food_trucks"
+        tools:layout="@layout/fragment_food_trucks">
+        <action
+            android:id="@+id/actionFoodTrucksFragmentToFoodTruckVendorDetailsFragment"
+            app:destination="@id/foodTruckVendorDetailsFragment" />
+        <action
+            android:id="@+id/actionFoodTrucksFragmentToFarmersMarketVendorDetailsFragment"
+            app:destination="@id/farmersMarketVendorDetailsFragment" />
+        <!-- Define action to navigate back to home fragment -->
+        <action
+            android:id="@+id/action_foodTrucksFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/foodTruckVendorDetailsFragment"
+        android:name="com.example.beachtest.FoodTruckVendorDetailsFragment"
+        android:label="fragment_food_truck_vendor_details"
+        tools:layout="@layout/fragment_food_truck_vendor_details">
+        <!-- Define action to navigate back to food trucks fragment -->
+        <action
+            android:id="@+id/action_foodTruckVendorDetailsFragment_to_foodTrucksFragment"
+            app:destination="@id/foodTrucksFragment" />
+    </fragment>
+
+    <!-- Farmers Market Vendor Details Fragment -->
+    <fragment
+        android:id="@+id/farmersMarketVendorDetailsFragment"
+        android:name="com.example.beachtest.FarmersMarketVendorDetailsFragment"
+        android:label="fragment_farmers_market_vendor_details"
+        tools:layout="@layout/fragment_farmers_market_vendor_details">
+        <!-- Corrected action to navigate back to food trucks fragment -->
+        <action
+            android:id="@+id/action_farmersMarketVendorDetailsFragment_to_foodTrucksFragment"
+            app:destination="@id/foodTrucksFragment" />
+    </fragment>
+
     <!-- More options on homepage screen fragment. -->
     <fragment
         android:id="@+id/optionsFragment"
