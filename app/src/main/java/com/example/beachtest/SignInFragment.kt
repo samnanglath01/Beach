@@ -25,7 +25,7 @@ class SignInFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSignInBinding.inflate(inflater, container, false)
-        // Initialize the FirebaseAuth instance to work with Firebase Authentication.
+        //  FirebaseAuth instance to work with Firebase Authentication.
         auth = FirebaseAuth.getInstance()
         binding.loginButton.setOnClickListener {
             signInUser()
@@ -37,7 +37,7 @@ class SignInFragment : Fragment() {
             signInUser()
         }
 
-        // Set an OnClickListener on the 'signUpButton'. When clicked, it navigates to the SignUpFragment.
+        // Set an onClickListener on the 'signUpButton'. When clicked, it navigates to the SignUpFragment.
         // This allows users to move to the sign-up screen if they don't have an account.
         binding.signUpButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
