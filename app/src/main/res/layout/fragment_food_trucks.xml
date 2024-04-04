@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoodTrucksFragment">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/topbannerProfile"
+        android:layout_width="410dp"
+        android:layout_height="110dp"
+        android:src="@drawable/topbanner" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_vendor_prompt"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/foodTrucksButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/food_trucks"
+        android:layout_marginTop="33dp" />
+
+    <Button
+        android:id="@+id/farmersMarketButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/farmers_market_vendors"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/backToOptionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="18dp"
+        android:text="Back to Options"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/arrowbackicon"
+        android:gravity="center"
+        android:drawablePadding="8dp" />
+
+    <!-- Placeholder for dynamic vendor display -->
+    <!-- You can use a RecyclerView here or a custom layout that will be shown/hidden based on the button clicked -->
+
+</LinearLayout>
