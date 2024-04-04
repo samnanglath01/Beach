@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">BeachTest</string>
+    <string name="title_activity_login">LoginActivity</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dining_hall_name">Dining Hall Name</string>
     <string name="breakfast">Breakfast</string>
@@ -63,5 +64,20 @@
     <string name="topBanner">Top Banner</string>
     <string name="dish_details">     Dish Details/Ingredients</string>
     <string name="back_to_home_page">Back to Home Page</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="date_format">%1$d/%2$d/%3$d</string>
+    <string-array name="meal_types">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snack</item>
+    </string-array>
 
 </resources>

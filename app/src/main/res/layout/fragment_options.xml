@@ -184,10 +184,10 @@
                 android:background="#D3D3D3"/>
 
             <TextView
-                android:id="@+id/buttonRecources"
+                android:id="@+id/buttonResources"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Recources"
+                android:text="     Resources"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:drawableStart="@drawable/resourceicon"

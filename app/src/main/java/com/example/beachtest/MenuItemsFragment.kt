@@ -2,12 +2,12 @@ package com.example.beachtest
 
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +24,11 @@ class MenuItemsFragment : Fragment() {
     private val firestore = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentMenuItemsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -46,11 +50,17 @@ class MenuItemsFragment : Fragment() {
                 val diningHall = userDoc.getString("diningHall")
                 val mealTime = userDoc.getString("mealTime")
                 val dietaryPreference = userDoc.getString("dietaryPreference")
-                val allergies = userDoc.getData()?.filterKeys { it.startsWith("contains") }?.filterValues { it == true }
+                val allergies = userDoc.getData()?.filterKeys { it.startsWith("contains") }
+                    ?.filterValues { it == true }
 
                 // Continue only if the dining hall and meal time have been set by the user
                 if (diningHall != null && mealTime != null) {
-                    displayMenuItems(diningHall, mealTime, dietaryPreference, allergies?.keys ?: emptySet())
+                    displayMenuItems(
+                        diningHall,
+                        mealTime,
+                        dietaryPreference,
+                        allergies?.keys ?: emptySet()
+                    )
                 } else {
                     // Handle the case where dining hall or meal time is not set
                 }
@@ -61,7 +71,12 @@ class MenuItemsFragment : Fragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun displayMenuItems(diningHall: String, mealTime: String, dietaryPreference: String?, allergies: Set<String>) {
+    private fun displayMenuItems(
+        diningHall: String,
+        mealTime: String,
+        dietaryPreference: String?,
+        allergies: Set<String>
+    ) {
         // Determine the corresponding fields for Firestore based on user selection
         val today = LocalDate.now()
 
@@ -82,11 +97,17 @@ class MenuItemsFragment : Fragment() {
         val endDate6 = LocalDate.of(2024, 5, 12)
 
         // Check if today is within the date range
-        val isWithinCycle1 = !today.isBefore(startDate1) && !today.isAfter(endDate1) || !today.isBefore(startDate6) && !today.isAfter(endDate6)
+        val isWithinCycle1 =
+            !today.isBefore(startDate1) && !today.isAfter(endDate1) || !today.isBefore(startDate6) && !today.isAfter(
+                endDate6
+            )
         val isWithinCycle2 = !today.isBefore(startDate2) && !today.isAfter(endDate2)
         val isWithinCycle3 = !today.isBefore(startDate3) && !today.isAfter(endDate3)
         val isWithinCycle4 = !today.isBefore(startDate4) && !today.isAfter(endDate4)
-        val isWithinCycle5 = !today.isBefore(startDate5) && !today.isAfter(endDate5) || !today.isBefore(startDate5ext) && !today.isAfter(endDate5ext)
+        val isWithinCycle5 =
+            !today.isBefore(startDate5) && !today.isAfter(endDate5) || !today.isBefore(startDate5ext) && !today.isAfter(
+                endDate5ext
+            )
 
         val dayOfWeek = today.dayOfWeek.toString().lowercase().capitalize()
         val servedTodayField = "served$dayOfWeek"
@@ -99,15 +120,15 @@ class MenuItemsFragment : Fragment() {
         // Apply the 'servedCycle' filters if within the date range
         if (isWithinCycle1) {
             menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle1", true)
-        } else if (isWithinCycle2){
+        } else if (isWithinCycle2) {
             menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle2", true)
-        } else if (isWithinCycle3){
+        } else if (isWithinCycle3) {
             menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle3", true)
-        } else if (isWithinCycle4){
+        } else if (isWithinCycle4) {
             menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle4", true)
-        } else if (isWithinCycle5){
+        } else if (isWithinCycle5) {
             menuItemsQuery = menuItemsQuery.whereEqualTo("servedCycle5", true)
-        } else{
+        } else {
             Toast.makeText(context, "Out of menu cycle range", Toast.LENGTH_SHORT).show()
         }
 
@@ -119,10 +140,17 @@ class MenuItemsFragment : Fragment() {
         // Filter based on dietary preferences
         dietaryPreference?.let { preference ->
             when {
-                preference.contains("Pescatarian", ignoreCase = true) -> menuItemsQuery = menuItemsQuery.whereEqualTo("isPescatarian", true)
-                preference.contains("Halal", ignoreCase = true) -> menuItemsQuery = menuItemsQuery.whereEqualTo("isHalal", true)
-                preference.contains("Vegetarian", ignoreCase = true) -> menuItemsQuery = menuItemsQuery.whereEqualTo("isVegetarian", true)
-                preference.contains("Vegan", ignoreCase = true) -> menuItemsQuery = menuItemsQuery.whereEqualTo("isVegan", true)
+                preference.contains("Pescatarian", ignoreCase = true) -> menuItemsQuery =
+                    menuItemsQuery.whereEqualTo("isPescatarian", true)
+
+                preference.contains("Halal", ignoreCase = true) -> menuItemsQuery =
+                    menuItemsQuery.whereEqualTo("isHalal", true)
+
+                preference.contains("Vegetarian", ignoreCase = true) -> menuItemsQuery =
+                    menuItemsQuery.whereEqualTo("isVegetarian", true)
+
+                preference.contains("Vegan", ignoreCase = true) -> menuItemsQuery =
+                    menuItemsQuery.whereEqualTo("isVegan", true)
             }
         }
 
@@ -132,15 +160,53 @@ class MenuItemsFragment : Fragment() {
             for (document in documents) {
                 menuItemsBuilder.append(document.id).append("\n")
             }
+
+            // Append brunch items if mealTime is Brunch
+            if (mealTime.equals("Brunch", ignoreCase = true)) {
+                val brunchItems = "Brunch always includes:\n" +
+                        "Scrambled Eggs\n" +
+                        "Oatmeal\n" +
+                        "Waffle Bar\n" +
+                        "Assorted Fruit Juice\n" +
+                        "Milk and Non-Dairy Milk\n" +
+                        "Assorted Cereals\n" +
+                        "Fresh Fruit\n" +
+                        "Deli Bar\n" +
+                        "Assorted Sparkling Water\n" +
+                        "Assorted Flavored Waters\n" +
+                        "Assorted Soft Drinks\n" +
+                        "Assorted Breakfast Pastries\n" +
+                        "Assorted Desserts\n" +
+                        "Novelty Ice Creams"
+                menuItemsBuilder.append("\n").append(brunchItems)
+            }
+            // Append dinner items if mealTime is Dinner
+            else if (mealTime.equals("Dinner", ignoreCase = true)) {
+                val brunchItems = "Dinner always includes:\n" +
+                        "Assorted Fruit Juice\n" +
+                        "Milk and Non-Dairy Milk\n" +
+                        "Assorted Cereals\n" +
+                        "Fresh Fruit\n" +
+                        "Salad Bar\n" +
+                        "Deli Bar\n" +
+                        "Chef's Choice\n" +
+                        "Assorted Sparkling Water\n" +
+                        "Assorted Flavored Waters\n" +
+                        "Assorted Soft Drinks\n" +
+                        "Assorted Desserts\n" +
+                        "Novelty Ice Creams"
+                menuItemsBuilder.append("\n").append(brunchItems)
+            }
+
             // Display the menu items in the TextView
             binding.textViewMenuItemsTitle.text = menuItemsBuilder.toString()
         }.addOnFailureListener {
             // Handle any errors here
         }
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        fun onDestroyView() {
+            super.onDestroyView()
+            _binding = null
+        }
     }
 }

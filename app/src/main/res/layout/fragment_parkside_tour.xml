@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ParksideTourFragment">
-
+    <!-- Luis Flores -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -24,7 +24,7 @@
                 android:id="@+id/buttonVirtualTour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Virtual Tour"
+                android:text="     Parkside Tour"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -33,18 +33,6 @@
                 android:padding="18dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="33dp"/>
-
 
 
         </LinearLayout>
