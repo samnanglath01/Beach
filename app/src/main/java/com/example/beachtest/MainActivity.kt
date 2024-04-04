@@ -15,6 +15,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 class MainActivity : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var navController: NavController
+    //Samnang Lath
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,16 +38,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    //Samnang lath
     fun sendRegistrationToServer(token: String?) {
         // Implement this method to send token to your app server.
         Log.d("FCM", "Send token to server: $token")
+        // Use Kotlin's safe call operator to only proceed if the token is not null.
         token?.let {
+            // Get an instance of Firestore to store the token.
             val firestore = FirebaseFirestore.getInstance()
+            // Create a map to hold the token and its creation timestamp.
             val tokenDocument = hashMapOf(
                 "token" to token,
                 "createdAt" to FieldValue.serverTimestamp() // To store the time the token was saved
             )
-
+// Add the tokenDocument map to the "tokens" collection in Firestore.
             firestore.collection("tokens").add(tokenDocument)
                 .addOnSuccessListener {
                     Log.d("FCM", "Token successfully stored in Firestore with document ID: ${it.id}")
