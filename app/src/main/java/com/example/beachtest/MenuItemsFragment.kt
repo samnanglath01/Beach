@@ -161,6 +161,24 @@ class MenuItemsFragment : Fragment() {
                 menuItemsBuilder.append(document.id).append("\n")
             }
 
+            // Append breakfast items if mealTime is Breakfast
+            if (mealTime.equals("Breakfast", ignoreCase = true)) {
+                val breakfastItems = "Breakfast always includes:\n" +
+                        "Scrambled Eggs\n" +
+                        "Oatmeal\n" +
+                        "Waffle Bar\n" +
+                        "Assorted Fruit Juice\n" +
+                        "Milk and Non-Dairy Milk\n" +
+                        "Assorted Cereals\n" +
+                        "Fresh Fruit\n" +
+                        "Deli Bar\n" +
+                        "Assorted Sparkling Water\n" +
+                        "Assorted Flavored Waters\n" +
+                        "Assorted Soft Drinks\n" +
+                        "Assorted Breakfast Pastries\n"
+                menuItemsBuilder.append("\n").append(breakfastItems)
+            }
+
             // Append brunch items if mealTime is Brunch
             if (mealTime.equals("Brunch", ignoreCase = true)) {
                 val brunchItems = "Brunch always includes:\n" +
@@ -180,9 +198,28 @@ class MenuItemsFragment : Fragment() {
                         "Novelty Ice Creams"
                 menuItemsBuilder.append("\n").append(brunchItems)
             }
+
+            // Append lunch items if mealTime is Lunch
+            if (mealTime.equals("Lunch", ignoreCase = true)) {
+                val lunchItems = "Lunch always includes:\n" +
+                        "Assorted Fruit Juice\n" +
+                        "Milk and Non-Dairy Milk\n" +
+                        "Assorted Cereals\n" +
+                        "Fresh Fruit\n" +
+                        "Chef's Choice\n" +
+                        "Salad Bar\n" +
+                        "Deli Bar\n" +
+                        "Assorted Sparkling Water\n" +
+                        "Assorted Flavored Waters\n" +
+                        "Assorted Soft Drinks\n" +
+                        "Assorted Desserts\n" +
+                        "Novelty Ice Creams"
+                menuItemsBuilder.append("\n").append(lunchItems)
+            }
+
             // Append dinner items if mealTime is Dinner
             else if (mealTime.equals("Dinner", ignoreCase = true)) {
-                val brunchItems = "Dinner always includes:\n" +
+                val dinnerItems = "Dinner always includes:\n" +
                         "Assorted Fruit Juice\n" +
                         "Milk and Non-Dairy Milk\n" +
                         "Assorted Cereals\n" +
@@ -195,7 +232,7 @@ class MenuItemsFragment : Fragment() {
                         "Assorted Soft Drinks\n" +
                         "Assorted Desserts\n" +
                         "Novelty Ice Creams"
-                menuItemsBuilder.append("\n").append(brunchItems)
+                menuItemsBuilder.append("\n").append(dinnerItems)
             }
 
             // Display the menu items in the TextView
