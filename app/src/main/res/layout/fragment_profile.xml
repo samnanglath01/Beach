@@ -8,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,15 +53,17 @@
                 android:src="@drawable/baseline_person_4_24"/>
 
 
-            <TextView
-                android:id="@+id/titleName"
+
+            <Button
+                android:id="@+id/btnProfile"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Name"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:text="Profile Picture"
+                android:textSize="15dp"
+                android:textStyle="" />
 
             <TextView
                 android:id="@+id/titleUsername"
@@ -93,7 +94,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/profileUsername"
-                    android:text="username"
                     android:layout_weight="1"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/profileEmail"
-                    android:text="email"
+
                     android:layout_weight="1"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
@@ -164,21 +164,21 @@
                 android:clickable="true"
                 android:focusable="true"/>
 
-            <Button
-                android:id="@+id/backHomeButton"
+            <TextView
+                android:id="@+id/backhomebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="18dp"
                 android:text="Back to Home Page"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:backgroundTint="@color/yellow"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:gravity="center_vertical"
+                android:drawableStart="@drawable/arrowbackicon"
+                android:gravity="center"
                 android:drawablePadding="8dp" />
-
 
         </LinearLayout>
     </ScrollView>

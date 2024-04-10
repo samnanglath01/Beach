@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
@@ -29,6 +30,7 @@
                 android:id="@+id/textViewDiningHallsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewBanner"
                 android:layout_marginTop="-40dp"
                 android:text="CSULB Dining Halls"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -118,6 +120,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginBottom="100dp"
                 android:backgroundTint="@color/yellow"/>
+
 
         </LinearLayout>
 

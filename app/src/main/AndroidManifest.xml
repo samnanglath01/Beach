@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,19 +16,26 @@
         android:theme="@style/Theme.BeachTest"
         tools:targetApi="31">
         <activity
-            android:name=".activity_login"
+            android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.BeachTest" />
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".MyFirebaseMessagingService"
+            android:exported="false"> <!-- Add this line -->
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.example.beachtest.Users.ui.MealReminderReceiver"/>
     </application>
 
 </manifest>

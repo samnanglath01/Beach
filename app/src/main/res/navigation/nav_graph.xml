@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Navigation graph for the app. Defines all the app's navigation paths. Written by: Marlen Dizon -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -48,7 +47,7 @@
             app:destination="@id/signInFragment" />
     </fragment>
 
-    <!--Sign Up Screen Fragment. -->
+    <!-- Sign-up screen fragment. -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.beachtest.SignUpFragment"
@@ -124,65 +123,48 @@
         <action
             android:id="@+id/action_homePageFragment_to_photographyTipFragment"
             app:destination="@id/photographyTipFragment" />
+        <action
+
+            android:id="@+id/action_homePageFragment_to_setMealPlan"
+            app:destination="@id/setMealPlan" />
+        <action
+            android:id="@+id/action_homePageFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_hallHoursFragment"
+            app:destination="@id/hallHoursFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_mealTimeFragment"
+            app:destination="@id/mealTimeFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_foodPantryFragment"
+            app:destination="@id/foodPantryFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_foodTrucksFragment"
+            app:destination="@id/foodTrucksFragment" />
+
     </fragment>
 
-    <!-- Home Screen Fragment-->
+    <!-- Home screen fragment. -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.beachtest.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_weekDayFragment"
-            app:destination="@id/weekDayFragment" />
-        <!-- Add this action to navigate to DiningHallDetailsFragment -->
-        <action
-            android:id="@+id/action_homeFragment_to_diningHallDetailsFragment"
-            app:destination="@id/diningHallDetailsFragment" />
     </fragment>
 
-    <!-- Weekday screen fragment. -->
-    <fragment
-        android:id="@+id/weekDayFragment"
-        android:name="com.example.beachtest.WeekDayFragment"
-        android:label="fragment_weekday"
-        tools:layout="@layout/fragment_week_day">
-        <argument
-            android:name="diningHall"
-            app:argType="string"/>
-        <action
-            android:id="@+id/action_weekDayFragment_to_mealTimeFragment"
-            app:destination="@id/mealTimeFragment">
-            <argument
-                android:name="day"
-                app:argType="string" />
-        </action>
-    </fragment>
-
-    <!-- Meal Time Fragment -->
+    <!-- Meal time screen fragment. -->
     <fragment
         android:id="@+id/mealTimeFragment"
         android:name="com.example.beachtest.MealTimeFragment"
         android:label="fragment_meal_time"
         tools:layout="@layout/fragment_meal_time">
-        <argument
-            android:name="diningHall"
-            app:argType="string"/>
-        <argument
-            android:name="day"
-            app:argType="string"/>
         <action
             android:id="@+id/action_mealTimeFragment_to_menuItemsFragment"
             app:destination="@id/menuItemsFragment">
-            <argument
-                android:name="diningHall"
-                app:argType="string"/>
-            <argument
-                android:name="day"
-                app:argType="string"/>
-            <argument
-                android:name="mealTime"
-                app:argType="string"/>
         </action>
     </fragment>
 
@@ -192,17 +174,7 @@
         android:name="com.example.beachtest.MenuItemsFragment"
         android:label="fragment_menu_items"
         tools:layout="@layout/fragment_menu_items">
-        <argument
-            android:name="diningHall"
-            app:argType="string" />
-        <argument
-            android:name="day"
-            app:argType="string" />
-        <argument
-            android:name="mealTime"
-            app:argType="string" />
     </fragment>
-
 
     <!-- Dining Hall Details Fragment -->
     <fragment
@@ -257,7 +229,7 @@
             app:destination="@id/foodTrucksFragment" />
     </fragment>
 
-    <!-- More option on homepage screen fragment. -->
+    <!-- More options on homepage screen fragment. -->
     <fragment
         android:id="@+id/optionsFragment"
         android:name="com.example.beachtest.OptionsFragment"
@@ -270,6 +242,9 @@
         <action
             android:id="@+id/action_optionsFragment_to_scheduleMealsFragment"
             app:destination="@id/scheduleMealsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_setMealPlan"
+            app:destination="@id/setMealPlan" />
    </fragment>
 
     <!-- Language Preference Selection Fragment -->
@@ -279,7 +254,15 @@
     android:label="fragment_language_pref_ui"
     tools:layout="@layout/fragment_language_pref_ui" />
 
-    <!-- Profile Fragment -->
+
+    <!-- Photography tips screen fragment -->
+    <fragment
+        android:id="@+id/photographyTipFragment"
+        android:name="com.example.beachtest.PhotographyTipFragment"
+        android:label="fragment_photography_tip"
+        tools:layout="@layout/fragment_photography_tip" />
+
+    <!-- Profile screen fragment -->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.beachtest.ProfileFragment"
@@ -292,11 +275,14 @@
             android:id="@+id/action_profileFragment_to_editDietaryPreferenceFragment"
             app:destination="@id/editDietaryPreferenceFragment" />
         <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
             android:id="@+id/action_profileFragment_to_optionsFragment"
             app:destination="@id/optionsFragment" />
     </fragment>
 
-    <!-- Edit Profile Fragment -->
+    <!-- Edit profile screen fragment -->
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.example.beachtest.EditProfileFragment"
@@ -307,7 +293,15 @@
             app:destination="@id/profileFragment" />
     </fragment>
 
-    <!-- Edit Dietary Preferences -->
+    <!-- Hours screen fragment. -->
+    <fragment
+        android:id="@+id/hallHoursFragment"
+        android:name="com.example.beachtest.HallHoursFragment"
+        android:label="fragment_menu_items"
+        tools:layout="@layout/fragment_hall_hours">
+    </fragment>
+
+    <!-- Edit Dietary Preference screen fragment -->
     <fragment
         android:id="@+id/editDietaryPreferenceFragment"
         android:name="com.example.beachtest.EditDietaryPreferenceFragment"
@@ -318,20 +312,12 @@
             app:destination="@id/profileFragment" />
     </fragment>
 
-    <!-- Photography Tip Fragment -->
     <fragment
-        android:id="@+id/photographyTipFragment"
-        android:name="com.example.beachtest.PhotographyTipFragment"
-        android:label="fragment_photography_tip"
-        tools:layout="@layout/fragment_photography_tip" />
+        android:id="@+id/setMealPlan"
+        android:name="com.example.beachtest.SetMealPlan"
+        android:label="fragment_set_meal_plan"
+        tools:layout="@layout/fragment_set_meal_plan" />
 
-    <!-- Hours screen fragment. -->
-    <fragment
-        android:id="@+id/hallHoursFragment"
-        android:name="com.example.beachtest.HallHoursFragment"
-        android:label="fragment_menu_items"
-        tools:layout="@layout/fragment_hall_hours">
-    </fragment>
 
     <!-- Prices screen fragment. -->
     <fragment

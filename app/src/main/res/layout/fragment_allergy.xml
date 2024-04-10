@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- FrameLayout for the AllergyFragment, designed to allow users to select their allergens.
+     Features a background image for visual appeal, a scrollable view for user selections,
+     and action buttons for saving or navigation. Designed for ease of use and accessibility.
+     Written by: Marlen Dizon -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,6 +11,7 @@
     tools:context=".AllergyFragment"
     android:background="@color/gray">
 
+    <!-- Background ImageView to enhance visual appeal of the fragment -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
@@ -13,6 +19,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/kitchen" />
 
+    <!-- ScrollView to accommodate varying screen sizes and ensure all content is accessible -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,6 +34,7 @@
             android:gravity="center"
             android:background="#A0000000">
 
+            <!-- Text label for the allergen selection section -->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -39,14 +47,16 @@
                 android:textAlignment="center"
                 android:textStyle="bold"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Milk allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_milk"
+                android:id="@+id/checkBoxMilk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Milk"
@@ -55,14 +65,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Fish allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_fish"
+                android:id="@+id/checkBoxFish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fish"
@@ -71,14 +83,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Soy allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_soy"
+                android:id="@+id/checkBoxSoy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Soy"
@@ -87,14 +101,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Peanuts allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_peanuts"
+                android:id="@+id/checkBoxPeanuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Peanuts"
@@ -103,14 +119,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Tree Nuts allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_treenuts"
+                android:id="@+id/checkBoxTreenuts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tree Nuts"
@@ -119,14 +137,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Wheat allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_wheat"
+                android:id="@+id/checkBoxWheat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Wheat"
@@ -135,14 +155,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Eggs allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_eggs"
+                android:id="@+id/checkBoxEggs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Eggs"
@@ -151,14 +173,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Shellfish / Crustacean allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_shellfish"
+                android:id="@+id/checkBoxShellfish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Shellfish / Crustacean"
@@ -167,14 +191,16 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Dynamic dividers to visually separate checkboxes for better user experience -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
 
+            <!-- Sesame allergen option -->
             <CheckBox
-                android:id="@+id/checkBox_sesame"
+                android:id="@+id/checkBoxSesame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sesame Seeds"
@@ -183,6 +209,7 @@
                 android:textSize="17dp"
                 android:background="#A0000000"/>
 
+            <!-- Save button for confirming allergen selections -->
             <Button
                 android:id="@+id/saveAllergy"
                 android:layout_width="match_parent"
@@ -192,6 +219,7 @@
                 android:backgroundTint="@color/yellow"
                 />
 
+            <!-- Button for navigating back to the dietary preferences screen -->
             <Button
                 android:id="@+id/backToDietary"
                 android:layout_width="match_parent"

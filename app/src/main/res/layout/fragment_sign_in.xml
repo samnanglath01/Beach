@@ -24,7 +24,7 @@
         android:orientation="vertical"
         android:padding="32dp"
         android:gravity="center"
-        android:background="#A0000000">
+        android:background="#A0000000"> <!-- Semi-transparent background to enhance text visibility -->
 
         <!-- Email input field -->
         <EditText
@@ -64,6 +64,7 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/yellow"/>
 
+        <!-- Sign-up button -->
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
@@ -72,6 +73,7 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/yellow"/>
 
+        <!-- Forgot password button -->
         <Button
             android:id="@+id/forgotPasswordButton"
             android:layout_width="match_parent"
@@ -80,6 +82,7 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/yellow"/>
 
+        <!-- Guest access button -->
         <Button
             android:id="@+id/guestButton"
             android:layout_width="match_parent"

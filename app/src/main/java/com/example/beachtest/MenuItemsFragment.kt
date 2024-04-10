@@ -75,14 +75,18 @@ class MenuItemsFragment : Fragment() {
         val startDate4 = LocalDate.of(2024, 4, 29)
         val endDate4 = LocalDate.of(2024, 5, 5)
         val startDate5 = LocalDate.of(2024, 3, 25)
+        val startDate5ext = LocalDate.of(2024, 4, 1)
+        val endDate5ext = LocalDate.of(2024, 4, 7)
         val endDate5 = LocalDate.of(2024, 3, 31)
+        val startDate6 = LocalDate.of(2024, 5, 6)
+        val endDate6 = LocalDate.of(2024, 5, 12)
 
         // Check if today is within the date range
-        val isWithinCycle1 = !today.isBefore(startDate1) && !today.isAfter(endDate1)
+        val isWithinCycle1 = !today.isBefore(startDate1) && !today.isAfter(endDate1) || !today.isBefore(startDate6) && !today.isAfter(endDate6)
         val isWithinCycle2 = !today.isBefore(startDate2) && !today.isAfter(endDate2)
         val isWithinCycle3 = !today.isBefore(startDate3) && !today.isAfter(endDate3)
         val isWithinCycle4 = !today.isBefore(startDate4) && !today.isAfter(endDate4)
-        val isWithinCycle5 = !today.isBefore(startDate5) && !today.isAfter(endDate5)
+        val isWithinCycle5 = !today.isBefore(startDate5) && !today.isAfter(endDate5) || !today.isBefore(startDate5ext) && !today.isAfter(endDate5ext)
 
         val dayOfWeek = today.dayOfWeek.toString().lowercase().capitalize()
         val servedTodayField = "served$dayOfWeek"

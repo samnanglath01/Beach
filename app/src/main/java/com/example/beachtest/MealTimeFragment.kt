@@ -46,7 +46,7 @@ class MealTimeFragment : Fragment() {
                 Toast.makeText(context, "Breakfast selected", Toast.LENGTH_SHORT).show()
             }
         }
-/**
+
         binding.brunchButton.setOnClickListener {
             if (today != DayOfWeek.SATURDAY && today != DayOfWeek.SUNDAY) {
                 Toast.makeText(context, "Brunch is only served on weekends. Please select another meal time.", Toast.LENGTH_LONG).show()
@@ -55,7 +55,7 @@ class MealTimeFragment : Fragment() {
                 Toast.makeText(context, "Brunch selected", Toast.LENGTH_SHORT).show()
             }
         }
-**/
+
         binding.lunchButton.setOnClickListener {
             if (today == DayOfWeek.SATURDAY || today == DayOfWeek.SUNDAY) {
                 Toast.makeText(context, "Lunch is not served on weekends. Please select another meal time.", Toast.LENGTH_LONG).show()
