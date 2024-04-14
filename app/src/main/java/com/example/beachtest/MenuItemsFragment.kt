@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +17,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import java.time.LocalDate
 import java.util.Locale
+import android.widget.Button
+import android.widget.LinearLayout
+import android.view.ViewGroup.LayoutParams
+import androidx.core.content.ContextCompat
+
 
 // Luis Flores
 class MenuItemsFragment : Fragment() {
@@ -33,7 +39,19 @@ class MenuItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getUserSelectionsAndDisplayMenu()
+
+        binding.backToMealTimeButton.setOnClickListener {
+            navigateBackToMealTime()
+        }
     }
+
+    //sebastian
+    private fun navigateBackToMealTime() {
+        if (isAdded && findNavController().currentDestination?.id == R.id.menuItemsFragment) {
+            findNavController().navigate(R.id.action_menuItemsFragment_to_mealTimeFragment)
+        }
+    }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getUserSelectionsAndDisplayMenu() {
@@ -128,14 +146,34 @@ class MenuItemsFragment : Fragment() {
 
         // Execute the query and handle the results
         menuItemsQuery.get().addOnSuccessListener { documents ->
-            val menuItemsBuilder = StringBuilder()
+            val menuItemsLayout = binding.menuItemsLayout
+            menuItemsLayout.removeAllViews()  // Clear previous buttons if any
             for (document in documents) {
-                menuItemsBuilder.append(document.id).append("\n")
+                val button = Button(context).apply {
+                    // For debugging, use a hardcoded string
+                    text = document.id
+                    textSize = 16f // Ensure the text size is reasonable
+                    setTextColor(ContextCompat.getColor(context, android.R.color.black)) // Set the text color explicitly
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).also { it.topMargin = 8 }
+                    setOnClickListener {
+                        navigateToDishDetails(document.id)
+                        
+                    }
+                }
+                menuItemsLayout.addView(button)
             }
-            // Display the menu items in the TextView
-            binding.textViewMenuItemsTitle.text = menuItemsBuilder.toString()
         }.addOnFailureListener {
             // Handle any errors here
+        }
+    }
+
+    private fun navigateToDishDetails(dishId: String) {
+        val action = MenuItemsFragmentDirections.actionMenuItemsFragmentToDishDetailsFragment(dishId)
+        if (isAdded) {
+            findNavController().navigate(action)
         }
     }
 

@@ -41,14 +41,31 @@
                 android:textColor="@color/yellow"
                 android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:id="@+id/textViewMenuItemsTitle"
+            <LinearLayout
+                android:id="@+id/menuItemsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/yellow"
+                android:orientation="vertical"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"
-                android:textSize="25dp"/>
+                android:layout_marginEnd="10dp">
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/backToMealTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Meal Time Page"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:backgroundTint="@color/yellow"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/arrowbackicon"
+                android:drawablePadding="8dp" />
 
         </LinearLayout>
 
