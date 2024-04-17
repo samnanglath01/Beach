@@ -154,6 +154,7 @@ class MenuItemsFragment : Fragment() {
                     text = document.id
                     textSize = 16f // Ensure the text size is reasonable
                     setTextColor(ContextCompat.getColor(context, android.R.color.black)) // Set the text color explicitly
+                    backgroundTintList = ContextCompat.getColorStateList(context, R.color.yellow) // Set the background tint to yellow
                     layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
