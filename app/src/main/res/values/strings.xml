@@ -64,6 +64,7 @@
     <string name="topBanner">Top Banner</string>
     <string name="dish_details">     Dish Details/Ingredients</string>
     <string name="back_to_home_page">Back to Home Page</string>
+    <string name="back_to_menu_items">Back to Menu Items</string>
     <string name="date_format">%1$d/%2$d/%3$d</string>
     <string-array name="meal_types">
         <item>Breakfast</item>

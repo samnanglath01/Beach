@@ -169,6 +169,23 @@
         android:name="com.example.beachtest.MenuItemsFragment"
         android:label="fragment_menu_items"
         tools:layout="@layout/fragment_menu_items">
+        <action
+            android:id="@+id/action_menuItemsFragment_to_mealTimeFragment"
+            app:destination="@id/mealTimeFragment" />
+        <action
+            android:id="@+id/action_menuItemsFragment_to_dishDetailsFragment"
+            app:destination="@id/dishDetailsFragment"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dishDetailsFragment"
+        android:name="com.example.beachtest.DishDetailsFragment"
+        android:label="fragment_dish_details"
+        tools:layout="@layout/fragment_dish_details">
+        <argument
+            android:name="dishId"
+            app:argType="string" />
     </fragment>
 
     <!-- Dining Hall Details Fragment -->
@@ -201,6 +218,7 @@
             app:destination="@id/optionsFragment" />
     </fragment>
 
+    <!-- Food truck vendor details fragment -->
     <fragment
         android:id="@+id/foodTruckVendorDetailsFragment"
         android:name="com.example.beachtest.FoodTruckVendorDetailsFragment"
@@ -292,7 +310,9 @@
         android:name="com.example.beachtest.PricesFragment"
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_prices">
-
+    <action
+        android:id="@+id/action_pricesFragment_to_optionsFragment"
+        app:destination="@id/optionsFragment" />
     </fragment>
 
     <!-- Virtual tour fragment -->

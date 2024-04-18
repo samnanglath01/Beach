@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -95,12 +99,12 @@ class MenuItemsFragment : Fragment() {
         val endDate5 = LocalDate.of(2024, 3, 31)
         val startDate6 = LocalDate.of(2024, 5, 6)
         val endDate6 = LocalDate.of(2024, 5, 12)
+        val startDate7 = LocalDate.of(2024, 5, 13)
+        val endDate7 = LocalDate.of(2024, 5, 19)
 
         // Check if today is within the date range
         val isWithinCycle1 =
-            !today.isBefore(startDate1) && !today.isAfter(endDate1) || !today.isBefore(startDate6) && !today.isAfter(
-                endDate6
-            )
+            !today.isBefore(startDate1) && !today.isAfter(endDate1) || !today.isBefore(startDate6) && !today.isAfter(endDate6) || !today.isBefore(startDate7) && !today.isAfter(endDate7)
         val isWithinCycle2 = !today.isBefore(startDate2) && !today.isAfter(endDate2)
         val isWithinCycle3 = !today.isBefore(startDate3) && !today.isAfter(endDate3)
         val isWithinCycle4 = !today.isBefore(startDate4) && !today.isAfter(endDate4)
@@ -155,6 +159,32 @@ class MenuItemsFragment : Fragment() {
         }
 
         // Execute the query and handle the results
+        menuItemsQuery.get().addOnSuccessListener { documents ->
+            val menuItemsLayout = binding.menuItemsLayout
+            menuItemsLayout.removeAllViews()  // Clear previous buttons if any
+            for (document in documents) {
+                val button = Button(context).apply {
+                    // For debugging, use a hardcoded string
+                    text = document.id
+                    textSize = 16f // Ensure the text size is reasonable
+                    setTextColor(ContextCompat.getColor(context, android.R.color.black)) // Set the text color explicitly
+                    backgroundTintList = ContextCompat.getColorStateList(context, R.color.yellow) // Set the background tint to yellow
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).also { it.topMargin = 8 }
+                    setOnClickListener {
+                        navigateToDishDetails(document.id)
+
+                    }
+                }
+                menuItemsLayout.addView(button)
+            }
+        }.addOnFailureListener {
+            // Handle any errors here
+        }
+    }
+        /*
         menuItemsQuery.get().addOnSuccessListener { documents ->
             val menuItemsBuilder = StringBuilder()
             for (document in documents) {
@@ -239,11 +269,17 @@ class MenuItemsFragment : Fragment() {
             binding.textViewMenuItemsTitle.text = menuItemsBuilder.toString()
         }.addOnFailureListener {
             // Handle any errors here
+        }*/
+
+        private fun navigateToDishDetails(dishId: String) {
+            val action = MenuItemsFragmentDirections.actionMenuItemsFragmentToDishDetailsFragment(dishId)
+            if (isAdded) {
+                findNavController().navigate(action)
+            }
         }
 
-        fun onDestroyView() {
+        override fun onDestroyView() {
             super.onDestroyView()
             _binding = null
         }
     }
-}
