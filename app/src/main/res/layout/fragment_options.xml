@@ -142,10 +142,10 @@
                 android:background="#D3D3D3"/>
 
             <TextView
-                android:id="@+id/buttonCalendar"
+                android:id="@+id/buttonScheduleMeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Calendar"
+                android:text="     Schedule Meal"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
