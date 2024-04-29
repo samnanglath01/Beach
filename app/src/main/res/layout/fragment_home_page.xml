@@ -6,6 +6,7 @@
     android:id="@+id/frame_container"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomePageFragment">
+
     <!-- FrameLayout is the root container for the fragment's UI.
          It is set to match the parent in both width and height,
          filling the entire screen space allocated for the fragment.
