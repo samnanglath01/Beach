@@ -1,5 +1,6 @@
 package com.example.beachtest
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMenuItemsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import java.time.LocalDate
@@ -27,6 +29,7 @@ class MenuItemsFragment : Fragment() {
     private val binding get() = _binding!!
     private val firestore = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    private var guestId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +37,13 @@ class MenuItemsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMenuItemsBinding.inflate(inflater, container, false)
+        guestId = loadGuestId()
         return binding.root
+    }
+
+    private fun loadGuestId(): String? {
+        val prefs = activity?.getSharedPreferences("GuestPrefs", Context.MODE_PRIVATE)
+        return prefs?.getString("guestId", null)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -45,31 +54,38 @@ class MenuItemsFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getUserSelectionsAndDisplayMenu() {
-        val userUid = auth.currentUser?.uid ?: return // Get current user UID
+        val userUid = auth.currentUser?.uid
 
         lifecycleScope.launch {
             try {
+                val docRef = if (userUid != null) {
+                    firestore.collection("Users").document(userUid)
+                } else if (guestId != null) {
+                    firestore.collection("Guests").document(guestId!!)
+                } else {
+                    Toast.makeText(context, "No user or guest data available.", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }
+
                 // Fetch user's selections, allergies, and dietary preferences from Firestore
-                val userDoc = firestore.collection("Users").document(userUid).get().await()
+                val userDoc = docRef.get().await()
                 val diningHall = userDoc.getString("diningHall")
                 val mealTime = userDoc.getString("mealTime")
-                val dietaryPreference = userDoc.getString("dietaryPreference")
-                val allergies = userDoc.getData()?.filterKeys { it.startsWith("contains") }
-                    ?.filterValues { it == true }
 
-                // Continue only if the dining hall and meal time have been set by the user
                 if (diningHall != null && mealTime != null) {
-                    displayMenuItems(
-                        diningHall,
-                        mealTime,
-                        dietaryPreference,
-                        allergies?.keys ?: emptySet()
-                    )
-                } else {
-                    // Handle the case where dining hall or meal time is not set
+                    if (userUid != null) {
+                        // Fetch additional data for authenticated users
+                        val dietaryPreference = userDoc.getString("dietaryPreference")
+                        val allergies = userDoc.getData()?.filterKeys { it.startsWith("contains") }
+                            ?.filterValues { it == true }?.keys ?: emptySet()
+                        displayMenuItems(diningHall, mealTime, dietaryPreference, allergies)
+                    } else {
+                        // Display for guests without dietary preferences and allergies
+                        displayMenuItems(diningHall, mealTime, null, emptySet())
+                    }
                 }
             } catch (e: Exception) {
-                // Handle exception
+                Toast.makeText(context, "Error retrieving data: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -136,12 +152,19 @@ class MenuItemsFragment : Fragment() {
             Toast.makeText(context, "Out of menu cycle range", Toast.LENGTH_SHORT).show()
         }
 
+        if (dietaryPreference != null) {
+            menuItemsQuery = applyDietaryFilters(menuItemsQuery, dietaryPreference)
+        }
+
         // Exclude menu items containing allergens
-        allergies.forEach { allergy ->
-            menuItemsQuery = menuItemsQuery.whereEqualTo(allergy, false)
+        if (allergies.isNotEmpty()) {
+            allergies.forEach { allergy ->
+                menuItemsQuery = menuItemsQuery.whereEqualTo(allergy, false)
+            }
         }
 
         // Filter based on dietary preferences
+        /*
         dietaryPreference?.let { preference ->
             when {
                 preference.contains("Pescatarian", ignoreCase = true) -> menuItemsQuery =
@@ -156,13 +179,13 @@ class MenuItemsFragment : Fragment() {
                 preference.contains("Vegan", ignoreCase = true) -> menuItemsQuery =
                     menuItemsQuery.whereEqualTo("isVegan", true)
             }
-        }
+        }*/
 
         // Execute the query and handle the results
         menuItemsQuery.get().addOnSuccessListener { documents ->
             val menuItemsLayout = binding.menuItemsLayout
             menuItemsLayout.removeAllViews()  // Clear previous buttons if any
-            for (document in documents) {
+            documents.forEach { document ->
                 val button = Button(context).apply {
                     // For debugging, use a hardcoded string
                     text = document.id
@@ -175,111 +198,41 @@ class MenuItemsFragment : Fragment() {
                     ).also { it.topMargin = 8 }
                     setOnClickListener {
                         navigateToDishDetails(document.id)
-
                     }
                 }
                 menuItemsLayout.addView(button)
             }
         }.addOnFailureListener {
             // Handle any errors here
+            Toast.makeText(context, "Failed to load menu items", Toast.LENGTH_SHORT).show()
         }
     }
-        /*
-        menuItemsQuery.get().addOnSuccessListener { documents ->
-            val menuItemsBuilder = StringBuilder()
-            for (document in documents) {
-                menuItemsBuilder.append(document.id).append("\n")
-            }
-
-            // Append breakfast items if mealTime is Breakfast
-            if (mealTime.equals("Breakfast", ignoreCase = true)) {
-                val breakfastItems = "Breakfast always includes:\n" +
-                        "Scrambled Eggs\n" +
-                        "Oatmeal\n" +
-                        "Waffle Bar\n" +
-                        "Assorted Fruit Juice\n" +
-                        "Milk and Non-Dairy Milk\n" +
-                        "Assorted Cereals\n" +
-                        "Fresh Fruit\n" +
-                        "Deli Bar\n" +
-                        "Assorted Sparkling Water\n" +
-                        "Assorted Flavored Waters\n" +
-                        "Assorted Soft Drinks\n" +
-                        "Assorted Breakfast Pastries\n"
-                menuItemsBuilder.append("\n").append(breakfastItems)
-            }
-
-            // Append brunch items if mealTime is Brunch
-            if (mealTime.equals("Brunch", ignoreCase = true)) {
-                val brunchItems = "Brunch always includes:\n" +
-                        "Scrambled Eggs\n" +
-                        "Oatmeal\n" +
-                        "Waffle Bar\n" +
-                        "Assorted Fruit Juice\n" +
-                        "Milk and Non-Dairy Milk\n" +
-                        "Assorted Cereals\n" +
-                        "Fresh Fruit\n" +
-                        "Deli Bar\n" +
-                        "Assorted Sparkling Water\n" +
-                        "Assorted Flavored Waters\n" +
-                        "Assorted Soft Drinks\n" +
-                        "Assorted Breakfast Pastries\n" +
-                        "Assorted Desserts\n" +
-                        "Novelty Ice Creams"
-                menuItemsBuilder.append("\n").append(brunchItems)
-            }
-
-            // Append lunch items if mealTime is Lunch
-            if (mealTime.equals("Lunch", ignoreCase = true)) {
-                val lunchItems = "Lunch always includes:\n" +
-                        "Assorted Fruit Juice\n" +
-                        "Milk and Non-Dairy Milk\n" +
-                        "Assorted Cereals\n" +
-                        "Fresh Fruit\n" +
-                        "Chef's Choice\n" +
-                        "Salad Bar\n" +
-                        "Deli Bar\n" +
-                        "Assorted Sparkling Water\n" +
-                        "Assorted Flavored Waters\n" +
-                        "Assorted Soft Drinks\n" +
-                        "Assorted Desserts\n" +
-                        "Novelty Ice Creams"
-                menuItemsBuilder.append("\n").append(lunchItems)
-            }
-
-            // Append dinner items if mealTime is Dinner
-            else if (mealTime.equals("Dinner", ignoreCase = true)) {
-                val dinnerItems = "Dinner always includes:\n" +
-                        "Assorted Fruit Juice\n" +
-                        "Milk and Non-Dairy Milk\n" +
-                        "Assorted Cereals\n" +
-                        "Fresh Fruit\n" +
-                        "Salad Bar\n" +
-                        "Deli Bar\n" +
-                        "Chef's Choice\n" +
-                        "Assorted Sparkling Water\n" +
-                        "Assorted Flavored Waters\n" +
-                        "Assorted Soft Drinks\n" +
-                        "Assorted Desserts\n" +
-                        "Novelty Ice Creams"
-                menuItemsBuilder.append("\n").append(dinnerItems)
-            }
-
-            // Display the menu items in the TextView
-            binding.textViewMenuItemsTitle.text = menuItemsBuilder.toString()
-        }.addOnFailureListener {
-            // Handle any errors here
-        }*/
-
-        private fun navigateToDishDetails(dishId: String) {
-            val action = MenuItemsFragmentDirections.actionMenuItemsFragmentToDishDetailsFragment(dishId)
-            if (isAdded) {
-                findNavController().navigate(action)
-            }
+    private fun applyDietaryFilters(query: Query, dietaryPreference: String): Query {
+        var modifiedQuery = query
+        if (dietaryPreference.contains("Pescatarian", ignoreCase = true)) {
+            modifiedQuery = modifiedQuery.whereEqualTo("isPescatarian", true)
         }
+        if (dietaryPreference.contains("Halal", ignoreCase = true)) {
+            modifiedQuery = modifiedQuery.whereEqualTo("isHalal", true)
+        }
+        if (dietaryPreference.contains("Vegetarian", ignoreCase = true)) {
+            modifiedQuery = modifiedQuery.whereEqualTo("isVegetarian", true)
+        }
+        if (dietaryPreference.contains("Vegan", ignoreCase = true)) {
+            modifiedQuery = modifiedQuery.whereEqualTo("isVegan", true)
+        }
+        return modifiedQuery
+    }
 
-        override fun onDestroyView() {
-            super.onDestroyView()
-            _binding = null
+    private fun navigateToDishDetails(dishId: String) {
+        val action = MenuItemsFragmentDirections.actionMenuItemsFragmentToDishDetailsFragment(dishId)
+        if (isAdded) {
+            findNavController().navigate(action)
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}

@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_signInFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_guestNavigationFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Fragment for email-based password recovery. -->
@@ -130,6 +133,9 @@
             android:id="@+id/action_homePageFragment_to_hallHoursFragment"
             app:destination="@id/hallHoursFragment" />
         <action
+            android:id="@+id/action_homePageFragment_to_mapFragment"
+            app:destination="@id/mapFragment"/>
+        <action
             android:id="@+id/action_homePageFragment_to_virtualTourFragment"
             app:destination="@id/virtualTourFragment" />
         <action
@@ -141,6 +147,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_foodTrucksFragment"
             app:destination="@id/foodTrucksFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_scheduleMealsFragment"
+            app:destination="@id/scheduleMealsFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -212,10 +221,9 @@
         <action
             android:id="@+id/actionFoodTrucksFragmentToFarmersMarketVendorDetailsFragment"
             app:destination="@id/farmersMarketVendorDetailsFragment" />
-        <!-- Define action to navigate back to home fragment -->
         <action
-            android:id="@+id/action_foodTrucksFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
+            android:id="@+id/action_foodTrucksFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Food truck vendor details fragment -->
@@ -310,9 +318,17 @@
         android:name="com.example.beachtest.PricesFragment"
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_prices">
-    <action
-        android:id="@+id/action_pricesFragment_to_optionsFragment"
-        app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_pricesFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+
+    <!-- Food Around Campus -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.beachtest.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map">
     </fragment>
 
     <!-- Virtual tour fragment -->
@@ -370,10 +386,9 @@
         android:name="com.example.beachtest.ScheduleMealsFragment"
         android:label="fragment_schedule_meals"
         tools:layout="@layout/fragment_schedule_meals">
-        <!-- Action to navigate back to the OptionsFragment -->
         <action
-            android:id="@+id/action_scheduleMealsFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
+            android:id="@+id/action_scheduleMealsFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
 </navigation>
