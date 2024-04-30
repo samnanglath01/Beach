@@ -145,6 +145,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_foodTrucksFragment"
             app:destination="@id/foodTrucksFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_setMealPlan2"
+            app:destination="@id/setMealPlan" />
 
     </fragment>
 
@@ -299,7 +302,14 @@
         android:id="@+id/setMealPlan"
         android:name="com.example.beachtest.SetMealPlan"
         android:label="fragment_set_meal_plan"
-        tools:layout="@layout/fragment_set_meal_plan" />
+        tools:layout="@layout/fragment_set_meal_plan" >
+        <action
+            android:id="@+id/action_setMealPlan_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_setMealPlan_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
 
 
     <!-- Prices screen fragment. -->

@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="225dp"
             android:layout_marginBottom="6dp"
-            android:src="@drawable/parkside" />
+            android:src="@drawable/hillside" />
 
         <Button
             android:id="@+id/lunchbutton"
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="225dp"
             android:layout_marginBottom="6dp"
-            android:src="@drawable/parkside" />
+            android:src="@drawable/beachside" />
 
         <Button
             android:id="@+id/dinnerbutton"
@@ -99,6 +99,20 @@
             android:layout_marginStart="45dp"
             android:layout_marginBottom="30dp"
             android:backgroundTint="@color/yellow"/>
+        <Button
+            android:id="@+id/backHomeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="12dp"
+            android:text="Back to Options"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

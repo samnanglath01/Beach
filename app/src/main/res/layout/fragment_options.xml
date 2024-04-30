@@ -19,6 +19,14 @@
                 android:layout_width="410dp"
                 android:layout_height="240dp"
                 android:src="@drawable/img" />
+            <Switch
+                android:id="@+id/switchMealUpdates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Update Notifications"
+                android:textStyle="bold"
+                android:padding="18dp"
+                android:gravity="center_vertical|start"/>
 
             <TextView
                 android:id="@+id/buttonProfile"
