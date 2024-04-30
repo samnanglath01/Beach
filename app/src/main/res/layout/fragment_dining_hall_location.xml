@@ -1,0 +1,114 @@
+<!-- FrameLayout as the root container for flexibility in stacking child views -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiningHallLocationFragment">
+
+    <!-- LinearLayout for vertical stacking of views -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ImageView to display a banner image at the top of the screen -->
+        <ImageView
+            android:id="@+id/topbannerProfile"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:src="@drawable/topbanner"
+            android:contentDescription="@string/top_banner_description" />
+
+        <!-- TextView that acts as a button for locations. It has drawable padding for icon spacing -->
+        <TextView
+            android:id="@+id/buttonLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/locationicon"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="18dp"
+            android:text="@string/dining_halls_location"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:drawablePadding="8dp" />
+
+        <!-- RelativeLayout container for the MapView, to allow more complex layouts if needed -->
+        <RelativeLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="357dp">
+
+            <!-- MapView from Google Maps for displaying map -->
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/user_list_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/map_description" />
+        </RelativeLayout>
+
+        <!-- Horizontal LinearLayout for logos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <!-- ImageView for a logo, clickable and focusable for interaction -->
+            <ImageView
+                android:id="@+id/hillsideLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/hillsidelogo"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/hillside_logo_description" />
+
+            <!-- Repeat of the ImageView setup for another logo -->
+            <ImageView
+                android:id="@+id/parksideLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/parksidelogo"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/parkside_logo_description" />
+
+            <!-- Repeat of the ImageView setup for another logo -->
+            <ImageView
+                android:id="@+id/beachsideLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/beachsidelogo"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/beachside_logo_description" />
+        </LinearLayout>
+
+        <!-- TextView used as a button to go back to the home screen, styled with drawable padding -->
+        <TextView
+            android:id="@+id/backhomebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="18dp"
+            android:text="@string/back_to_home"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/arrowbackicon"
+            android:gravity="center"
+            android:drawablePadding="8dp" />
+    </LinearLayout>
+</FrameLayout>

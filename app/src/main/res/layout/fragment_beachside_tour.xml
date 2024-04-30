@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".BeachsideTourFragment">
-    <!-- Luis Flores -->
+    <!-- Pictures/Descriptions by Luis Flores and Layout/Descriptions by Sebastian Tadeo-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,7 +35,38 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:layout_marginBottom="10dp"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to the Beachside Dining Hall Tour!\n"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:id="@+id/videoView"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp">
+            </VideoView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Located off campus on Pacific Coast Highway and Clark Ave, the Beachside Dining Hall is a refreshing and convenient place for students seeking a freshly made and delicious meal from the various buffets and salad bars offered here.\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
         </LinearLayout>
+
     </ScrollView>
 
 </FrameLayout>

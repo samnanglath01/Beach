@@ -91,6 +91,7 @@ class MealTimeFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Toast.makeText(context, "Failed to save meal time: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
+            // Luis Flores, guest mode
         } else if (guestId != null) {
             // Save for guest using the same ID
             firestore.collection("Guests").document(guestId!!)

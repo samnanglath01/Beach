@@ -12,6 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+// Luis Flores, food around campus
 class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -42,14 +43,26 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun setupFoodLocations() {
+        view?.findViewById<View>(R.id.btnNugget)?.setOnClickListener {
+            addMarkerAt(33.7803, -118.1141, "The Nugget")
+        }
+        view?.findViewById<View>(R.id.btnOutpost)?.setOnClickListener {
+            addMarkerAt(33.7823, -118.1105, "Outpost Grill")
+        }
+        view?.findViewById<View>(R.id.btnCaffeineLab)?.setOnClickListener {
+            addMarkerAt(33.7767, -118.1140, "Caffeine Lab")
+        }
         view?.findViewById<View>(R.id.btnSubway)?.setOnClickListener {
-            addMarkerAt(33.7825, -118.1154, "Subway")
+            addMarkerAt(33.7810, -118.1138, "Subway")
         }
         view?.findViewById<View>(R.id.btnElPolloLoco)?.setOnClickListener {
-            addMarkerAt(33.7830, -118.1120, "El Pollo Loco")
+            addMarkerAt(33.7811, -118.1138, "El Pollo Loco")
         }
-        view?.findViewById<View>(R.id.btnCoffeeBeach)?.setOnClickListener {
-            addMarkerAt(33.7832, -118.1122, "Coffee Beach")
+        view?.findViewById<View>(R.id.btnCarlsJr)?.setOnClickListener {
+            addMarkerAt(33.7811, -118.1137, "Carl's Jr.")
+        }
+        view?.findViewById<View>(R.id.btnCoffeeBean)?.setOnClickListener {
+            addMarkerAt(33.7810, -118.1134, "The Coffee Bean")
         }
     }
 

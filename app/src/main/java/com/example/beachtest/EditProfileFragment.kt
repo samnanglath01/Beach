@@ -1,16 +1,13 @@
 package com.example.beachtest
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.beachtest.Users.ui.UserManager
-import com.example.beachtest.databinding.FragmentEditDietaryPreferenceBinding
 import com.example.beachtest.databinding.FragmentEditProfileBinding
 
 class EditProfileFragment : Fragment() {
@@ -36,7 +33,7 @@ class EditProfileFragment : Fragment() {
         // Set up an onClickListener for the 'backToProfileButton'. When clicked, it navigates the user back to the profile fragment.
 
         binding.backToProfileButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_editDietaryPreferenceFragment_to_profileFragment)
+            it.findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
         }
 
         // Set up an onClickListener for the 'SaveeditButton'. This initiates the process to save the updated user profile information.

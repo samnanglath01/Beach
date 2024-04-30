@@ -27,10 +27,35 @@
                 android:layout_height="300dp" />
 
             <Button
+                android:id="@+id/btnNugget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The Nugget"
+                android:backgroundTint="@color/yellow"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnOutpost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Outpost Grill"
+                android:backgroundTint="@color/yellow"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnCaffeineLab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Caffeine Lab"
+                android:backgroundTint="@color/yellow"
+                android:layout_margin="8dp"/>
+
+            <Button
                 android:id="@+id/btnSubway"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Subway"
+                android:backgroundTint="@color/yellow"
                 android:layout_margin="8dp"/>
 
             <Button
@@ -38,13 +63,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="El Pollo Loco"
+                android:backgroundTint="@color/yellow"
                 android:layout_margin="8dp"/>
 
             <Button
-                android:id="@+id/btnCoffeeBeach"
+                android:id="@+id/btnCarlsJr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee Beach"
+                android:text="Carls Jr."
+                android:backgroundTint="@color/yellow"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnCoffeeBean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coffee Bean"
+                android:backgroundTint="@color/yellow"
                 android:layout_margin="8dp"/>
 
         </LinearLayout>

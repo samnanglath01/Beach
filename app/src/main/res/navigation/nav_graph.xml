@@ -127,6 +127,12 @@
             android:id="@+id/action_homePageFragment_to_photographyTipFragment"
             app:destination="@id/photographyTipFragment" />
         <action
+            android:id="@+id/action_homePageFragment_to_setMealPlan"
+            app:destination="@id/setMealPlan" />
+        <action
+            android:id="@+id/action_homePageFragment_to_diningHallLocationFragment"
+            app:destination="@id/diningHallLocationFragment" />
+        <action
             android:id="@+id/action_homePageFragment_to_pricesFragment"
             app:destination="@id/pricesFragment" />
         <action
@@ -312,6 +318,16 @@
             app:destination="@id/profileFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/diningHallLocationFragment"
+        android:name="com.example.beachtest.DiningHallLocationFragment"
+        android:label="fragment_dining_hall_location"
+        tools:layout="@layout/fragment_dining_hall_location" >
+        <action
+            android:id="@+id/action_diningHallLocationFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+
     <!-- Prices screen fragment. -->
     <fragment
         android:id="@+id/pricesFragment"
@@ -324,6 +340,7 @@
     </fragment>
 
     <!-- Food Around Campus -->
+    <!-- Luis Flores -->
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.beachtest.MapFragment"
@@ -388,6 +405,19 @@
         tools:layout="@layout/fragment_schedule_meals">
         <action
             android:id="@+id/action_scheduleMealsFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/setMealPlan"
+        android:name="com.example.beachtest.SetMealPlan"
+        android:label="fragment_set_meal_plan"
+        tools:layout="@layout/fragment_set_meal_plan" >
+        <action
+            android:id="@+id/action_setMealPlan_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_setMealPlan_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
 
