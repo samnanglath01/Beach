@@ -1,15 +1,16 @@
 package com.example.beachtest
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 //Samnang Lath & Marlen Dizon
 //code for sign in
 // using viewbinding
@@ -19,6 +20,7 @@ class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
     // Declare a variable for Firebase Authentication to handle user authentication.
     private lateinit var auth: FirebaseAuth
+    private var firestore = FirebaseFirestore.getInstance()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +29,7 @@ class SignInFragment : Fragment() {
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         //  FirebaseAuth instance to work with Firebase Authentication.
         auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
         binding.loginButton.setOnClickListener {
             signInUser()
         }

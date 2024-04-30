@@ -148,32 +148,16 @@
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
-            <TextView
-                android:id="@+id/buttonLanguage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="     Language"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/languageicon"
-                android:drawableEnd="@drawable/arrow_forward"
-                android:gravity="center_vertical"
-                android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true" />
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
             <TextView
-                android:id="@+id/buttonCalendar"
+                android:id="@+id/buttonScheduleMeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Calendar"
+                android:text="     Schedule Meal"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -212,34 +196,14 @@
                 android:background="#D3D3D3"/>
 
             <TextView
-                android:id="@+id/buttonResources"
+                android:id="@+id/buttonFoodSpots"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Resources"
-                android:textStyle="bold"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/resourceicon"
-                android:drawableEnd="@drawable/arrow_forward"
-                android:gravity="center_vertical"
-                android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3"/>
-
-            <TextView
-                android:id="@+id/buttonEvent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="     Events"
-                android:textStyle="bold"
+                android:text="     Food Around Campus"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/eventsicon"
+                android:drawableStart="@drawable/locationicon"
                 android:drawableEnd="@drawable/arrow_forward"
                 android:gravity="center_vertical"
                 android:padding="18dp"

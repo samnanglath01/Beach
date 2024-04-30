@@ -3,12 +3,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HillsideTourFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Pictures/Descriptions by Luis Flores and Layout/Descriptions by Sebastian Tadeo-->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/topBannerProfile"
+                android:layout_width="410dp"
+                android:layout_height="110dp"
+                android:src="@drawable/topbanner"/>
+
+            <TextView
+                android:id="@+id/buttonVirtualTour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     Hillside Tour"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/touricon"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to the Hillside Dining Hall Tour!\n"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Located on Earl Warren Drive and Beach Drive, the Hillside Dining Hall is the culinary cornerstone for students looking for a meal that feels like home. Boasting a cozy interior and an inviting atmosphere, it's a place where you can unwind, study, and socialize over a variety of freshly-prepared dishes.\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="As you step into this panorama of the virtual tour, you’ll notice the hall’s warm lighting and comfortable seating that create an ideal setting for both communal dining and intimate gatherings.\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:id="@+id/hillsidePanorama"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/hillsidepanorama" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nHere you can check out our wonderful buffet of savory dishes cooked and served by the hardworking chefs"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:src="@drawable/hillsidetour1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nBelow, explore the dining area's thoughtful design, with tables for every need. Cozy corners provide solitude, while communal tables encourage shared experiences. Each spot offers its unique ambiance, catering to diverse preferences and enhancing the dining experience."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nYou can also check out and grab your meal from the breakfast/salad bar here, as well as a fresh cup of coffee right next to the bar."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/hillsidetour2"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="342dp"
+                android:src="@drawable/hillsidetour3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nHere you will also find the door on the left which will take you to the patio where you can dine outdoors with your friends, family and acquaintances. It will be located to your when you enter the dining hall, to the left of the buffet."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="548dp"
+                android:src="@drawable/hillsidetour4"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="274dp"
+                android:src="@drawable/hillsidetour5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nOn the right side of the Hillside dining hall, you will find more tables and seating locations for dining and studying, as well as a salad bar for anyone who is vegan/vegetarian/pescatarian. "
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="236dp"
+                android:src="@drawable/hillsidetour6"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="548dp"
+                android:src="@drawable/hillsidetour7"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="\nHere is where you will drop off all plates, cups and eating utensils after a meal, where the dishwashers will take care in picking up after and wash your plates, maintaining proper wash and sanitation."
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="548dp"
+                android:src="@drawable/hillsidetour8"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

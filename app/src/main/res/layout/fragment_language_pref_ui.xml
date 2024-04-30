@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LanguagePrefUiFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/topbannerProfile"
+                android:layout_width="410dp"
+                android:layout_height="110dp"
+                android:contentDescription="@string/topBanner"
+                android:src="@drawable/topbanner" />
+
+            <TextView
+                android:id="@+id/buttonLanguagePref"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Language Preference Selection"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:drawableStart="@drawable/languageicon"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/currentLanguageTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/lang_pref_prompt"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/buttonChange2Spanish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     Spanish"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawableStart="@drawable/languageicon"
+                android:drawableEnd="@drawable/arrow_forward"
+                android:gravity="center_vertical"
+                android:padding="18dp"
+                android:background="@drawable/button_yellow_ripple"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

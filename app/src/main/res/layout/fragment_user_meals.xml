@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserMealsFragment">
+
+    <!-- Banner Image at the top -->
+    <ImageView
+        android:id="@+id/bannerImageView"
+        android:layout_width="410dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/topbanner" />
+
+    <!-- Text View for a descriptive header -->
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User's Scheduled Meals"
+        android:drawableStart="@drawable/timeicon"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <!-- Text View for a brief description or instructions -->
+    <TextView
+        android:id="@+id/instructionsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here are your upcoming scheduled meals. You can view or remove them as needed."
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
+
+    <!-- RecyclerView for listing the meals -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mealsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/meal_list_item"
+        android:background="@drawable/rounded_border"/>
+
+    <TextView
+        android:id="@+id/emptyStateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No meals scheduled yet."
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:background="@drawable/rounded_border" />
+
+    <Button
+        android:id="@+id/backHomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Options"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:backgroundTint="@color/yellow"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        android:drawablePadding="8dp" />
+
+</LinearLayout>
