@@ -20,6 +20,15 @@
                 android:layout_height="240dp"
                 android:src="@drawable/img" />
 
+            <Switch
+                android:id="@+id/switchMealUpdates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Update Notifications"
+                android:textStyle="bold"
+                android:padding="18dp"
+                android:gravity="center_vertical|start"/>
+
             <TextView
                 android:id="@+id/buttonProfile"
                 android:layout_width="match_parent"
@@ -99,6 +108,11 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"/>
+
             <TextView
                 android:id="@+id/buttonLocation"
                 android:layout_width="match_parent"
@@ -110,15 +124,11 @@
                 android:focusable="true"
                 android:gravity="center_vertical"
                 android:padding="18dp"
-                android:text="     Location"
+                android:text="     Dining Halls Location"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3"/>
 
             <View
                 android:layout_width="match_parent"
@@ -126,14 +136,14 @@
                 android:background="#D3D3D3"/>
 
             <TextView
-                android:id="@+id/buttonScheduleMeal"
+                android:id="@+id/buttonSetPlan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Schedule Meal"
+                android:text="     Meal Plan"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/calendaricon"
+                android:drawableStart="@drawable/foodicon"
                 android:drawableEnd="@drawable/arrow_forward"
                 android:gravity="center_vertical"
                 android:padding="18dp"

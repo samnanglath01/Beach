@@ -26,22 +26,22 @@ This file defines the layout of a screen in an Android app that allows users to 
                 android:id="@+id/topbannerProfile"
                 android:layout_width="410dp"
                 android:layout_height="110dp"
-                android:src="@drawable/topbanner"/>
+                android:src="@drawable/topbanner" />
 
             <!-- A TextView displays text. Here, it's used as a title or button with bold text indicating "Schedule Meal". -->
             <TextView
                 android:id="@+id/buttonScheduleMeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="  Schedule Meal"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="25sp"
+                android:layout_marginBottom="10dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:drawableStart="@drawable/timeicon"
                 android:gravity="center_vertical"
                 android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_marginBottom="10dp"/>
+                android:text="  Schedule Meal"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/virtualTourInfo"
@@ -57,36 +57,36 @@ This file defines the layout of a screen in an Android app that allows users to 
                 android:id="@+id/mealDescriptionPrompt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
                 android:text="Please enter the meal description or any special notes below: "
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="25dp"/>
+                android:textSize="18sp" />
 
             <!-- An EditText allows users to enter and edit text. Here, it's used for entering meal descriptions. -->
             <EditText
                 android:id="@+id/mealDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="top"
                 android:hint="Type here.."
                 android:inputType="textMultiLine"
-                android:gravity="top"
-                android:minHeight="100dp"
-                android:layout_margin="16dp"/>
+                android:minHeight="100dp" />
 
 
             <TextView
                 android:id="@+id/MealTypeSpinnerPrompt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
                 android:text="Select the meal type below:"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="25dp"/>
+                android:textSize="18sp" />
 
             <!-- A Spinner provides a dropdown menu to select from various options, in this case, meal types. -->
             <Spinner
@@ -102,76 +102,75 @@ This file defines the layout of a screen in an Android app that allows users to 
                 android:id="@+id/datePickerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pick Date"
-                android:backgroundTint="@color/yellow"
                 android:layout_margin="16dp"
-                />
+                android:backgroundTint="@color/yellow"
+                android:text="Pick Date" />
 
             <!-- TextView for displaying the selected date -->
             <TextView
                 android:id="@+id/selectedDateText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No date selected"
-                android:gravity="center_horizontal"
-                android:textSize="14sp"
                 android:layout_margin="16dp"
-                android:textColor="@color/black"/>
+                android:gravity="center_horizontal"
+                android:text="No date selected"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <!-- A button is used here to trigger actions like opening a time picker dialog. -->
             <Button
                 android:id="@+id/timePickerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pick Time"
+                android:layout_margin="16dp"
                 android:backgroundTint="@color/yellow"
-                android:layout_margin="16dp"/>
+                android:text="Pick Time" />
 
             <!-- TextView for displaying the selected time -->
             <TextView
                 android:id="@+id/selectedTimeText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No time selected"
-                android:gravity="center_horizontal"
-                android:textSize="14sp"
                 android:layout_margin="16dp"
-                android:textColor="@color/black"/>
+                android:gravity="center_horizontal"
+                android:text="No time selected"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <!-- A Switch allows users to toggle between two states: on and off. Here, it's used to enable or disable notifications. -->
             <Switch
                 android:id="@+id/notificationToggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:text="Enable Notification"
                 android:thumbTint="@color/switch_thumb_selector"
-                android:trackTint="@color/colorPrimary"
-                android:layout_margin="16dp"/>
+                android:trackTint="@color/colorPrimary" />
 
             <!-- More buttons for scheduling a meal and navigating back to a previous screen. -->
             <Button
                 android:id="@+id/scheduleMealButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Schedule Meal"
+                android:layout_margin="16dp"
                 android:backgroundTint="@color/yellow"
-                android:textColor="@android:color/white"
-                android:layout_margin="16dp"/>
+                android:text="Schedule Meal"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/backHomeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
                 android:text="Back to Options"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:backgroundTint="@color/yellow"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:gravity="center_vertical"
-                android:drawablePadding="8dp" />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

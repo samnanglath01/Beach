@@ -1,5 +1,6 @@
 package com.example.beachtest
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -7,7 +8,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,9 +16,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.example.beachtest.Users.ui.UserManager
-import android.Manifest
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.beachtest.Users.ui.UserManager
 import com.example.beachtest.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -43,6 +43,10 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+
+        binding.backhomebutton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
+        }
         binding.editButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
@@ -51,10 +55,22 @@ class ProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_profileFragment_to_editDietaryPreferenceFragment)
         }
 
+        //samnang lath
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val navController = it.findNavController()
+
+            // Assuming signInFragment is accessible directly without popping anything
+            navController.navigate(R.id.signInFragment)
+
+            // Clear all back stack after navigation
+            navController.popBackStack(R.id.splashFragment, false) // Replace 'startDestination' with the ID of the root or start destination in your navigation graph
+        }
+
 
         return binding.root
     }
-//Samnang Lath
+    //Samnang Lath
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -92,7 +108,7 @@ class ProfileFragment : Fragment() {
                 if (task.isSuccessful) {
                     Toast.makeText(requireActivity(), "Account deleted.", Toast.LENGTH_SHORT).show()
 
-                        it.findNavController().navigate(R.id.action_profileFragment_to_signInFragment)
+                    it.findNavController().navigate(R.id.action_profileFragment_to_signInFragment)
 
                     // Handle the post-account-deletion logic here, such as navigating to a sign-in activity.
                 } else {

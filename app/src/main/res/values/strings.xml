@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BeachTest</string>
+    <string name="google_maps_api_key">AIzaSyD1TmIEsc-Lpj_EwUt2JKLKDp_YJmzz5PI</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dining_hall_name">Dining Hall Name</string>
     <string name="breakfast">Breakfast</string>
@@ -66,6 +67,10 @@
     <string name="back_to_home_page">Back to Home Page</string>
     <string name="back_to_menu_items">Back to Menu Items</string>
     <string name="date_format">%1$d/%2$d/%3$d</string>
+    <string name="hillside_logo_description">Hillside Dining Hall logo</string>
+    <string name="parkside_logo_description">Parkside Dining Hall logo</string>
+    <string name="beachside_logo_description">Beachside Dining Hall logo</string>
+    <string name="back_to_home">Back to Home Page</string>
     <string-array name="meal_types">
         <item>Breakfast</item>
         <item>Lunch</item>

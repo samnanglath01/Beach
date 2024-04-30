@@ -82,6 +82,7 @@ class HomeFragment : Fragment() {
             // Save for logged in user
             firestore.collection("Users").document(userUid)
                 .update("diningHall", diningHall)
+            // Luis Flores, guest mode
         } else {
             if (guestId == null) {
                 guestId = UUID.randomUUID().toString()

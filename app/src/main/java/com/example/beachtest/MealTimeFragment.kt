@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMealTimeBinding
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.DayOfWeek
@@ -39,6 +40,52 @@ class MealTimeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMealTimeButtons()
+        setupReviewSubmission()
+    }
+
+
+    private fun setupReviewSubmission() {
+        binding.submitReviewButton.setOnClickListener {
+            val rating = binding.ratingBar.rating
+            val reviewText = binding.reviewEditText.text.toString()
+            submitReview(rating, reviewText)
+        }
+    }
+
+    private fun submitReview(rating: Float, reviewText: String) {
+        val userUid = auth.currentUser?.uid
+
+        if (userUid != null && reviewText.isNotBlank()) {
+            firestore.collection("Users").document(userUid).get()
+                .addOnSuccessListener { document ->
+                    val diningHall = document.getString("diningHall") ?: "Unknown Dining Hall"
+                    val userName = document.getString("username") ?: "No user logged in"
+                    val reviewData = hashMapOf(
+                        "userId" to userUid,
+                        "rating" to rating,
+                        "review" to reviewText,
+                        "timestamp" to Timestamp.now(),
+                        "diningHall" to diningHall,
+                        "username" to userName
+                    )
+
+                    firestore.collection("reviews")
+                        .add(reviewData)
+                        .addOnSuccessListener {
+                            Toast.makeText(context, "Review submitted successfully!", Toast.LENGTH_SHORT).show()
+                            binding.reviewEditText.text.clear()
+                            binding.ratingBar.rating = 0f
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(context, "Failed to submit review: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(context, "Failed to fetch dining hall information: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(context, "Review text cannot be empty.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -91,6 +138,7 @@ class MealTimeFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Toast.makeText(context, "Failed to save meal time: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
+            // Luis Flores, guest mode
         } else if (guestId != null) {
             // Save for guest using the same ID
             firestore.collection("Guests").document(guestId!!)
