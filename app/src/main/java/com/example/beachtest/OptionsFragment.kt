@@ -91,10 +91,15 @@ class OptionsFragment : Fragment() {
         }
 
         binding.buttonSetPlan.setOnClickListener {
-            Toast.makeText(context, "Schedule Meal clicked", Toast.LENGTH_SHORT).show()
-            it.findNavController().navigate(R.id.action_homePageFragment_to_setMealPlan)
+            if (auth.currentUser == null) {
+                showSignInDialog()
+            } else {
+                Toast.makeText(context, "Schedule Meal clicked", Toast.LENGTH_SHORT).show()
+                it.findNavController().navigate(R.id.action_homePageFragment_to_setMealPlan)
+            }
+            setupSwitchListener()
         }
-        setupSwitchListener()
+
         return binding.root
     }
     private fun setupSwitchListener() {
