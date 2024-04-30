@@ -63,7 +63,7 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
-
+    <!--Samnang Lath -->
     <!-- Fragment for setting dietary preferences. -->
     <fragment
         android:id="@+id/dietaryPreferenceFragment"
@@ -151,9 +151,7 @@
         <action
             android:id="@+id/action_homePageFragment_to_foodTrucksFragment"
             app:destination="@id/foodTrucksFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_setMealPlan2"
-            app:destination="@id/setMealPlan" />
+
 
 <action
             android:id="@+id/action_homePageFragment_to_scheduleMealsFragment"
@@ -167,7 +165,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
     </fragment>
-
+    <!-- Samnang Lath -->
     <!-- Meal time screen fragment. -->
     <fragment
         android:id="@+id/mealTimeFragment"
@@ -291,6 +289,9 @@
             app:destination="@id/editDietaryPreferenceFragment" />
         <action
             android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment2"
             app:destination="@id/signInFragment" />
     </fragment>
 

@@ -25,14 +25,14 @@
                 android:id="@+id/buttonProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textStyle="bold"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="?android:attr/selectableItemBackground"
                 android:drawableStart="@drawable/profileicon"
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
                 android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground" />
+                android:text="Profile"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/editprofileButton"
@@ -40,9 +40,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="240dp"
                 android:layout_marginBottom="-50dp"
-                android:src="@drawable/editicon"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:src="@drawable/editicon" />
 
             <ImageView
                 android:id="@+id/profileImg"
@@ -50,8 +50,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
-                android:src="@drawable/baseline_person_4_24"/>
-
+                android:src="@drawable/baseline_person_4_24" />
 
 
             <Button
@@ -77,55 +76,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:padding="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/username"
                     android:layout_weight="1"
                     android:text="Username"
-                    android:textStyle="bold"
                     android:textColor="@color/yellow"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/profileUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/profileUsername"
                     android:layout_weight="1"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
-                android:padding="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/email"
                     android:layout_weight="1"
                     android:text="Email"
-                    android:textStyle="bold"
                     android:textColor="@color/yellow"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/profileEmail"
 
                     android:layout_weight="1"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -133,22 +133,33 @@
                 android:id="@+id/editButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/yellow"
                 android:gravity="center"
                 android:text="Edit Profile"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/yellow"/>
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/editDietButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/yellow"
                 android:gravity="center"
                 android:text="Edit Dietary Preference"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/yellow"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnLogout"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Logout"
+                android:textSize="15dp"
+                android:textStyle="" />
 
             <TextView
                 android:id="@+id/DeleteButton"
@@ -157,12 +168,12 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="100dp"
-                android:text="Delete Account"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#FF0000"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:text="Delete Account"
+                android:textColor="#FF0000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/backhomebutton"
@@ -170,15 +181,15 @@
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
+                android:drawableStart="@drawable/arrowbackicon"
+                android:drawablePadding="8dp"
                 android:focusable="true"
+                android:gravity="center"
                 android:padding="18dp"
                 android:text="Back to Home Page"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:drawableStart="@drawable/arrowbackicon"
-                android:gravity="center"
-                android:drawablePadding="8dp" />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

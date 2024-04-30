@@ -50,6 +50,17 @@ class ProfileFragment : Fragment() {
         binding.editDietButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_editDietaryPreferenceFragment)
         }
+        //samnang lath
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val navController = it.findNavController()
+
+            // Assuming signInFragment is accessible directly without popping anything
+            navController.navigate(R.id.signInFragment)
+
+            // Clear all back stack after navigation
+            navController.popBackStack(R.id.splashFragment, false) // Replace 'startDestination' with the ID of the root or start destination in your navigation graph
+        }
 
 
         return binding.root

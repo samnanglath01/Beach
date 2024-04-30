@@ -36,7 +36,7 @@ class OptionsFragment : Fragment() {
     ): View {
         binding = FragmentOptionsBinding.inflate(inflater, container, false)
         auth = FirebaseAuth.getInstance()
-
+//samnang lath
         // Set up click listeners using View Binding
         binding.buttonProfile.setOnClickListener {
             if (auth.currentUser == null) {
@@ -64,7 +64,7 @@ class OptionsFragment : Fragment() {
             Toast.makeText(context, "Hours clicked", Toast.LENGTH_SHORT).show();
             it.findNavController().navigate(R.id.action_homePageFragment_to_hallHoursFragment)
         }
-
+//samnang lath
         binding.buttonFoodSpots.setOnClickListener {
             Toast.makeText(context, "Map clicked", Toast.LENGTH_SHORT).show();
             it.findNavController().navigate(R.id.action_homePageFragment_to_mapFragment)
@@ -90,9 +90,9 @@ class OptionsFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homePageFragment_to_foodTrucksFragment)
         }
 
-        binding.buttonScheduleMeal.setOnClickListener {
+        binding.buttonSetPlan.setOnClickListener {
             Toast.makeText(context, "Schedule Meal clicked", Toast.LENGTH_SHORT).show()
-            it.findNavController().navigate(R.id.action_homePageFragment_to_scheduleMealsFragment)
+            it.findNavController().navigate(R.id.action_homePageFragment_to_setMealPlan)
         }
         setupSwitchListener()
         return binding.root

@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
-
+//samnang lath
 class MainActivity : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var navController: NavController
