@@ -1,6 +1,7 @@
 package com.example.beachtest
 
 import android.app.AlarmManager
+import android.app.AlertDialog
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -15,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.navigation.fragment.findNavController
 import com.example.beachtest.Users.ui.MealReminderReceiver
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SetMealPlan.newInstance] factory method to
  * create an instance of this fragment.
  */
+//samnang lath
 class SetMealPlan : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -39,7 +42,7 @@ class SetMealPlan : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
+    //Samnang lath
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -47,24 +50,41 @@ class SetMealPlan : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        view.findViewById<Button>(R.id.backHomeButton).setOnClickListener {
+            findNavController().navigate(R.id.action_setMealPlan_to_homePageFragment)
+        }
         view.findViewById<Button>(R.id.morningMealbutton).setOnClickListener {
             if (checkAndRequestExactAlarmPermission()) {
                 scheduleMealReminder(requireContext(), "Breakfast")
+                showConfirmationDialog("Breakfast")
+
             }
         }
 
         view.findViewById<Button>(R.id.lunchbutton).setOnClickListener {
             if (checkAndRequestExactAlarmPermission()) {
                 scheduleMealReminder(requireContext(), "Lunch")
+                showConfirmationDialog("Lunch")
             }
         }
 
         view.findViewById<Button>(R.id.dinnerbutton).setOnClickListener {
             if (checkAndRequestExactAlarmPermission()) {
                 scheduleMealReminder(requireContext(), "Dinner")
+                showConfirmationDialog("Dinner")
             }
         }
+    }
+
+    private fun showConfirmationDialog(mealType: String) {
+        if (!isAdded) return
+        AlertDialog.Builder(requireContext())
+            .setTitle("Booking Confirmed")
+            .setMessage("You have successfully booked your $mealType plan.")
+            .setPositiveButton(android.R.string.ok) { dialog, which ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
     private fun checkAndRequestExactAlarmPermission(): Boolean {

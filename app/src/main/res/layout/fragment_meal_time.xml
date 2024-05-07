@@ -34,7 +34,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textSize="26dp"
+                android:textSize="26sp"
                 android:textColor="@color/yellow"
                 android:layout_marginBottom="8dp"/>
 
@@ -147,12 +147,155 @@
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/yellow"/>
 
+
+            <!-- Leave a review section -->
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/leaveReviewSection">
+
+                <TextView
+                    android:id="@+id/leaveReviewTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/leave_a_review"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/yellow"/>
+
+                <!-- User profile and name container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image View -->
+                    <ImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/profile_picture_description" />
+
+                    <!-- User's Name -->
+                    <TextView
+                        android:id="@+id/userNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/john_smith"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your star rating:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+                <!-- RatingBar for user ratings -->
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="false"/>
+
+                <TextView
+                    android:id="@+id/ratingScaleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <!-- EditText for review input -->
+                <EditText
+                    android:id="@+id/reviewEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/write_your_review"
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:padding="10dp"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:maxLines="5"
+                    android:scrollbars="vertical"
+                    android:autofillHints="none" />
+
+                <!-- 'Add Photo' button -->
+                <Button
+                    android:id="@+id/addPhotoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:drawableStart="@android:drawable/ic_menu_camera"
+                    android:drawablePadding="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/add_photo"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/yellow"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp" />
+
+                <!-- Button to submit review -->
+                <Button
+                    android:id="@+id/submitReviewButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/submit_review"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/white"/>
+
+
+
+                <!-- ImageView for displaying the selected image -->
+                <ImageView
+                    android:id="@+id/reviewImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/review_image_description" />
+
+            </LinearLayout>
+
+
             <Button
                 android:id="@+id/backToDiningHallButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back to Dining Halls Page"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:backgroundTint="@color/yellow"
                 android:paddingStart="18dp"

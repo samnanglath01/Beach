@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VirtualTourFragment">
-
+    <!-- Luis Flores -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -42,14 +42,34 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22dp"
-                android:text="Welcome to our Virtual Page! Here you can get an inside look into each of the 3 dining halls, such as the tables for good seating location, all the delicacies from each dish provided, and the chefs that work tirelessly to cater and prepare your favorite dish!\n"/>
+                android:text="Embark on a culinary journey with our Virtual Tour! As you navigate through the vibrant and interactive pages, you're invited to discover the unique atmosphere of each of our three distinguished dining halls!\n"/>
 
             <TextView
                 android:id="@+id/virtualTourInfo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:text="Whether you're deciding where to have your next meal or simply exploring your dining options, our virtual page is designed to transport you right into the heart of the dining community!\n"/>
+
+            <TextView
+                android:id="@+id/virtualTourInfo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:text="Take a moment to step inside, explore, and get inspired for your next visit, where we promise to turn this virtual preview into a tangible and memorable dining experience!\n"/>
+
+            <TextView
+                android:id="@+id/virtualTourInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="22dp"
                 android:textColor="@color/black"
                 android:text="Choose a Dining Hall below to get started with your tour:"/>
             <TextView
@@ -77,7 +97,7 @@
                 android:text="Tour Parkside"
                 android:textColor="@color/white"
                 android:layout_marginTop="-65dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/yellow"/>
 
@@ -106,7 +126,7 @@
                 android:text="Tour Hillside"
                 android:textColor="@color/white"
                 android:layout_marginTop="-65dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/yellow"/>
 
@@ -135,9 +155,24 @@
                 android:text="Tour Beachside"
                 android:textColor="@color/white"
                 android:layout_marginTop="-65dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginBottom="100dp"
                 android:backgroundTint="@color/yellow"/>
+
+            <Button
+                android:id="@+id/backHomeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Options"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:backgroundTint="@color/yellow"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp" />
 
         </LinearLayout>
     </ScrollView>

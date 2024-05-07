@@ -1,3 +1,4 @@
+
 package com.example.beachtest
 
 import android.app.Activity
@@ -51,13 +52,29 @@ class ProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_profileFragment_to_editDietaryPreferenceFragment)
         }
 
+        binding.backHomeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
+        }
+
+        //samnang lath
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val navController = it.findNavController()
+
+            // Assuming signInFragment is accessible directly without popping anything
+            navController.navigate(R.id.signInFragment)
+
+            // Clear all back stack after navigation
+            navController.popBackStack(R.id.splashFragment, false) // Replace 'startDestination' with the ID of the root or start destination in your navigation graph
+        }
+
 
         return binding.root
     }
-//Samnang Lath
+    //Samnang Lath
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
         // Initialize UserManager
         val userManager = UserManager()
 
@@ -92,7 +109,7 @@ class ProfileFragment : Fragment() {
                 if (task.isSuccessful) {
                     Toast.makeText(requireActivity(), "Account deleted.", Toast.LENGTH_SHORT).show()
 
-                        it.findNavController().navigate(R.id.action_profileFragment_to_signInFragment)
+                    it.findNavController().navigate(R.id.action_profileFragment_to_signInFragment)
 
                     // Handle the post-account-deletion logic here, such as navigating to a sign-in activity.
                 } else {

@@ -35,7 +35,7 @@ class ScheduleMealsFragment : Fragment() {
     private fun setupListeners() {
         binding.backHomeButton.setOnClickListener {
             Toast.makeText(context, "Back to Options clicked", Toast.LENGTH_SHORT).show()
-            it.findNavController().navigate(R.id.action_scheduleMealsFragment_to_optionsFragment)
+            it.findNavController().navigate(R.id.action_scheduleMealsFragment_to_homePageFragment)
         }
 
         binding.datePickerButton.setOnClickListener {
@@ -92,14 +92,13 @@ class ScheduleMealsFragment : Fragment() {
         return user != null
     }
     private fun saveMealToFirestore(mealDescription: String, date: String, time: String, mealType: String) {
+        // Get the user ID
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
         if (!isUserLoggedIn()) {
             Toast.makeText(context, "Please log in to schedule a meal.", Toast.LENGTH_LONG).show()
             // Redirect to login page or show login prompt
             return
         }
-
-        // Get the user ID
-        val userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         // Construct a custom document name (for example, concatenating user ID and current timestamp)
         val customDocumentName = "$userId-${System.currentTimeMillis()}"

@@ -83,4 +83,17 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- String resources for content descriptions -->
+    <string name="top_banner_description">Top banner image</string>
+    <string name="hillside_logo_description">Hillside Dining Hall logo</string>
+    <string name="parkside_logo_description">Parkside Dining Hall logo</string>
+    <string name="beachside_logo_description">Beachside Dining Hall logo</string>
+    <string name="map_description">Map showing dining hall locations</string>
+
+
+    !-- String resources for TextViews and Buttons -->
+    <string name="dining_halls_location">Dining Halls Location</string>
+    <string name="back_to_home">Back to Home Page</string>
+
 </resources>

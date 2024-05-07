@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.DayOfWeek
 import java.time.LocalDate
+import androidx.navigation.NavDirections
 
 // Luis Flores
 class HomeFragment : Fragment() {
@@ -60,7 +61,7 @@ class HomeFragment : Fragment() {
 
         binding.beachsidehomebutton.setOnClickListener {
             saveDiningHallChoice("Beachside")
-            Toast.makeText(context, "Beachside selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Beachside selected", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_homePageFragment_to_mealTimeFragment)
         }
     }

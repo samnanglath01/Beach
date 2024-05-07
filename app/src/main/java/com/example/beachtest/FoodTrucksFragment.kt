@@ -35,7 +35,7 @@ class FoodTrucksFragment : Fragment() {
 
         // Navigate back to home page when the "Back to Home Page" button is clicked
         view.findViewById<Button>(R.id.backToOptionButton).setOnClickListener {
-            findNavController().navigate(R.id.action_foodTrucksFragment_to_optionsFragment)
+            findNavController().navigate(R.id.action_foodTrucksFragment_to_homePageFragment)
         }
 
         return view

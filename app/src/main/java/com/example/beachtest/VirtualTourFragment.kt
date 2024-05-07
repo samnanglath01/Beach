@@ -13,6 +13,11 @@ class VirtualTourFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentVirtualTourBinding.inflate(inflater, container, false)
+
+        binding.backHomeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_virtualTourFragment_to_homePageFragment)
+        }
+
         return binding.root
 
     }
