@@ -1,5 +1,6 @@
 package com.example.beachtest
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -17,19 +18,26 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.time.DayOfWeek
 import java.time.LocalDate
 
-// Luis Flores
+// Luis Flores & Sebastian Tadeo
 // Define a Fragment subclass for managing meal time selection
 class MealTimeFragment : Fragment() {
     private lateinit var binding: FragmentMealTimeBinding
     private val firestore = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    private var guestId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment using View Binding
         binding = FragmentMealTimeBinding.inflate(inflater, container, false)
+        guestId = loadGuestId() // Load the guest ID from SharedPreferences
         return binding.root
+    }
+
+    private fun loadGuestId(): String? {
+        val prefs = activity?.getSharedPreferences("GuestPrefs", Context.MODE_PRIVATE)
+        return prefs?.getString("guestId", null)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -81,8 +89,8 @@ class MealTimeFragment : Fragment() {
         }
 
         binding.dinnerButton.setOnClickListener {
-            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show()
             saveMealTimeChoice("Dinner")
+            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show()
         }
 
         // Back button click listener to navigate back to the dining hall selection fragment
@@ -91,6 +99,7 @@ class MealTimeFragment : Fragment() {
         }
     }
 
+    // Sebastian Tadeo
     // Setup for the rating bar
     private fun setupRatingBar() {
         binding.ratingBar.rating = 2.5f
@@ -110,9 +119,11 @@ class MealTimeFragment : Fragment() {
         }
     }
 
+    // Sebastian Tadeo
     // Function to save the selected meal time choice to Firestore
     private fun saveMealTimeChoice(mealTime: String) {
         val userUid = auth.currentUser?.uid
+
         if (userUid != null) {
             // User is logged in, update Firestore with the selected meal time
             firestore.collection("Users").document(userUid)
@@ -210,3 +221,4 @@ class MealTimeFragment : Fragment() {
 
 
 }
+

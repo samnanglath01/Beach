@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_signInFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_guestNavigationFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Fragment for email-based password recovery. -->
@@ -60,7 +63,7 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
-
+    <!--Samnang Lath -->
     <!-- Fragment for setting dietary preferences. -->
     <fragment
         android:id="@+id/dietaryPreferenceFragment"
@@ -133,6 +136,9 @@
             android:id="@+id/action_homePageFragment_to_hallHoursFragment"
             app:destination="@id/hallHoursFragment" />
         <action
+            android:id="@+id/action_homePageFragment_to_mapFragment"
+            app:destination="@id/mapFragment"/>
+        <action
             android:id="@+id/action_homePageFragment_to_virtualTourFragment"
             app:destination="@id/virtualTourFragment" />
         <action
@@ -153,6 +159,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_campusFood"
             app:destination="@id/campusFood" />
+        <action
+            android:id="@+id/action_homePageFragment_to_scheduleMealsFragment"
+            app:destination="@id/scheduleMealsFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -162,7 +171,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
     </fragment>
-
+    <!-- Samnang Lath -->
     <!-- Meal time screen fragment. -->
     <fragment
         android:id="@+id/mealTimeFragment"
@@ -193,9 +202,9 @@
             android:id="@+id/action_menuItemsFragment_to_dishDetailsFragment"
             app:destination="@id/dishDetailsFragment"
             app:argType="string" />
-
     </fragment>
 
+    <!-- Dish Details screen Fragment. -->
     <fragment
         android:id="@+id/dishDetailsFragment"
         android:name="com.example.beachtest.DishDetailsFragment"
@@ -230,11 +239,11 @@
         <action
             android:id="@+id/actionFoodTrucksFragmentToFarmersMarketVendorDetailsFragment"
             app:destination="@id/farmersMarketVendorDetailsFragment" />
-        <!-- Define action to navigate back to home fragment -->
         <action
             android:id="@+id/action_foodTrucksFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
+
 
     <!-- Food Truck Vendor Details Fragment -->
     <fragment
@@ -276,7 +285,6 @@
         <action
             android:id="@+id/action_optionsFragment_to_setMealPlan"
             app:destination="@id/setMealPlan" />
-
    </fragment>
 
     <!-- Language Preference Selection Fragment -->
@@ -312,6 +320,9 @@
         <action
             android:id="@+id/action_profileFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment2"
+            app:destination="@id/signInFragment" />
     </fragment>
 
     <!-- Edit profile screen fragment -->
@@ -344,6 +355,7 @@
             app:destination="@id/profileFragment" />
     </fragment>
 
+    <!-- Prices screen fragment. -->
     <fragment
         android:id="@+id/setMealPlan"
         android:name="com.example.beachtest.SetMealPlan"
@@ -365,8 +377,8 @@
         android:label="fragment_prices_items"
         tools:layout="@layout/fragment_prices">
         <action
-            android:id="@+id/action_pricesFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
+            android:id="@+id/action_pricesFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
     </fragment>
 
     <!-- Food Around Campus -->
@@ -435,11 +447,12 @@
         android:name="com.example.beachtest.ScheduleMealsFragment"
         android:label="fragment_schedule_meals"
         tools:layout="@layout/fragment_schedule_meals">
-        <!-- Action to navigate back to the OptionsFragment -->
         <action
             android:id="@+id/action_scheduleMealsFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Dining Hall Location Fragment -->
     <fragment
         android:id="@+id/diningHallLocationFragment"
         android:name="com.example.beachtest.DiningHallLocationFragment"
@@ -449,6 +462,8 @@
             android:id="@+id/action_diningHallLocationFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
+
+    <!-- Campus Food  -->
     <fragment
         android:id="@+id/campusFood"
         android:name="com.example.beachtest.CampusFoodFragment"

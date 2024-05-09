@@ -36,6 +36,7 @@
             android:value="AIzaSyD1TmIEsc-Lpj_EwUt2JKLKDp_YJmzz5PI" />
 
         <!-- Main Activity -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

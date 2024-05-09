@@ -58,4 +58,5 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(location).title(title))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 17f))
     }
+
 }

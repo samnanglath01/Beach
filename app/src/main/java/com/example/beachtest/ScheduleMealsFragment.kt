@@ -1,22 +1,21 @@
 package com.example.beachtest
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.content.Context
-import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.beachtest.databinding.FragmentScheduleMealsBinding
-import java.util.Calendar
-import java.util.*
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
-import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
-import com.google.firebase.firestore.FieldValue
+import java.util.Calendar
+import java.util.Locale
 
 class ScheduleMealsFragment : Fragment() {
 
@@ -130,3 +129,4 @@ class ScheduleMealsFragment : Fragment() {
         _binding = null
     }
 }
+

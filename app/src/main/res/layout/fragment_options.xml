@@ -19,6 +19,14 @@
                 android:layout_width="410dp"
                 android:layout_height="240dp"
                 android:src="@drawable/img" />
+            <Switch
+                android:id="@+id/switchMealUpdates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Update Notifications"
+                android:textStyle="bold"
+                android:padding="18dp"
+                android:gravity="center_vertical|start"/>
 
             <TextView
                 android:id="@+id/buttonProfile"
@@ -140,6 +148,7 @@
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
+
             <TextView
                 android:id="@+id/buttonListtoEat"
                 android:layout_width="match_parent"
@@ -225,46 +234,6 @@
                 android:layout_height="1dp"
                 android:background="#D3D3D3"/>
 
-            <TextView
-                android:id="@+id/buttonResources"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="     Resources"
-                android:textStyle="bold"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/resourceicon"
-                android:drawableEnd="@drawable/arrow_forward"
-                android:gravity="center_vertical"
-                android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3"/>
-
-            <TextView
-                android:id="@+id/buttonEvent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="     Events"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:drawableStart="@drawable/eventsicon"
-                android:drawableEnd="@drawable/arrow_forward"
-                android:gravity="center_vertical"
-                android:padding="18dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3"/>
 
             <TextView
                 android:id="@+id/buttonFoodSpots"

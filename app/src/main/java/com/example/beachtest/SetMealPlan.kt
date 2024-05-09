@@ -42,7 +42,8 @@ class SetMealPlan : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    //Samnang lath
+
+    //Samnang Lath
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -57,7 +58,6 @@ class SetMealPlan : Fragment() {
             if (checkAndRequestExactAlarmPermission()) {
                 scheduleMealReminder(requireContext(), "Breakfast")
                 showConfirmationDialog("Breakfast")
-
             }
         }
 
@@ -74,10 +74,9 @@ class SetMealPlan : Fragment() {
                 showConfirmationDialog("Dinner")
             }
         }
-    }
 
+    }
     private fun showConfirmationDialog(mealType: String) {
-        if (!isAdded) return
         AlertDialog.Builder(requireContext())
             .setTitle("Booking Confirmed")
             .setMessage("You have successfully booked your $mealType plan.")

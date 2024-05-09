@@ -1,14 +1,15 @@
 package com.example.beachtest
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.beachtest.databinding.FragmentDishDetailsBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DishDetailsFragment : Fragment() {
@@ -28,6 +29,7 @@ class DishDetailsFragment : Fragment() {
     private var userLikesDish: Boolean? = null
     private var thumbsUpCount = 0
     private var thumbsDownCount = 0
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +37,7 @@ class DishDetailsFragment : Fragment() {
     ): View {
         // Inflate the layout using view binding
         _binding = FragmentDishDetailsBinding.inflate(inflater, container, false)
+        auth = FirebaseAuth.getInstance()
         return binding.root
     }
 
@@ -74,15 +77,22 @@ class DishDetailsFragment : Fragment() {
 
     private fun setupThumbListeners(dishId: String) {
         binding.thumbsUpButton.setOnClickListener {
-            val newLikeStatus = !(userLikesDish ?: false)
-            updateThumbsUp(dishId, newLikeStatus)
+            if (auth.currentUser != null) {
+                updateThumbsUp(dishId, !(userLikesDish ?: false))
+            } else {
+                Toast.makeText(context, "Sign in/sign up to be able to vote on meals", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.thumbsDownButton.setOnClickListener {
-            val newDislikeStatus = userLikesDish ?: true
-            updateThumbsDown(dishId, newDislikeStatus)
+            if (auth.currentUser != null) {
+                updateThumbsDown(dishId, userLikesDish ?: true)
+            } else {
+                Toast.makeText(context, "Sign in/sign up to be able to vote on meals", Toast.LENGTH_SHORT).show()
+            }
         }
     }
+
 
     private fun updateThumbsUp(dishId: String, newStatus: Boolean) {
         if (newStatus) {
@@ -164,4 +174,6 @@ class DishDetailsFragment : Fragment() {
         // Clear the binding when the view is destroyed
         _binding = null
     }
+
 }
+
