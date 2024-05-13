@@ -64,6 +64,53 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:src="@drawable/beachside_exterior1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nExperience exceptional service, a relaxed atmosphere, and the perfect spot to socialize or study. Whether you're grabbing a quick bite or settling in for a leisurely meal, Beachside Dining Hall is the ideal destination. Visit us today and savor the flavors of Long Beach!"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:src="@drawable/beachside3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nAt Beachside Dining Hall, we pride ourselves on providing a diverse menu that caters to all tastes and dietary needs. From hearty breakfasts to satisfying lunches and dinners, our talented culinary team uses fresh, locally sourced ingredients to create delicious meals. Enjoy a range of condiments and toppings at our condiment station to customize your meal just the way you like it"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:src="@drawable/beachside_interior1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nOur facility features ample seating with modern furnishings to accommodate groups of all sizes. Whether you're looking for a quiet corner to focus on your studies or a lively area to catch up with friends, Beachside Dining Hall has the perfect spot for you."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
 
         </LinearLayout>
 
