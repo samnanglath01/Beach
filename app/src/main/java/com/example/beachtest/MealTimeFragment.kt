@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMealTimeBinding
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,10 +41,6 @@ class MealTimeFragment : Fragment() {
     private var guestId: String? = null
 
     companion object {
-        private const val USERS_COLLECTION = "Users"
-        private const val DINING_HALL_REVIEWS_COLLECTION = "diningHallReviews"
-        private const val GUEST_PREFS = "GuestPrefs"
-        private const val GUEST_ID_KEY = "guestId"
         private const val IMAGE_PICK_CODE = 999 // Request code for picking an image
         private const val PERMISSION_CODE = 1001 // Request code for permissions
     }
@@ -58,8 +55,8 @@ class MealTimeFragment : Fragment() {
     }
 
     private fun loadGuestId(): String? {
-        val prefs = activity?.getSharedPreferences(GUEST_PREFS, Context.MODE_PRIVATE)
-        return prefs?.getString(GUEST_ID_KEY, null)
+        val prefs = activity?.getSharedPreferences("GuestPrefs", Context.MODE_PRIVATE)
+        return prefs?.getString("guestId", null)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -74,7 +71,7 @@ class MealTimeFragment : Fragment() {
 
         // Call setupSubmitReviewButton with the selected dining hall
         selectedDiningHall?.let { diningHall ->
-            setupSubmitReviewButton(diningHall)
+            setupReviewSubmission()
             fetchReviews(diningHall)
         }
     }
@@ -152,23 +149,6 @@ class MealTimeFragment : Fragment() {
 
 
 
-    // Centralized validation function
-    private fun validateReviewInputs(reviewText: String, rating: Float): Boolean {
-        if (reviewText.isEmpty()) {
-            Toast.makeText(context, "Please write your review", Toast.LENGTH_SHORT).show()
-            Log.d("SubmitReview", "Review text is empty")
-            return false
-        }
-
-        if (rating == 0f) {
-            Toast.makeText(context, "Please select a rating", Toast.LENGTH_SHORT).show()
-            Log.d("SubmitReview", "Rating not selected")
-            return false
-        }
-
-        return true
-    }
-
     // Sebastian Tadeo
     // Function to save the selected meal time choice to Firestore
     // Simplified user login check in other parts of code
@@ -209,48 +189,50 @@ class MealTimeFragment : Fragment() {
         navigate(R.id.action_mealTimeFragment_to_menuItemsFragment)
     }
 
-    private fun setupSubmitReviewButton(diningHall: String) {
+    private fun setupReviewSubmission() {
         binding.submitReviewButton.setOnClickListener {
-            val reviewText = binding.reviewEditText.text.toString().trim()
+            val reviewText = binding.reviewEditText.text.toString()
             val rating = binding.ratingBar.rating
-
-            if (!validateReviewInputs(reviewText, rating)) return@setOnClickListener  // Check input validation
-
-            if (!isUserLoggedIn()) {
-                Toast.makeText(context, "No user logged in. Please log in to submit a review.", Toast.LENGTH_SHORT).show()
-                Log.d("SubmitReview", "No user logged in")
-                return@setOnClickListener
-            }
-
-            saveReview(reviewText, rating, diningHall)
+            //if (!validateReviewInputs(rating, reviewText)) return@setOnClickListener  // Check input validation
+            submitReview(rating, reviewText)
         }
     }
 
     // Function to save the review to Firestore
-    private fun saveReview(reviewText: String, reviewRating: Float, diningHall: String) {
-        // User check is no longer necessary here because it's handled in the button setup.
-        val userId = FirebaseAuth.getInstance().currentUser!!.uid
-        val roundedRating = Math.round(reviewRating).coerceIn(1, 5)
+    private fun submitReview(rating: Float, reviewText: String) {
+        val userUid = auth.currentUser?.uid
 
-        val reviewData = hashMapOf(
-            "userId" to userId,
-            "reviewText" to reviewText,
-            "rating" to roundedRating,
-            "diningHall" to diningHall,
-            "timestamp" to FieldValue.serverTimestamp()
-        )
+        if (userUid != null && reviewText.isNotBlank()) {
+            firestore.collection("Users").document(userUid).get()
+                .addOnSuccessListener { document ->
+                    val diningHall = document.getString("diningHall") ?: "Unknown Dining Hall"
+                    val userName = document.getString("username") ?: "No user logged in"
+                    val reviewData = hashMapOf(
+                        "userId" to userUid,
+                        "rating" to rating,
+                        "review" to reviewText,
+                        "timestamp" to Timestamp.now(),
+                        "diningHall" to diningHall,
+                        "username" to userName
+                    )
 
-        firestore.collection("diningHallReviews")
-            .add(reviewData)
-            .addOnSuccessListener { documentReference ->
-                Log.d("Firestore", "Review written with ID: ${documentReference.id}")
-                Toast.makeText(context, "Review saved successfully!", Toast.LENGTH_SHORT).show()
-                // Optional: Navigate to another fragment or update UI to reflect the successful operation
-            }
-            .addOnFailureListener { e ->
-                handleFirestoreError(e, "adding review")
-                Toast.makeText(context, "Error adding review. Please try again.", Toast.LENGTH_LONG).show()
-            }
+                    firestore.collection("reviews")
+                        .add(reviewData)
+                        .addOnSuccessListener {
+                            Toast.makeText(context, "Review submitted successfully!", Toast.LENGTH_SHORT).show()
+                            binding.reviewEditText.text.clear()
+                            binding.ratingBar.rating = 0f
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(context, "Failed to submit review: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(context, "Failed to fetch dining hall information: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(context, "Review text cannot be empty.", Toast.LENGTH_SHORT).show()
+        }
     }
     private fun handleFirestoreError(e: Exception, action: String) {
         Log.e("FirestoreError", "Error during $action: ${e.message}")
@@ -272,34 +254,42 @@ class MealTimeFragment : Fragment() {
     }
 
     private fun addReviewToLayout(reviewText: String, rating: Double) {
-        val context = requireContext() // Ensures context is not null
         val reviewLayout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply {
-                topMargin = 16
+            ).also {
+                it.topMargin = 16
+                it.bottomMargin = 16
             }
-            background = ContextCompat.getDrawable(context, R.drawable.review_background)
-            setPadding(16, 16, 16, 16) // Set padding correctly
+            background = ContextCompat.getDrawable(requireContext(), R.drawable.review_background)
+            setPadding(16, 16, 16, 16)
         }
 
         val textView = TextView(context).apply {
             text = reviewText
             textSize = 16f
-            setTextColor(ContextCompat.getColor(context, R.color.black)) // Set text color correctly
+            setTextColor(Color.BLACK)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
         }
 
         val ratingBar = RatingBar(context, null, android.R.attr.ratingBarStyleSmall).apply {
-            reviewRating = reviewRating.toFloat() // Convert Double to Float
-            isIndicator = true
+            this.rating = rating.toFloat()
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
         }
 
         reviewLayout.addView(textView)
         reviewLayout.addView(ratingBar)
         binding.previousReviewsSection.addView(reviewLayout)
     }
+
 
     private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK)
