@@ -126,11 +126,11 @@ class MealTimeFragment : Fragment() {
     // Sebastian Tadeo
     // Setup for the rating bar
     private fun setupRatingBar() {
-        binding.ratingBar.rating = 2.5f
+        binding.ratingBar.rating = 3.0f
         binding.ratingBar.stepSize = 1.0f
         binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
             // Update the text below the RatingBar based on the selected value
-            val roundedRating = Math.round(rating)
+            val roundedRating = Math.round(rating).coerceIn(1,5)
             ratingBar.rating = roundedRating.toFloat()
             binding.ratingScaleText.text = when (roundedRating) {
                 1 -> "Very Bad"
@@ -141,7 +141,7 @@ class MealTimeFragment : Fragment() {
                 else -> "Not Rated"
             }
             // Optionally show a toast
-            Toast.makeText(context, "Rating: $rating", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Rating: $roundedRating", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -227,14 +227,15 @@ class MealTimeFragment : Fragment() {
     }
 
     // Function to save the review to Firestore
-    private fun saveReview(reviewText: String, rating: Float, diningHall: String) {
+    private fun saveReview(reviewText: String, reviewRating: Float, diningHall: String) {
         // User check is no longer necessary here because it's handled in the button setup.
         val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        val roundedRating = Math.round(reviewRating).coerceIn(1, 5)
 
         val reviewData = hashMapOf(
             "userId" to userId,
             "reviewText" to reviewText,
-            "rating" to rating,
+            "rating" to roundedRating,
             "diningHall" to diningHall,
             "timestamp" to FieldValue.serverTimestamp()
         )
@@ -291,7 +292,7 @@ class MealTimeFragment : Fragment() {
         }
 
         val ratingBar = RatingBar(context, null, android.R.attr.ratingBarStyleSmall).apply {
-            rating = rating.toFloat() // Convert Double to Float
+            reviewRating = reviewRating.toFloat() // Convert Double to Float
             isIndicator = true
         }
 
