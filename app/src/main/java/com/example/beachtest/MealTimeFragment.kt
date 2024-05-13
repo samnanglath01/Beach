@@ -130,13 +130,15 @@ class MealTimeFragment : Fragment() {
         binding.ratingBar.stepSize = 1.0f
         binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
             // Update the text below the RatingBar based on the selected value
-            binding.ratingScaleText.text = when (rating.toInt()) {
+            val roundedRating = Math.round(rating)
+            ratingBar.rating = roundedRating.toFloat()
+            binding.ratingScaleText.text = when (roundedRating) {
                 1 -> "Very Bad"
                 2 -> "Bad"
                 3 -> "Good"
                 4 -> "Great"
                 5 -> "Awesome"
-                else -> ""
+                else -> "Not Rated"
             }
             // Optionally show a toast
             Toast.makeText(context, "Rating: $rating", Toast.LENGTH_SHORT).show()
@@ -269,6 +271,7 @@ class MealTimeFragment : Fragment() {
     }
 
     private fun addReviewToLayout(reviewText: String, rating: Double) {
+        val context = requireContext() // Ensures context is not null
         val reviewLayout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(
@@ -277,18 +280,18 @@ class MealTimeFragment : Fragment() {
             ).apply {
                 topMargin = 16
             }
-            background = ContextCompat.getDrawable(requireContext(), R.drawable.review_background)
-            padding = 16
+            background = ContextCompat.getDrawable(context, R.drawable.review_background)
+            setPadding(16, 16, 16, 16) // Set padding correctly
         }
 
         val textView = TextView(context).apply {
             text = reviewText
             textSize = 16f
-            textColor = ContextCompat.getColor(requireContext(), R.color.black)
+            setTextColor(ContextCompat.getColor(context, R.color.black)) // Set text color correctly
         }
 
         val ratingBar = RatingBar(context, null, android.R.attr.ratingBarStyleSmall).apply {
-            rating = rating.toFloat()
+            rating = rating.toFloat() // Convert Double to Float
             isIndicator = true
         }
 
@@ -296,6 +299,7 @@ class MealTimeFragment : Fragment() {
         reviewLayout.addView(ratingBar)
         binding.previousReviewsSection.addView(reviewLayout)
     }
+
     private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
