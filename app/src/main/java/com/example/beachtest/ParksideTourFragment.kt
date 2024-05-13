@@ -43,5 +43,4 @@ class ParksideTourFragment : Fragment() {
             }
         }
     }
-
 }

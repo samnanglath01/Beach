@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.beachtest.databinding.FragmentMealTimeBinding
 import com.google.firebase.Timestamp
@@ -28,6 +29,10 @@ class MealTimeFragment : Fragment() {
     ): View {
         binding = FragmentMealTimeBinding.inflate(inflater, container, false)
         guestId = loadGuestId() // Load the guest ID from SharedPreferences
+
+        binding.backToDiningHallButton.setOnClickListener{
+            it.findNavController().navigate(R.id.action_mealTimeFragment_to_homePageFragment)
+        }
         return binding.root
     }
 
@@ -55,7 +60,7 @@ class MealTimeFragment : Fragment() {
     private fun submitReview(rating: Float, reviewText: String) {
         val userUid = auth.currentUser?.uid
 
-        if (userUid != null && reviewText.isNotBlank()) {
+        if (userUid != null) {
             firestore.collection("Users").document(userUid).get()
                 .addOnSuccessListener { document ->
                     val diningHall = document.getString("diningHall") ?: "Unknown Dining Hall"
@@ -84,7 +89,7 @@ class MealTimeFragment : Fragment() {
                     Toast.makeText(context, "Failed to fetch dining hall information: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            Toast.makeText(context, "Review text cannot be empty.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Sign in to leave a review", Toast.LENGTH_SHORT).show()
         }
     }
 
