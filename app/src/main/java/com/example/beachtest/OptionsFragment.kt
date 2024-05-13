@@ -97,8 +97,9 @@ class OptionsFragment : Fragment() {
                 Toast.makeText(context, "Schedule Meal clicked", Toast.LENGTH_SHORT).show()
                 it.findNavController().navigate(R.id.action_homePageFragment_to_setMealPlan)
             }
-            setupSwitchListener()
+
         }
+        setupSwitchListener()
 
         return binding.root
     }
