@@ -271,7 +271,11 @@
         android:id="@+id/photographyTipFragment"
         android:name="com.example.beachtest.PhotographyTipFragment"
         android:label="fragment_photography_tip"
-        tools:layout="@layout/fragment_photography_tip" />
+        tools:layout="@layout/fragment_photography_tip" >
+        <action
+            android:id="@+id/action_photographyTipFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
 
     <!-- Profile screen fragment -->
     <fragment

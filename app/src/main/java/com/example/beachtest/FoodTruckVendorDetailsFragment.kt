@@ -17,27 +17,23 @@ class FoodTruckVendorDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_food_truck_vendor_details, container, false)
-
         setupTextViewListeners(rootView)
-
         return rootView
     }
 
     private fun setupTextViewListeners(rootView: View) {
-        rootView.findViewById<TextView>(R.id.textVendor1).setOnClickListener {
-            openWebPage("https://www.5elementosla.com")
-        }
-        rootView.findViewById<TextView>(R.id.textVendor2).setOnClickListener {
-            openWebPage("https://www.babysbadassburgers.com")
-        }
-        rootView.findViewById<TextView>(R.id.textVendor3).setOnClickListener {
-            openWebPage("https://www.sugoitaliano.com")
-        }
-        rootView.findViewById<TextView>(R.id.textVendor4).setOnClickListener {
-            openWebPage("https://www.crepesbonaparte.com")
-        }
-        rootView.findViewById<TextView>(R.id.textVendor5).setOnClickListener {
-            openWebPage("https://www.smilehotdog.com")
+        val vendorIds = listOf(
+            R.id.textVendor1 to "https://www.5elementosla.com",
+            R.id.textVendor2 to "https://www.babysbadassburgers.com",
+            R.id.textVendor3 to "https://www.sugoitaliano.com",
+            R.id.textVendor4 to "https://www.crepesbonaparte.com",
+            R.id.textVendor5 to "https://www.smilehotdog.com"
+        )
+
+        vendorIds.forEach { (id, url) ->
+            rootView.findViewById<TextView>(id).setOnClickListener {
+                openWebPage(url)
+            }
         }
 
         rootView.findViewById<TextView>(R.id.backhomebutton).setOnClickListener {
@@ -46,12 +42,13 @@ class FoodTruckVendorDetailsFragment : Fragment() {
     }
 
     private fun openWebPage(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.data = Uri.parse(url)
-        if (intent.resolveActivity(requireActivity().packageManager) != null) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+            addCategory(Intent.CATEGORY_BROWSABLE)
+        }
+        try {
             startActivity(intent)
-        } else {
-            Toast.makeText(context, "No application can handle this request. Please install a web browser or check the URL.", Toast.LENGTH_LONG).show()
+        } catch (e: Exception) {
+            Toast.makeText(context, "No application can handle this request. Please install a web browser.", Toast.LENGTH_LONG).show()
         }
     }
 }
