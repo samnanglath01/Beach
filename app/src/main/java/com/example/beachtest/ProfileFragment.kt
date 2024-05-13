@@ -43,6 +43,10 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+
+        binding.backhomebutton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
+        }
         binding.editButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }

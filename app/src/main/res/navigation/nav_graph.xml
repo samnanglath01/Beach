@@ -174,8 +174,10 @@
         tools:layout="@layout/fragment_meal_time">
         <action
             android:id="@+id/action_mealTimeFragment_to_menuItemsFragment"
-            app:destination="@id/menuItemsFragment">
-        </action>
+            app:destination="@id/menuItemsFragment"/>
+        <action
+            android:id="@+id/action_mealTimeFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"/>
     </fragment>
 
     <!-- Menu items screen fragment. -->
@@ -286,6 +288,9 @@
         <action
             android:id="@+id/action_profileFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"/>
     </fragment>
 
     <!-- Edit profile screen fragment -->
