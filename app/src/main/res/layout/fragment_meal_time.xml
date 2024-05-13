@@ -235,7 +235,7 @@
                     android:background="#FFFFFF"
                     android:padding="10dp"
                     android:inputType="textMultiLine"
-                    android:minLines="3"
+                    android:minLines="2"
                     android:maxLines="5"
                     android:scrollbars="vertical"
                     android:autofillHints="none" />
@@ -262,6 +262,17 @@
                     android:layout_marginEnd="8dp"
                     android:elevation="4dp" />
 
+                <!-- ImageView for displaying the selected image -->
+                <ImageView
+                    android:id="@+id/reviewImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/review_image_description"
+                    android:background="@android:color/darker_gray" />
+
                 <!-- Button to submit review -->
                 <Button
                     android:id="@+id/submitReviewButton"
@@ -275,18 +286,38 @@
                     android:textColor="@color/white"/>
 
 
-
-                <!-- ImageView for displaying the selected image -->
-                <ImageView
-                    android:id="@+id/reviewImageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="8dp"
-                    android:visibility="gone"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/review_image_description" />
-
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/prevReviewTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous Reviews for selected Dining Hall: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/yellow"/>
+
+            <LinearLayout
+                android:id="@+id/previousReviewsSection"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+
+        </LinearLayout>
 
 
             <Button
