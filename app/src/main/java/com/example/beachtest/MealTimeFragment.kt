@@ -44,6 +44,14 @@ class MealTimeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupMealTimeButtons()
         setupReviewSubmission()
+        setupRatingBar()
+
+        // Retrieve the selected dining hall name from arguments
+        val selectedDiningHall = arguments?.getString("selectedDiningHall")
+        selectedDiningHall?.let {
+            fetchReviews(it)
+        }
+
     }
 
 
@@ -87,7 +95,27 @@ class MealTimeFragment : Fragment() {
                     Toast.makeText(context, "Failed to fetch dining hall information: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            Toast.makeText(context, "NEED TO BE LOGGED IN OR Review text cannot be empty.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "NEED TO BE LOGGED IN TO LEAVE A REVIEW OR Review text cannot be empty.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Setup for the rating bar
+    private fun setupRatingBar() {
+        binding.ratingBar.rating = 3.0f
+        binding.ratingBar.stepSize = 1.0f
+        binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            val roundedRating = Math.round(rating).coerceIn(1, 5)
+            ratingBar.rating = roundedRating.toFloat()
+            binding.ratingScaleText.text = when (roundedRating) {
+                1 -> "Very Bad"
+                2 -> "Bad"
+                3 -> "Good"
+                4 -> "Great"
+                5 -> "Awesome"
+                else -> "Not Rated"
+            }
+            // Optionally show a toast
+            Toast.makeText(context, "Rating: $roundedRating", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -167,7 +195,7 @@ class MealTimeFragment : Fragment() {
 
         binding.dinnerButton.setOnClickListener {
             saveMealTimeChoice("Dinner")
-            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show()
         }
     }
 
