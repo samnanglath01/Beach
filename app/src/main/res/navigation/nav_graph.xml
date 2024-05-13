@@ -310,6 +310,9 @@
         android:name="com.example.beachtest.HallHoursFragment"
         android:label="fragment_menu_items"
         tools:layout="@layout/fragment_hall_hours">
+        <action
+            android:id="@+id/action_hallHoursFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"/>
     </fragment>
 
     <!-- Edit Dietary Preference screen fragment -->
@@ -400,6 +403,9 @@
         android:name="com.example.beachtest.FoodPantryFragment"
         android:label="fragment_food_pantry"
         tools:layout="@layout/fragment_food_pantry">
+        <action
+            android:id="@+id/action_foodPantryFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"/>
     </fragment>
 
     <!-- Schedule Meals Fragment -->

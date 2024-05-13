@@ -189,6 +189,21 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/black"/>
 
+            <Button
+                android:id="@+id/backHomeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Home Page"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:backgroundTint="@color/yellow"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp" />
+
         </LinearLayout>
 
     </ScrollView>
