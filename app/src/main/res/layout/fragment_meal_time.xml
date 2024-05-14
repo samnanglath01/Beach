@@ -243,38 +243,6 @@
                     android:scrollbars="vertical"
                     android:autofillHints="none" />
 
-                <!-- 'Add Photo' button -->
-                <Button
-                    android:id="@+id/addPhotoButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:drawableStart="@android:drawable/ic_menu_camera"
-                    android:drawablePadding="8dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:text="@string/add_photo"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="@color/yellow"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:elevation="4dp" />
-
-                <!-- ImageView for displaying the selected image -->
-                <ImageView
-                    android:id="@+id/reviewImageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="8dp"
-                    android:visibility="gone"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/review_image_description"
-                    android:background="@android:color/darker_gray" />
 
                 <!-- Button to submit review -->
                 <Button
@@ -576,7 +544,7 @@
 
             </LinearLayout>
 
-            <!-- Previous Reviews section 2 -->
+            <!-- Previous Reviews section 4 -->
             <LinearLayout
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
@@ -586,7 +554,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="30dp"
-                android:id="@+id/previousReviewSection2"
+                android:id="@+id/previousReviewSection4"
                 >
 
 
@@ -599,7 +567,7 @@
 
                     <!-- Profile Image View -->
                     <ImageView
-                        android:id="@+id/previousReviewProfileImageView2"
+                        android:id="@+id/previousReviewProfileImageView4"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/sym_def_app_icon"
@@ -609,10 +577,10 @@
 
                     <!-- User's Name -->
                     <TextView
-                        android:id="@+id/prevReviewUserNameTextView2"
+                        android:id="@+id/prevReviewUserNameTextView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stephanie Tadeo"
+                        android:text="Chris Pineda"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -698,7 +666,7 @@
                         android:id="@+id/prevReviewUserNameTextView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Edith Garcia"
+                        android:text="James Valenzuela"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -739,7 +707,7 @@
                     android:id="@+id/previousReviewText5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The dining hall offers a good selection of dishes, including several healthy options. The environment is generally clean, and the staff is courteous. It's a great value, although it can get quite crowded at times. Overall, a solid choice for a meal on campus!"
+                    android:text="The dining hall has a decent variety of food, but some dishes are hit or miss. While the staff is friendly, service can be slow during peak hours. The area is kept fairly clean, though it tends to be noisy. Adequate for quick dining, but there's room for improvement."
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
