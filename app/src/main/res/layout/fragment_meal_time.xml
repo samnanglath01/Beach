@@ -291,8 +291,18 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/previousReviewWindowDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Below you can see the previously posted reviews for the current dining hall that other users have uploaded."
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/yellow"
+                android:padding="12dp"/>
 
-            <!-- Previous Reviews section -->
+
+            <!-- Previous Reviews section 1 -->
             <LinearLayout
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
@@ -302,17 +312,9 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="30dp"
-                android:id="@+id/previousReviewSection">
+                android:id="@+id/previousReviewSection"
+                >
 
-
-                <TextView
-                    android:id="@+id/previousReviewWindowDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Below you can see the previously posted reviews for the current dining hall that other users have uploaded."
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/yellow"/>
 
                 <!-- User profile and name container -->
                 <LinearLayout
@@ -336,7 +338,7 @@
                         android:id="@+id/prevReviewUserNameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/john_smith"
+                        android:text="Juan Lopez"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -355,7 +357,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
-                    android:rating="3"
+                    android:rating="4"
                     android:stepSize="1.0"
                     android:layout_gravity="center_horizontal"
                     style="?android:attr/ratingBarStyleIndicator"
@@ -366,14 +368,14 @@
                     android:id="@+id/previousReviewRatingScaleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  "
+                    android:text="Selected rating : Great "
                     android:textSize="18sp"
                     android:gravity="center_horizontal"
                     android:textStyle="bold"
                     android:layout_marginTop="8dp"
                     />
-
-                <!-- ScrollView to contain dynamically added TextViews for reviews -->
+                <!--
+                                ScrollView to contain dynamically added TextViews for reviews
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -385,10 +387,122 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
-                        <!-- TextViews will be added here dynamically -->
+                        <- TextViews will be added here dynamically
                     </LinearLayout>
                 </ScrollView>
+                -->
+                <TextView
+                    android:id="@+id/previousReviewText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I love this dining hall becuase it had vegan and vegetarian friendly options!!"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="#FFFFFF"
+                    android:padding="16dp"/>
 
+            </LinearLayout>
+
+            <!-- Previous Reviews section 2 -->
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/previousReviewSection2"
+                >
+
+
+                <!-- User profile and name container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image View -->
+                    <ImageView
+                        android:id="@+id/previousReviewProfileImageView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/profile_picture_description" />
+
+                    <!-- User's Name -->
+                    <TextView
+                        android:id="@+id/prevReviewUserNameTextView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stephanie Tadeo"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review's star rating:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+                <!-- RatingBar for user ratings -->
+                <RatingBar
+                    android:id="@+id/previousReviewRatingBar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="1.0"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/previousReviewRatingScaleText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected rating : Awesome "
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+                <!--
+                                ScrollView to contain dynamically added TextViews for reviews
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/previousReviewTextContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <- TextViews will be added here dynamically
+                    </LinearLayout>
+                </ScrollView>
+                -->
+                <TextView
+                    android:id="@+id/previousReviewText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I had an amazing experience within the dining hall! There was a variety of foods to choose from that complied with my dietary needs. Clean environment with friendly staffing! Definitely worth the price if you are visiting! "
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="#FFFFFF"
+                    android:padding="16dp"/>
 
             </LinearLayout>
 
