@@ -513,7 +513,7 @@
 
                     <!-- Profile Image View -->
                     <ImageView
-                        android:id="@+id/previousReviewProfileImageView"
+                        android:id="@+id/previousReviewProfileImageView3"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/sym_def_app_icon"
@@ -576,6 +576,177 @@
 
             </LinearLayout>
 
+            <!-- Previous Reviews section 2 -->
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/previousReviewSection2"
+                >
+
+
+                <!-- User profile and name container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image View -->
+                    <ImageView
+                        android:id="@+id/previousReviewProfileImageView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/profile_picture_description" />
+
+                    <!-- User's Name -->
+                    <TextView
+                        android:id="@+id/prevReviewUserNameTextView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stephanie Tadeo"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review's star rating:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+                <!-- RatingBar for user ratings -->
+                <RatingBar
+                    android:id="@+id/previousReviewRatingBar4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="1.0"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/previousReviewRatingScaleText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected rating : Awesome "
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <TextView
+                    android:id="@+id/previousReviewText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I had an amazing experience within the dining hall! There was a variety of foods to choose from that complied with my dietary needs. Clean environment with friendly staffing! Definitely worth the price if you are visiting! "
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="#FFFFFF"
+                    android:padding="16dp"/>
+
+            </LinearLayout>
+
+            <!-- Previous Reviews section 5 -->
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/previousReviewSection5"
+                >
+
+
+                <!-- User profile and name container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image View -->
+                    <ImageView
+                        android:id="@+id/previousReviewProfileImageView5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/profile_picture_description" />
+
+                    <!-- User's Name -->
+                    <TextView
+                        android:id="@+id/prevReviewUserNameTextView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edith Garcia"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review's star rating:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+                <!-- RatingBar for user ratings -->
+                <RatingBar
+                    android:id="@+id/previousReviewRatingBar5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="1.0"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/previousReviewRatingScaleText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected rating : Good"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <TextView
+                    android:id="@+id/previousReviewText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The dining hall offers a good selection of dishes, including several healthy options. The environment is generally clean, and the staff is courteous. It's a great value, although it can get quite crowded at times. Overall, a solid choice for a meal on campus!"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="#FFFFFF"
+                    android:padding="16dp"/>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/backToDiningHallButton"
