@@ -159,6 +159,7 @@
                 android:layout_marginBottom="30dp"
                 android:id="@+id/leaveReviewSection">
 
+
                 <TextView
                     android:id="@+id/leaveReviewTextView"
                     android:layout_width="wrap_content"
@@ -290,18 +291,9 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/previousReviewDescriptionText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Previous Reviews for selected Dining Hall: "
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/yellow"/>
 
+            <!-- Previous Reviews section -->
             <LinearLayout
-                android:id="@+id/previousReviewsSection"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -310,23 +302,95 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="30dp"
-                />
+                android:id="@+id/previousReviewSection">
 
+
+                <TextView
+                    android:id="@+id/previousReviewWindowDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Below you can see the previously posted reviews for the current dining hall that other users have uploaded."
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/yellow"/>
+
+                <!-- User profile and name container -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
 
+                    <!-- Profile Image View -->
+                    <ImageView
+                        android:id="@+id/previousReviewProfileImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/profile_picture_description" />
+
+                    <!-- User's Name -->
                     <TextView
-                        android:id="@+id/prevReviewTextView"
+                        android:id="@+id/prevReviewUserNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/john_smith"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review's star rating:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+                <!-- RatingBar for user ratings -->
+                <RatingBar
+                    android:id="@+id/previousReviewRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="1.0"
+                    android:layout_gravity="center_horizontal"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/previousReviewRatingScaleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <!-- ScrollView to contain dynamically added TextViews for reviews -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/previousReviewTextContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:layout_marginTop="6dp"/>
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <!-- TextViews will be added here dynamically -->
+                    </LinearLayout>
+                </ScrollView>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
 
             <Button

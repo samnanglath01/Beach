@@ -47,7 +47,8 @@
         android:textStyle="bold"
         android:drawableStart="@drawable/arrowbackicon"
         android:gravity="center"
-        android:drawablePadding="8dp" />
+        android:drawablePadding="8dp"
+        />
 
     <!-- Placeholder for dynamic vendor display -->
     <!-- You can use a RecyclerView here or a custom layout that will be shown/hidden based on the button clicked -->

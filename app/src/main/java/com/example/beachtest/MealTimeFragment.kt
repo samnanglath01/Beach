@@ -12,7 +12,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.beachtest.databinding.FragmentMealTimeBinding
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
@@ -26,11 +28,16 @@ class MealTimeFragment : Fragment() {
     private val auth = FirebaseAuth.getInstance()
     private var guestId: String? = null
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentMealTimeBinding.inflate(inflater, container, false)
         guestId = loadGuestId() // Load the guest ID from SharedPreferences
+
+        binding.backToDiningHallButton.setOnClickListener{
+            it.findNavController().navigate(R.id.action_mealTimeFragment_to_homePageFragment)
+        }
         return binding.root
     }
 
@@ -45,12 +52,6 @@ class MealTimeFragment : Fragment() {
         setupMealTimeButtons()
         setupReviewSubmission()
         setupRatingBar()
-
-        // Retrieve the selected dining hall name from arguments
-        val selectedDiningHall = arguments?.getString("selectedDiningHall")
-        selectedDiningHall?.let {
-            fetchReviews(it)
-        }
 
     }
 
@@ -107,11 +108,11 @@ class MealTimeFragment : Fragment() {
             val roundedRating = Math.round(rating).coerceIn(1, 5)
             ratingBar.rating = roundedRating.toFloat()
             binding.ratingScaleText.text = when (roundedRating) {
-                1 -> "Very Bad"
-                2 -> "Bad"
-                3 -> "Good"
-                4 -> "Great"
-                5 -> "Awesome"
+                1 -> "Selected rating : Very Bad"
+                2 -> "Selected rating : Bad"
+                3 -> "Selected rating : Good"
+                4 -> "Selected rating : Great"
+                5 -> "Selected rating : Awesome"
                 else -> "Not Rated"
             }
             // Optionally show a toast
@@ -124,41 +125,30 @@ class MealTimeFragment : Fragment() {
             .whereEqualTo("diningHall", diningHall)
             .get()
             .addOnSuccessListener { documents ->
-                val reviewsContainer = binding.previousReviewsSection
-                reviewsContainer.removeAllViews()  // Clear previous reviews if any
-
                 if (documents.isEmpty) {
-                    val textView = TextView(context).apply {
-                        text = "No reviews found for this dining hall."
-                        textSize = 18f
-                        setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
-                    }
-                    reviewsContainer.addView(textView)
+                    binding.previousReviewTextContainer.text = "No reviews found for this dining hall."
+                    binding.prevReviewUserNameTextView.text = ""
+                    binding.previousReviewRatingBar.rating = 0f
                 } else {
+                    val reviewsText = StringBuilder()
                     documents.forEach { document ->
                         val username = document.getString("username") ?: "Anonymous"
-                        val rating = document.getDouble("rating") ?: 0.0
+                        val rating = document.getDouble("rating")?.toFloat() ?: 0f
                         val reviewText = document.getString("review") ?: "No comment provided"
 
-                        val reviewDisplay = TextView(context).apply {
-                            text = "User: $username, Rating: $rating, Review: $reviewText"
-                            textSize = 18f
-                            setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
-                            layoutParams = LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.MATCH_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT
-                            ).apply {
-                                topMargin = 16
-                            }
-                        }
-                        reviewsContainer.addView(reviewDisplay)
+                        // Append each review to the StringBuilder
+                        reviewsText.append("User: $username, Rating: $rating, Review: $reviewText\n\n")
                     }
+                    // Update the UI with all reviews
+                    binding.previousReviewTextContainer.text = reviewsText.toString()
                 }
             }
             .addOnFailureListener { exception ->
                 Toast.makeText(context, "Error fetching reviews: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+
 
 
 

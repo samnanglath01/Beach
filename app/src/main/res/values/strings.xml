@@ -47,19 +47,29 @@
     <string name="farmers_market_vendors">Farmers Market Vendors</string>
     <string name="ingredients_label">Ingredients:</string>
     <string name="kitchen_image_description">An image of a kitchen to set the theme for dietary preferences.</string>
+
+    <!-- String resources for Food Truck Vendor descriptions -->
     <string name="ft_vendor_1">5 Elementos - Thu Mar 07 2024 @ Cal State Long Beach: Friendship Walk</string>
     <string name="ft_vendor_2">Baby\'s Burgers (LA) - Thu Mar 07 2024 @ Cal State Long Beach: Peterson Hall</string>
     <string name="ft_vendor_3">SUGO ITALIANO - Mon Mar 11 2024 @ Cal State Long Beach: Friendship Walk</string>
     <string name="ft_vendor_4">Crepes Bonaparte - Mon Mar 11 2024 @ Cal State Long Beach: Peterson Hall</string>
     <string name="ft_vendor_5">Smile Hot Dog - Tue Mar 12 2024 @ Cal State Long Beach: Friendship Walk</string>
-    <string name="fm_vendor_1">Farmers Produce</string>
+    <string name="ft_vendor_6">Taco Therapy - Thu Mar 14 2024 @ Cal State Long Beach: Peterson Hall</string>
+    <string name="ft_vendor_7">Turkish Grill - Thu Mar 14 2024 @ Cal State Long Beach: Friendship Walk</string>
+    <string name="ft_vendor_8">LA LA Lasagna - Mon Mar 18 2024 @ Cal State Long Beach: Peterson Hall</string>
+    <string name="ft_vendor_9">Kalamaki Greek La - Mon Mar 18 2024 @ Cal State Long Beach: Friendship Walk</string>
+
+    <!-- String resources for Farmers Market Vendor descriptions -->
+    <string name="fm_vendor_1">Local Farmers Produce</string>
     <string name="fm_vendor_2">Arepas Venezuelan Experience</string>
     <string name="fm_vendor_3">Tacomasa</string>
     <string name="fm_vendor_4">Bao Bao House</string>
     <string name="fm_vendor_5">Cue Bakeshop</string>
     <string name="fm_vendor_6">Pupusas Salvadorenas</string>
+    <string name="fm_vendor_7">Long Beach Farmers Market Instagram</string>
     <string name="foodTruckVendorsList"> List of Food Truck Vendors:</string>
     <string name="farmersMarketVendorsList"> List of Farmer\'s Market Vendors:</string>
+
     <string name="current_language">Current Application Language: %1$s</string>
     <string name="topBanner">Top Banner</string>
     <string name="dish_details">     Dish Details/Ingredients</string>
