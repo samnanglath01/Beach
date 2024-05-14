@@ -34,7 +34,7 @@ class ParksideTourFragment : Fragment() {
 
         videoView?.apply {
             setMediaController(mediaController)
-            setVideoURI(Uri.parse("android.resource://" + context?.packageName + "/" + R.raw.parksidetourOutsideVideo))
+            setVideoURI(Uri.parse("android.resource://" + context?.packageName + "/" + R.raw.parksidevid))
             requestFocus()
             start()
 
