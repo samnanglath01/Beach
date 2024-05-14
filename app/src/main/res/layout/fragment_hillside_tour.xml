@@ -37,14 +37,29 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="Welcome to the Hillside Dining Hall Tour!\n"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                />
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/backHomeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:text="Back to Virtual Tour Options"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <VideoView
                 android:layout_width="match_parent"

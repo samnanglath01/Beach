@@ -45,7 +45,7 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
 
-        binding.backhomebutton.setOnClickListener {
+        binding.backHomeButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
         }
         binding.editButton.setOnClickListener {

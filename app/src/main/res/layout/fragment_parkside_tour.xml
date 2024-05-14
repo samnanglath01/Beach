@@ -36,14 +36,29 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="71dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="Welcome to the Parkside Dining Hall Tour!\n"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                />
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/backHomeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:text="Back to Virtual Tour Options"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -155,22 +170,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="328dp"
-                android:src="@drawable/parksidetour5"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="\nHere you will also see the outside patio,  where you can dine outdoors with your friends, family and acquaintances. It will be located to your right when you enter the dining hall."
-                android:textColor="@color/black"
-                android:textSize="22dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:src="@drawable/parksidetouroutside"/>
+                android:src="@drawable/parksidetour5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="\n"
+                android:text="\nThe image below shows a waffle station in the dining hall where students can make their own waffles. Waffle batter is typically available in a bottle for students to pour themselves, and additional toppings like whipped cream, strawberries, nuts, and syrup can be requested from attendants to customize waffles to their liking."
                 android:textColor="@color/black"
                 android:textSize="22dp"
                 android:textStyle="bold" />

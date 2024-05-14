@@ -153,9 +153,6 @@
         <action
             android:id="@+id/action_homePageFragment_to_foodTrucksFragment"
             app:destination="@id/foodTrucksFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_scheduleMealsFragment"
-            app:destination="@id/scheduleMealsFragment" />
     </fragment>
 
     <!-- Home screen fragment. -->
@@ -371,6 +368,9 @@
         <action
             android:id="@+id/action_virtualTourFragment_to_parksideTourFragment"
             app:destination="@id/parksideTourFragment" />
+        <action
+            android:id="@+id/action_virtualTourFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"/>
     </fragment>
 
     <!--Beachside virtual tour fragment -->
@@ -379,6 +379,9 @@
         android:name="com.example.beachtest.BeachsideTourFragment"
         android:label="fragment_beachside_tour"
         tools:layout="@layout/fragment_beachside_tour">
+        <action
+            android:id="@+id/action_beachsideTourFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
     </fragment>
 
     <!-- Hillside virtual tour fragment -->
@@ -387,6 +390,9 @@
         android:name="com.example.beachtest.HillsideTourFragment"
         android:label="fragment_hillside_tour"
         tools:layout="@layout/fragment_hillside_tour">
+        <action
+            android:id="@+id/action_hillsideTourFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
     </fragment>
 
     <!-- Parkside virtual tour fragment -->
@@ -395,6 +401,9 @@
         android:name="com.example.beachtest.ParksideTourFragment"
         android:label="fragment_parkside_tour"
         tools:layout="@layout/fragment_parkside_tour">
+        <action
+            android:id="@+id/action_parksideTourFragment_to_virtualTourFragment"
+            app:destination="@id/virtualTourFragment" />
     </fragment>
 
     <!-- Food Pantry fragment -->
@@ -406,17 +415,6 @@
         <action
             android:id="@+id/action_foodPantryFragment_to_homePageFragment"
             app:destination="@id/homePageFragment"/>
-    </fragment>
-
-    <!-- Schedule Meals Fragment -->
-    <fragment
-        android:id="@+id/scheduleMealsFragment"
-        android:name="com.example.beachtest.ScheduleMealsFragment"
-        android:label="fragment_schedule_meals"
-        tools:layout="@layout/fragment_schedule_meals">
-        <action
-            android:id="@+id/action_scheduleMealsFragment_to_homePageFragment"
-            app:destination="@id/homePageFragment" />
     </fragment>
 
     <fragment

@@ -24,6 +24,7 @@ class MealTimeFragment : Fragment() {
     private val auth = FirebaseAuth.getInstance()
     private var guestId: String? = null
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -46,6 +47,8 @@ class MealTimeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupMealTimeButtons()
         setupReviewSubmission()
+        setupRatingBar()
+
     }
 
 
@@ -60,7 +63,7 @@ class MealTimeFragment : Fragment() {
     private fun submitReview(rating: Float, reviewText: String) {
         val userUid = auth.currentUser?.uid
 
-        if (userUid != null) {
+        if (userUid != null && reviewText.isNotBlank()) {
             firestore.collection("Users").document(userUid).get()
                 .addOnSuccessListener { document ->
                     val diningHall = document.getString("diningHall") ?: "Unknown Dining Hall"
@@ -89,9 +92,60 @@ class MealTimeFragment : Fragment() {
                     Toast.makeText(context, "Failed to fetch dining hall information: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            Toast.makeText(context, "Sign in to leave a review", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "NEED TO BE LOGGED IN TO LEAVE A REVIEW OR Review text cannot be empty.", Toast.LENGTH_SHORT).show()
         }
     }
+
+    // Setup for the rating bar
+    private fun setupRatingBar() {
+        binding.ratingBar.rating = 3.0f
+        binding.ratingBar.stepSize = 1.0f
+        binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            val roundedRating = Math.round(rating).coerceIn(1, 5)
+            ratingBar.rating = roundedRating.toFloat()
+            binding.ratingScaleText.text = when (roundedRating) {
+                1 -> "Selected rating : Very Bad"
+                2 -> "Selected rating : Bad"
+                3 -> "Selected rating : Good"
+                4 -> "Selected rating : Great"
+                5 -> "Selected rating : Awesome"
+                else -> "Not Rated"
+            }
+            // Optionally show a toast
+            Toast.makeText(context, "Rating: $roundedRating", Toast.LENGTH_SHORT).show()
+        }
+    }
+    /**
+    private fun fetchReviews(diningHall: String) {
+    firestore.collection("reviews")
+    .whereEqualTo("diningHall", diningHall)
+    .get()
+    .addOnSuccessListener { documents ->
+    if (documents.isEmpty) {
+    binding.previousReviewTextContainer.text = "No reviews found for this dining hall."
+    binding.prevReviewUserNameTextView.text = ""
+    binding.previousReviewRatingBar.rating = 0f
+    } else {
+    val reviewsText = StringBuilder()
+    documents.forEach { document ->
+    val username = document.getString("username") ?: "Anonymous"
+    val rating = document.getDouble("rating")?.toFloat() ?: 0f
+    val reviewText = document.getString("review") ?: "No comment provided"
+
+    // Append each review to the StringBuilder
+    reviewsText.append("User: $username, Rating: $rating, Review: $reviewText\n\n")
+    }
+    // Update the UI with all reviews
+    binding.previousReviewTextContainer.text = reviewsText.toString()
+    }
+    }
+    .addOnFailureListener { exception ->
+    Toast.makeText(context, "Error fetching reviews: ${exception.message}", Toast.LENGTH_SHORT).show()
+    }
+    }
+     ***/
+
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setupMealTimeButtons() {
@@ -126,7 +180,7 @@ class MealTimeFragment : Fragment() {
 
         binding.dinnerButton.setOnClickListener {
             saveMealTimeChoice("Dinner")
-            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Dinner selected", Toast.LENGTH_SHORT).show()
         }
     }
 

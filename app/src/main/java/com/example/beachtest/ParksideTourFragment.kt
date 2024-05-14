@@ -9,16 +9,23 @@ import android.widget.MediaController
 import android.widget.Toast
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
-
+import androidx.navigation.findNavController
+import com.example.beachtest.databinding.FragmentParksideTourBinding
 
 class ParksideTourFragment : Fragment() {
     private var videoView: VideoView? = null
     private var mediaController: MediaController? = null
+    private lateinit var binding: FragmentParksideTourBinding
 
     // Luis Flores
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parkside_tour, container, false)
+        binding = FragmentParksideTourBinding.inflate(inflater, container, false)
+
+        binding.backHomeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_parksideTourFragment_to_virtualTourFragment)
+        }
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

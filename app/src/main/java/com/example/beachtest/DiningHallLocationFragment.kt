@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.beachtest.databinding.FragmentDiningHallLocationBinding
@@ -26,7 +25,6 @@ class DiningHallLocationFragment : Fragment(), OnMapReadyCallback {
         _binding = FragmentDiningHallLocationBinding.inflate(inflater, container, false)
         // Sets up a click listener on the back button to navigate back to the home page.
         binding.backhomebutton.setOnClickListener {
-            Toast.makeText(context, "Profile clicked", Toast.LENGTH_SHORT).show()
             it.findNavController().navigate(R.id.action_diningHallLocationFragment_to_homePageFragment)
         }
         return binding.root // Returns the root view from the binding object.

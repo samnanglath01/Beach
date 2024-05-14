@@ -28,12 +28,11 @@ class FarmersMarketVendorDetailsFragment : Fragment() {
 
     private fun setupButtonListeners(view: View) {
         val vendorUrls = mapOf(
-            R.id.buttonVendor1 to "https://www.visitlongbeach.com/blog/long-beach-farmers-markets/",
-            R.id.buttonVendor2 to "https://www.theareparepublic.com/",
-            R.id.buttonVendor3 to "https://www.tacomasa.com/",
-            R.id.buttonVendor4 to "https://www.instagram.com/la_baobaohouse/",
-            R.id.buttonVendor5 to "https://cuebakeshop.com/",
-            R.id.buttonVendor6 to "https://salvadorenorestaurant.com/",
+            R.id.buttonVendor1 to "https://www.theareparepublic.com/",
+            R.id.buttonVendor2 to "https://www.tacomasa.com/",
+            R.id.buttonVendor3 to "https://www.instagram.com/la_baobaohouse/",
+            R.id.buttonVendor4 to "https://cuebakeshop.com/",
+            R.id.buttonVendor5 to "https://salvadorenorestaurant.com/"
         )
 
         vendorUrls.forEach { (buttonId, url) ->
