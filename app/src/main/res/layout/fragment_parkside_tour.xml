@@ -75,19 +75,34 @@
             <ImageView
                 android:id="@+id/hillsidePanorama"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/hillsidepanorama" />
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour8" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\nHere you can check out our wonderful buffet of savory dishes cooked and served by the hardworking chefs"
-                android:textColor="@color/black"
-                android:textSize="22dp"
-                android:textStyle="bold"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                />
+                android:text="The image shows the entrance to parkside dining hall where students must scan their student ID if they are dorm residents or pay the meal price if they are regular students or visitors. It is a cash-free zone, so those without a dorming meal plan or visitors should bring a credit or debit card, as cash is not accepted. This ensures a smooth and efficient entry process into the dining area..\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="540dp"
+                android:src="@drawable/parksidetour9" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="\nHere you can check out our wonderful buffet of savory dishes cooked and served by the hardworking chefs."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -145,22 +160,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\nHere you will also find the door on the left which will take you to the patio where you can dine outdoors with your friends, family and acquaintances. It will be located to your when you enter the dining hall, to the left of the buffet."
-                android:textColor="@color/black"
-                android:textSize="22dp"
-                android:textStyle="bold"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                />
+                android:text="\nHere you will also see the outside patio,  where you can dine outdoors with your friends, family and acquaintances. It will be located to your right when you enter the dining hall."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="548dp"
-                android:src="@drawable/hillsidetour4"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="274dp"
+                android:layout_height="300dp"
                 android:src="@drawable/parksidetouroutside"/>
 
             <TextView
