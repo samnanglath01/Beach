@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="\n"
+                android:text="\nThe image below shows a waffle station in the dining hall where students can make their own waffles. Waffle batter is typically available in a bottle for students to pour themselves, and additional toppings like whipped cream, strawberries, nuts, and syrup can be requested from attendants to customize waffles to their liking."
                 android:textColor="@color/black"
                 android:textSize="22dp"
                 android:textStyle="bold" />
