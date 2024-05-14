@@ -15,8 +15,7 @@ import androidx.navigation.findNavController
 class FarmersMarketVendorDetailsFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_farmers_market_vendor_details, container, false)
@@ -24,58 +23,39 @@ class FarmersMarketVendorDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupButtonListeners(view)
     }
 
     private fun setupButtonListeners(view: View) {
-        view.findViewById<Button>(R.id.buttonVendor1)?.setOnClickListener {
-            openWebPage("https://www.theareparepublic.com/")
+        val vendorUrls = mapOf(
+            R.id.buttonVendor1 to "https://www.visitlongbeach.com/blog/long-beach-farmers-markets/",
+            R.id.buttonVendor2 to "https://www.theareparepublic.com/",
+            R.id.buttonVendor3 to "https://www.tacomasa.com/",
+            R.id.buttonVendor4 to "https://www.instagram.com/la_baobaohouse/",
+            R.id.buttonVendor5 to "https://cuebakeshop.com/",
+            R.id.buttonVendor6 to "https://salvadorenorestaurant.com/",
+        )
+
+        vendorUrls.forEach { (buttonId, url) ->
+            view.findViewById<Button>(buttonId)?.setOnClickListener {
+                openWebPage(url)
+            }
         }
-        view.findViewById<Button>(R.id.buttonVendor2)?.setOnClickListener {
-            openWebPage("https://www.tacomasa.com/")
-        }
-        view.findViewById<Button>(R.id.buttonVendor3)?.setOnClickListener {
-            openWebPage("https://www.instagram.com/la_baobaohouse/")
-        }
-        view.findViewById<Button>(R.id.buttonVendor4)?.setOnClickListener {
-            openWebPage("https://cuebakeshop.com/")
-        }
-        view.findViewById<Button>(R.id.buttonVendor5)?.setOnClickListener {
-            openWebPage("https://salvadorenorestaurant.com/")
-        }
-        // Set up click listener for back button
+
         view.findViewById<Button>(R.id.backhomebutton)?.setOnClickListener {
-            // Navigate back to the FoodTrucksFragment
-            it.findNavController()
-                .navigate(R.id.action_farmersMarketVendorDetailsFragment_to_foodTrucksFragment)
+            it.findNavController().navigate(R.id.action_farmersMarketVendorDetailsFragment_to_foodTrucksFragment)
         }
     }
 
     private fun openWebPage(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+            addCategory(Intent.CATEGORY_BROWSABLE) // Ensure this Intent is handled by a web browser
+        }
         try {
-            val formattedUrl =
-                if (url.startsWith("http://") || url.startsWith("https://")) url else "http://$url"
-            val webPage: Uri = Uri.parse(formattedUrl)
-            val intent = Intent(Intent.ACTION_VIEW, webPage)
-            // Check if there's an app that can handle this intent
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            } else {
-                // Log an error or show a toast
-                Log.e(
-                    "FarmersMarketVendorDetailsFragment",
-                    "No application can handle this request. Please install a web browser or check the URL."
-                )
-                Toast.makeText(
-                    requireContext(),
-                    "No application can handle this request.",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
+            startActivity(intent)
         } catch (e: Exception) {
-            Log.e("FarmersMarketVendorDetailsFragment", "Failed to open URL: $url", e)
-            // Optionally handle the error or inform the user
+            Log.e("FarmersMarketVendorDetailsFragment", "No application can handle this request. URL: $url", e)
+            Toast.makeText(requireContext(), "No application can handle this request. Please install a web browser.", Toast.LENGTH_LONG).show()
         }
     }
 }

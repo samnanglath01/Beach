@@ -12,7 +12,7 @@
         <ImageView
             android:id="@+id/topbannerProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="110dp"
             android:contentDescription="@string/topBanner"
             android:src="@drawable/topbanner" />
 
@@ -87,6 +87,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ft_vendor_5"
+            android:textColor="@android:color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/textVendor6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ft_vendor_6"
+            android:textColor="@android:color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/textVendor7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ft_vendor_7"
+            android:textColor="@android:color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/textVendor8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ft_vendor_8"
+            android:textColor="@android:color/black"
+            android:drawableEnd="@drawable/arrow_forward"
+            android:padding="18dp"
+            android:textAlignment="textStart"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/textVendor9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ft_vendor_9"
             android:textColor="@android:color/black"
             android:drawableEnd="@drawable/arrow_forward"
             android:padding="18dp"

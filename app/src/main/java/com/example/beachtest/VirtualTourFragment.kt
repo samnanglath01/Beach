@@ -16,6 +16,10 @@ class VirtualTourFragment : Fragment() {
     ): View {
         binding = FragmentVirtualTourBinding.inflate(inflater, container, false)
 
+        binding.backHomeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_virtualTourFragment_to_homePageFragment)
+        }
+
         // Set up click listeners to navigate to each dining hall
         // Parkside tour option
         binding.parksidehomebutton.setOnClickListener {
@@ -33,6 +37,7 @@ class VirtualTourFragment : Fragment() {
         binding.beachsidehomebutton.setOnClickListener {
             Toast.makeText(context, "Beachside clicked", Toast.LENGTH_SHORT).show()
             it.findNavController().navigate(R.id.action_virtualTourFragment_to_beachsideTourFragment)
+
         }
 
         return binding.root

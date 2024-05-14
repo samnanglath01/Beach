@@ -1,3 +1,4 @@
+
 package com.example.beachtest
 
 import android.Manifest
@@ -54,6 +55,33 @@ class ProfileFragment : Fragment() {
         binding.editDietButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_editDietaryPreferenceFragment)
         }
+        //samnang lath
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val navController = it.findNavController()
+
+            // Assuming signInFragment is accessible directly without popping anything
+            navController.navigate(R.id.signInFragment)
+
+            // Clear all back stack after navigation
+            navController.popBackStack(R.id.splashFragment, false) // Replace 'startDestination' with the ID of the root or start destination in your navigation graph
+        }
+
+        binding.backHomeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
+        }
+
+        //samnang lath
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val navController = it.findNavController()
+
+            // Assuming signInFragment is accessible directly without popping anything
+            navController.navigate(R.id.signInFragment)
+
+            // Clear all back stack after navigation
+            navController.popBackStack(R.id.splashFragment, false) // Replace 'startDestination' with the ID of the root or start destination in your navigation graph
+        }
 
         //samnang lath
         binding.btnLogout.setOnClickListener{
@@ -73,7 +101,7 @@ class ProfileFragment : Fragment() {
     //Samnang Lath
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
         // Initialize UserManager
         val userManager = UserManager()
 

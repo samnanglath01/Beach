@@ -4,16 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Sebastian Tadeo -->
+    <!-- LinearLayout for vertical stacking of views -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="10dp">
 
+        <!-- ImageView to display a banner image at the top of the screen -->
         <ImageView
             android:id="@+id/topbannerProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="110dp"
             android:src="@drawable/topbanner"
             android:contentDescription="@string/topBanner" />
 
@@ -112,18 +115,20 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"/>
 
+
         <!-- Back to Home Page Button -->
-        <Button
+        <TextView
             android:id="@+id/backhomebutton"
-            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/back_to_home_page"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:drawableStart="@drawable/arrowbackicon"
             android:padding="18dp"
             android:textAlignment="textStart"
-            android:textAllCaps="false"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 

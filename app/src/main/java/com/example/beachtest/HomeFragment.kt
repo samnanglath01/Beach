@@ -16,7 +16,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import java.time.DayOfWeek
 import java.time.LocalDate
+import androidx.navigation.NavDirections
 import java.util.UUID
+
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding

@@ -93,6 +93,7 @@ class DishDetailsFragment : Fragment() {
         }
     }
 
+
     private fun updateThumbsUp(dishId: String, newStatus: Boolean) {
         if (newStatus) {
             if (userLikesDish == false && thumbsDownCount > 0) {
@@ -173,4 +174,6 @@ class DishDetailsFragment : Fragment() {
         // Clear the binding when the view is destroyed
         _binding = null
     }
+
 }
+

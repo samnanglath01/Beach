@@ -6,7 +6,7 @@
     <color name="gray">#1e1f22</color>
     <color name="colorPrimary">#4A6572</color> <!-- A deep blue-gray that complements your current gray and can serve as a primary color -->
     <color name="colorAccent">#F9AA33</color> <!-- A vibrant orange that works well with yellow, providing a lively accent -->
-    <color name="colorBackground">#F0F1F5</color> <!-- A light grayish-blue, great for backgrounds, providing contrast without being too stark -->
+    <color name="colorBackground">#EEEBAA </color> <!-- A light grayish-blue, great for backgrounds, providing contrast without being too stark -->
     <color name="colorText">#3C4858</color> <!-- A softer alternative to black for text, providing ease on the eyes -->
     <color name="colorSubtle">#8C9BAA</color> <!-- A subtle blue-gray for less prominent elements or secondary text -->
     <color name="colorAlert">#D32F2F</color> <!-- A strong red for alerts or important actions, stands out against your existing palette -->

@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome to the Beachside Dining Hall Tour!\n"
+                android:text="Welcome to the Parkside Dining Hall Tour!\n"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold"
@@ -45,25 +45,168 @@
                 android:layout_marginEnd="5dp"
                 />
 
-            <VideoView
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:id="@+id/videoView"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp">
-            </VideoView>
+                android:layout_height="275dp"
+                android:src="@drawable/parksidetour1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Located on Earl Warren Drive and Atherton St, the Parkside Dining Hall is the culinary cornerstone for students looking for a meal that feels like home. Boasting a cozy interior and an inviting atmosphere, it's a place where you can unwind, study, and socialize over a variety of freshly-prepared dishes.\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The image below shows a locker area where students can store their bags before entering the dining hall, with a sign reminding them not to bring valuables. It advises keeping important items in dorms, vehicles, or rented lockers. Bags are not allowed in the dining hall to maintain a safe and clean space.\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:id="@+id/hillsidePanorama"
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour8" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="The image shows the entrance to parkside dining hall where students must scan their student ID if they are dorm residents or pay the meal price if they are regular students or visitors. It is a cash-free zone, so those without a dorming meal plan or visitors should bring a credit or debit card, as cash is not accepted. This ensures a smooth and efficient entry process into the dining area..\n"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="540dp"
+                android:src="@drawable/parksidetour9" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Located on Earl Warren Dr., the Parkside Dining Hall is a refreshing and convenient place for students seeking a freshly made and delicious meal from the various buffets and salad bars offered here.\n"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="\nHere you can check out our wonderful buffet of savory dishes cooked and served by the hardworking chefs."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour2"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nBelow, explore the dining area's thoughtful design, with tables for every need. Cozy corners provide solitude, while communal tables encourage shared experiences. Each spot offers its unique ambiance, catering to diverse preferences and enhancing the dining experience."
                 android:textColor="@color/black"
                 android:textSize="22dp"
                 android:textStyle="bold"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour6"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour7"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nYou can also check out and grab your drink from the two fountain drink dispensers shown here, as well as a fresh cup of coffee or fresh Dole juice right next to the bar."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour4"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="328dp"
+                android:src="@drawable/parksidetour5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="\nHere you will also see the outside patio,  where you can dine outdoors with your friends, family and acquaintances. It will be located to your right when you enter the dining hall."
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/parksidetouroutside"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nOn the right side of the Parkside dining hall, you will find more tables and seating locations for dining and studying, as well as a salad bar for anyone who is vegan/vegetarian/pescatarian. "
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="305dp"
+                android:src="@drawable/parksidetour10"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="305dp"
+                android:src="@drawable/parksidetour11"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="\nHere is where you will drop off all plates, cups and eating utensils after a meal, where the dishwashers will take care in picking up after and wash your plates, maintaining proper wash and sanitation."
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="305dp"
+                android:src="@drawable/parksidetour12" />
 
 
         </LinearLayout>

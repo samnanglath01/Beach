@@ -91,14 +91,13 @@ class ScheduleMealsFragment : Fragment() {
         return user != null
     }
     private fun saveMealToFirestore(mealDescription: String, date: String, time: String, mealType: String) {
+        // Get the user ID
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
         if (!isUserLoggedIn()) {
             Toast.makeText(context, "Please log in to schedule a meal.", Toast.LENGTH_LONG).show()
             // Redirect to login page or show login prompt
             return
         }
-
-        // Get the user ID
-        val userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         // Construct a custom document name (for example, concatenating user ID and current timestamp)
         val customDocumentName = "$userId-${System.currentTimeMillis()}"
@@ -130,3 +129,4 @@ class ScheduleMealsFragment : Fragment() {
         _binding = null
     }
 }
+
