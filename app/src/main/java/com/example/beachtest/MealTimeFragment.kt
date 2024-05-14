@@ -119,7 +119,7 @@ class MealTimeFragment : Fragment() {
             Toast.makeText(context, "Rating: $roundedRating", Toast.LENGTH_SHORT).show()
         }
     }
-
+/**
     private fun fetchReviews(diningHall: String) {
         firestore.collection("reviews")
             .whereEqualTo("diningHall", diningHall)
@@ -147,8 +147,7 @@ class MealTimeFragment : Fragment() {
                 Toast.makeText(context, "Error fetching reviews: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
-
-
+    ***/
 
 
 
